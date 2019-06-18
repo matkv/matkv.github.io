@@ -6,6 +6,7 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
+title: Index
 ---
 
 This website is a personal wiki for C#, Kotlin & Android development and will be used for quick access to links and the personal notes I take while learning.
