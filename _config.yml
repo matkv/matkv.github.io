@@ -64,4 +64,3 @@ exclude:
 - _posts/
 - _includes/head.html
 - History.markdown
-- index.md
