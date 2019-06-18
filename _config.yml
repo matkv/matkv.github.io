@@ -2,9 +2,9 @@ title: matkv
 author: matkv
 email: 
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This website is a personal wiki for C#, Kotlin & Android development
+  and will be used for quick access to links and the personal
+  notes I take while learning.
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
