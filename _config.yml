@@ -62,3 +62,4 @@ exclude:
 - vendor/gems/
 - vendor/ruby/
 - _posts/
+- _includes/head.html
