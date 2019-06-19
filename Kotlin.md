@@ -3,7 +3,6 @@ layout: page
 title: Kotlin
 permalink: /kotlin/
 toc: true
-highlighter: rouge
 ---
 
 **Table of contents**
