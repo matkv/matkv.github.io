@@ -4,7 +4,7 @@ title: C#
 permalink: /csharp/
 ---
 
-```CSharp
+```csharp
 namespace JBLWakeUpNew
 {
     public partial class FormJBLWakeUp : Form
