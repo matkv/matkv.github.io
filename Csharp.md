@@ -11,7 +11,7 @@ namespace JBLWakeUpNew
     {
         public FormJBLWakeUp()
         {
-            InitializeComponent();
+            InitializeComponent();  //this is a test comment
             
             Location = new Point(MousePosition.X - this.Width / 2, Screen.PrimaryScreen.WorkingArea.Bottom - this.Height);
             
