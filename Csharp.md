@@ -3,6 +3,7 @@ layout: page
 title: C#
 permalink: /csharp/
 ---
+
 ```CSharp
 namespace JBLWakeUpNew
 {
@@ -30,3 +31,6 @@ namespace JBLWakeUpNew
         }
     }
 }
+```
+
+Testing how well this works.
