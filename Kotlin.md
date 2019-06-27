@@ -65,4 +65,61 @@ The mathematical operators can also be chained:
 ```kotlin
 2.plus(71).plus(232).div(30).times(4)
 ```
-  
+---
+### Switch
+
+```kotlin
+when(fishname.length){
+0 -> println("print something")
+in 3..12 -> println("print something else")}
+```
+
+## Functions 
+
+```kotlin
+fun printHello(){
+}
+```
+
+- A Kotlin file has the extention ".kt".
+- The ```main``` function is the entry point, the execution starts there.
+- Every function returns something, if nothing is specified - it returns the type ```unit``` which has no value.
+- Almost everything in Kotlin is an expression - it has a value (except for loops and while loops).
+- If statements are possible directly when declaring a value or in a string.
+
+```kotlin 
+val isHot = if(temperature > 50) true else false 
+
+val temperature : Int  = 25
+val message = "You are " + if (temperature > 50) "fried" else "safe"    
+
+```
+
+- Parameters can have a default value. If nothing is specified, the default is used. A parameter can be specified by position or name.
+
+```Kotlin
+fun swim(speed : String = "fast")
+```
+
+We can create a function that checks for a certain condition in one line. This helps to simplify helper functions. It is also possible to use functions to set default parameters, but we should be careful with that because default parameters are evaluated at call time by Kotlin.
+
+```kotlin
+fun isTooHot(temperature : Int) = temperature > 0
+```
+
+Adding a ```!!``` after an object converts a non-nullable type to a unsafe nullable type. It will throw a ```NullPointerException``` if the value is null.
+
+
+## Lists & Collections
+
+### Making a list nullable
+
+```kotlin
+var list: List<Int?> = listOf(null,null)
+```
+
+```kotlin
+var list2: List<Int>? = null
+```
+
+When creating a list with ```val```, only the variable is immutable, not the list itself.
