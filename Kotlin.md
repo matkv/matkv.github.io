@@ -37,8 +37,6 @@ return fishFoodTreats?.dec() ?:0
 ```
 Explanation: if the object is not ```null``` -> use a treat + return new value + remove one treat (decrease method), else return 0. This is done with the ```?:``` Elvis operator.
 
---- 
-
 ### Mathematical operators
 
   Add (+)
@@ -65,7 +63,7 @@ The mathematical operators can also be chained:
 ```kotlin
 2.plus(71).plus(232).div(30).times(4)
 ```
----
+
 ### Switch
 
 ```kotlin
