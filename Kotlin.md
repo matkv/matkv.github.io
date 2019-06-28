@@ -107,6 +107,22 @@ fun isTooHot(temperature : Int) = temperature > 0
 
 Adding a ```!!``` after an object converts a non-nullable type to a unsafe nullable type. It will throw a ```NullPointerException``` if the value is null.
 
+### Filters
+
+Filters check if elements in a collection match a certain condition. ```it``` refers to each element on which we call the filter. For example, this filter filters out the elements that start with the letter 'p'.
+
+```kotlin
+println(decorations.filter {it[0] == 'p'})
+```
+
+In Kotlin, single quotes designate characters, double quotes designate strings. They are not interchangable.
+
+Example: Print all curry spices sorted descending by length.
+
+```kotlin
+val spices = listOf("curry", "pepper", "cayenne", "ginger", "red curry", "green curry", "red pepper" )
+println(spices.filter {it.contains("curry")}.sortedByDescending { it.length })
+```
 
 ## Lists & Collections
 
