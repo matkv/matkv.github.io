@@ -124,6 +124,48 @@ val spices = listOf("curry", "pepper", "cayenne", "ginger", "red curry", "green 
 println(spices.filter {it.contains("curry")}.sortedByDescending { it.length })
 ```
 
+### Lambdas
+
+A lambda is an expression that makes a function. We declare a function that has no name. It is always surrounded by curly brackets. We can declare a variable and assign it to a lambda, and then call it by adding () after the variable name.
+
+For example: calling this by using swim() would print "swim":
+
+```kotlin
+val swim = {println("swim \n")}
+```
+
+Lambdas can take arguments just like named functions. Arguments go on the left side of a function and the body of the lambda goes after the function arrow.
+
+```kotlin
+var dirty = 20
+val waterFilter = {dirty: Int -> dirty / 2 }
+
+waterFilter(dirty)
+```
+
+Another example: waterFilter can be any function that takes an ```int``` and returns an ```int```.
+
+```kotlin
+var dirty = 20
+val waterFilter: (Int) -> Int = {dirty -> dirty / 2}
+
+fun feedFish(dirty: Int) = dirty + 10
+```
+
+Lambdas can be used with higher order functions (functions that take a function as an argument). Here we pass a variable and a function and the variable is used in the function:
+
+```kotlin
+fun updateDirty(dirty: Int, operation: (Int) -> Int): Int {
+  return operation(dirty)
+}
+```
+
+The function argument needs to be the last parameter. To pass a named function as a parameter, we need to add "::" before it. Function type notation is more readable, which reduces errors, clearly showing what type is passed in and what type is returned.
+
+## Classes
+
+TODO
+
 ## Lists & Collections
 
 ### Making a list nullable
