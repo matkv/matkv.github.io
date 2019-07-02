@@ -373,3 +373,61 @@ for (j in 1..100){
   }
  }
 ```
+
+## Higher Order Functions
+
+For example, ```with``` is a higher order function. We can create our own higher order function.
+
+```kotlin
+
+fun fishExamples() {
+    val fish = Fish("splashy")
+
+    myWith(fish.name) {
+        capitalize()
+    }
+}
+
+fun myWith(name: String, block: String.() -> Unit)  //block is the class we are extending
+{
+    name.block()
+}
+```
+
+Some other higher order extension functions:
+
+run -> takes a lambda as an argument and returns the result of executing the lambda (works with all types)
+
+apply -> returns the object it is applied to. Can be useful for calling functions on a newly created object.
+
+let -> useful for chaining manipulations together
+
+If we want to use it without overhead, we use inline functions:
+
+```kotlin
+inline fun myWith(name: String, block: String.() -> Unit)  //block is the class we are extending
+{
+    //inline means zero overhead
+    name.block()
+}
+```
+
+### SAM - Single Abstract Method
+
+SAM is an interface with one method on it.
+
+```java
+public class JavaRun {  //Java Class
+    public static void runNow(Runnable runnable){
+        runnable.run();
+    }
+}
+```
+
+```kotlin
+fun Example() {
+    JavaRun.runNow{
+        println("Passing a lambda as a runnable")
+    }
+}
+```
