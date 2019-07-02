@@ -323,14 +323,18 @@ They are always resolved statically based on the variable they are applied to.
 
 ### Generic classes
 
-Can hold any type of values. Generic type T. For example, MyList<T>. By default, T stands for the nullable "Any" type. Can be constricted by using, for example ```class Aquarium<T : WaterSupply>(val waterSupply : T)```
+Can hold any type of values. Generic type T. For example, MyList<T>. By default, T stands for the nullable "Any" type. Can be constricted by using, for example 
+ 
+ ```kotlin
+ class Aquarium<T : WaterSupply>(val waterSupply : T)
+ ```
   
 Using ```out``` before the type ensures that Kotlin uses it safely? out types can only be returned 
 ```in``` types can only be passed into an object    ***check this again***
   
 Adding generics to a function 
 ```kotlin 
-fun <reified T: WaterSupply>isWaterClean(aquarium: Aquarium<WaterSupply>)
+fun <reified T : WaterSupply>isWaterClean(aquarium: Aquarium<WaterSupply>)
 ```
 
 ```reified``` checks if it is a real type, and we have to use ```inline``` before the function. Then we can use, for example, is checks on the type.
@@ -353,7 +357,7 @@ and then we can, for example, check if a class has a certain annotation and do s
 ```kotlin
 val classObj = Plant::class
 
-for (annotation in classObj.annotation) {//do something} 
+for (annotation in classObj.annotation) { //do something } 
 ```
 
 ```@get``` can only be apllied to property getters, ```@set``` only to setters.
