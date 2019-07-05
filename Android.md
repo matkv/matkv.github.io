@@ -49,3 +49,36 @@ rollButton.setOnClickListener {
 ## Resources
 
 All of our image resources should be in the ```drawable``` folder in our resources folder. We can access them in our code by using, for example, ```R.drawable.dice_1```
+
+## Finding views efficiently
+
+Generally, we want to minimize the amount of times we use ```findViewById``` because it searches the whole view hierarchy. This could cause our app to lag on slower devices. It it good practice to make a field for views that we use often. In Android, we generally don't write code in activity constructors. The views are actually not in memory until they've been inflated by setContentView.
+
+A common pattern in Android to initialise non-null variables in ```onCreate``` we can use ```lateinit```. This promises the compiler that the variable will be initialised before calling any methods on it.
+
+```kotlin
+lateinit var diceImage: ImageView
+```
+
+## Tools namespace
+
+The "tools" namespace is used when we want to define dummy content which can be used when designing our app. For example, we might want to show an emputy screen when our app has started, but while designing we want to be able to use dummy data so we can see how it would look once some data has been loaded.
+
+Attributes using the "tools" namespace are only shown when previewing the screen in design view, they're removed once we actually compile the app.
+
+## Introduction to Gradle
+
+Gradle is the build tool for Android. It is responsible for:
+
+* Decides what devices can actually run our app
+* It compiles our code to an executable
+* It manages dependent code and libraries
+* Signing apps so users can actually download the app from Google Play
+* Running automated tests
+
+A project contains two gradle files:
+
+* A single gradle file for project wide build settings
+* A specific gradle file for each module of our project (Module -> folder with source files and resources for a certain piece of functionality in our app)
+
+The default module is called ```app```.
