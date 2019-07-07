@@ -116,3 +116,21 @@ Every view has a left and a top coordinate, a width and a height. The unit for e
 Views are organizes in a hierachy of views. Views whose primary job it is to contain other views are called ```ViewGroups```. Commonly, a layout has a top viewgroup and a number of viewgroups inside it. For example, the LinearLayout is a viewgroup that allows us to arrange views horizontally or vertically by setting its orientation. The deeper the view hierarchy is, the more work the Android system has to do to calculate layouts. Having deep view hierarchies can slow down our app.
 
 To help with this, Android offers a layout that promotes a flat view hierarchy - ConstraintLayout. It is best for arranging a small number of views or viewgroups in a complex layout that might otherwise require deep nesting.
+
+## Resources
+
+When setting the text for a textView, we shouldn't use the actual string, but a string resource. With the resources editor (button next to where we would set the text normally) we can add a new resource. A string resource is then found in strings.xml. 
+
+Something similar can be done for example for the text size, the created resource will be stored in dimens.xml.
+
+## Styling
+
+Padding -> space added inside the view
+
+Margin -> space added outside the view
+
+To create certain formatting for multiple views, we can create a style. One way to do this: right click the view in the component tree in the designer, click refactor, "Extract Style".
+
+## Scrollable view
+
+A basic scrollable view is ScrollView, which can take one other view as a child. This is commonly a LinearLayout
