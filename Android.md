@@ -82,3 +82,37 @@ A project contains two gradle files:
 * A specific gradle file for each module of our project (Module -> folder with source files and resources for a certain piece of functionality in our app)
 
 The default module is called ```app```.
+
+### build.gradle
+
+The build.gradle file for the project is right inside the root folder of the project. The other build.gradle file is inside the app folder.
+
+Inside the build.gradle file in the project foder:
+
+* The repositories for the entire project are defined. A repository is a remote server where external code is downloaded from. For example Android libraries.
+* Dependencies - external code, such as libraries that a project depends on
+
+The build.gradle file in the app folder is responsible for setting up the app module. Inside it:
+
+* Plugins & SDK versions are specified.
+  * compileSdkVersion -> the version that our app actually compiles in
+  * minSdkVersion -> the minimum version that it supports
+  * targetSdkVersion -> we basically promise that we have tested our app from the minimum version up to this version
+* The application ID is specified - the unique identifier of our app. It is not possible to have to apps with the same id on the same device or on google play.
+* Dependencies -  all the dependencies that are needed for our app. Gradle will download these dependencies for the repositories that we specified in the *project* build.gradle file.
+
+## Android Compatibility
+
+Minimum API Level - Android has version numbers that map to the API levels. If our minSdkVersion is, for example, 19 - the minimum API version that a phone that wants to run it needs to have is 19. 18 and lower won't be able to install the app.
+
+In some cases, it might not even make sense to support devices that are below a certain API level. Support libraries like Android Jetpack help us with compatibility issues. For example - our class ```MainActivity : AppCompatActivity()``` extends extends from AppCompatActivity() - this is a compatibility class that makes sure that our activity includes a menu bar known as the action bar that looks the same across different platform OS levels.
+
+AppCompatActivity is part of ```androidx``` - the namespace of Android Jetpack.
+
+# Layout
+
+Every view has a left and a top coordinate, a width and a height. The unit for expressing location and dimensions is the Density Independent Pixel (dp). Android devices automatically handle the conversion from dp to pixel values.
+
+Views are organizes in a hierachy of views. Views whose primary job it is to contain other views are called ```ViewGroups```. Commonly, a layout has a top viewgroup and a number of viewgroups inside it. For example, the LinearLayout is a viewgroup that allows us to arrange views horizontally or vertically by setting its orientation. The deeper the view hierarchy is, the more work the Android system has to do to calculate layouts. Having deep view hierarchies can slow down our app.
+
+To help with this, Android offers a layout that promotes a flat view hierarchy - ConstraintLayout. It is best for arranging a small number of views or viewgroups in a complex layout that might otherwise require deep nesting.
