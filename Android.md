@@ -133,4 +133,16 @@ To create certain formatting for multiple views, we can create a style. One way 
 
 ## Scrollable view
 
-A basic scrollable view is ScrollView, which can take one other view as a child. This is commonly a LinearLayout
+A basic scrollable view is ScrollView, which can take one other view as a child. This is commonly a LinearLayout.
+
+## EditText
+
+The editText view let's a user input some text. By setting the inputType, we can decide what type of text should be entered and the keyboard will show version that fits it, for example e-mail or entering a date or a number. If we choose password as the type it will show the password characters instead of the actual value.
+
+If we make the text value empty, the value that is set in the "hint" property will be shown instead.
+
+## Visibility settings for views
+
+* visible shows the view
+* invisible hides it, but the view still takes up space
+* gone hides it and removes the space it would take up
