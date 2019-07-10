@@ -50,7 +50,7 @@ rollButton.setOnClickListener {
 
 All of our image resources should be in the ```drawable``` folder in our resources folder. We can access them in our code by using, for example, ```R.drawable.dice_1```
 
-## Finding views efficiently
+## Finding a view
 
 Generally, we want to minimize the amount of times we use ```findViewById``` because it searches the whole view hierarchy. This could cause our app to lag on slower devices. It it good practice to make a field for views that we use often. In Android, we generally don't write code in activity constructors. The views are actually not in memory until they've been inflated by setContentView.
 
@@ -146,3 +146,80 @@ If we make the text value empty, the value that is set in the "hint" property wi
 * visible shows the view
 * invisible hides it, but the view still takes up space
 * gone hides it and removes the space it would take up
+
+## Data Binding
+
+Instead of using ```findViewById```, we can use Data Binding to find our views. Using Data Binding leads to significant performance improvements. To enable data binding, we need to add this code to the build.gradle file in the app module in the android section:
+
+```kotlin
+dataBinding {
+        enabled = true  
+    }
+```
+
+Furthermore, we need to wrap our whole main_activity.xml in a <layout></layout> tag and add the namespace declarations to the layout tag instead:
+
+```kotlin
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+```
+
+In the main activity we create a binding using. The binding is like a glue beetween the layout and the actual activity.
+
+```kotlin
+private lateinit var binding : ActivityMainBinding
+```
+
+And in onCreate:
+
+```kotlin
+binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+```
+
+Now we don't need to use ```findViewById``` anymore, we can find a certain view like this:
+
+```kotlin
+binding.doneButton.setOnClickListener{ 
+...
+}
+```
+
+Another example. Here we need to Invalidate all binding expressions so that they get recreated with the correct data.
+
+```kotlin
+ binding.apply {
+  nicknameText.text = binding.editText.text
+  invalidateAll() //needed to refresh the UI with the new data
+  editText.visibility = View.GONE
+  view.visibility = View.GONE
+  nicknameText.visibility = View.VISIBLE
+        }
+```
+
+### Binding a view to a data class
+
+We have a data class: 
+
+```kotlin
+data class MyName(var name : String = "", var nickname : String = "")
+```
+
+In our xml, right after the layout tag, we set a data tag with a new variable with a name and a type. The name of the variable doesn't have to be the same as the class name of the type, but it is usually done like this:
+
+```kotlin
+<data>
+    <variable
+            name="myName"
+            type="com.example.aboutme.MyName"/>
+</data>
+```
+
+Setting the actual text using data from this variable: ```android:text="@={myName.name}"```. Then in onCreate we set it like this: ```binding.myName = myName```
+
+Another example: Here the nickname_text textview has a binding for myName.nickname as its text. In the MainActivity we set it like this:
+
+```kotlin
+myName?.nickname = nickname_edit.text.toString()
+```
+This means we don't need to actually touch the textview itself, we set the value of our binding variable, and this is the one that is accessed in the view.
