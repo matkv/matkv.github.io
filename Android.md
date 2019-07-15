@@ -223,3 +223,33 @@ Another example: Here the nickname_text textview has a binding for myName.nickna
 myName?.nickname = nickname_edit.text.toString()
 ```
 This means we don't need to actually touch the textview itself, we set the value of our binding variable, and this is the one that is accessed in the view.
+
+## ConstraintLayout
+
+Constraint -> a connection or alignment to another UI element, to the parent layout, or to an invisible guideline.
+
+Advantages of using ConstraintLayout:
+
+* Responsive to screens and resolution
+* Usually results in a flatter view hierarchy
+* Optimized for laying out its views
+* Free form - we can place views anywhere, and the editor helps add constraints
+
+There are three types of constraints:
+
+* Fixed constraints: represented by a straight line in the design view. We specify a specific dimension. A common use for fixed constraints is margin.
+* Wrap content: represented by a line of '>' in the designer. The view expands only as much as needed to fit its contents.
+* Match constraints: represented by a zig-zag line. The more constraints are of this kind, the more the layout can adapt to different screen sizes and orientations.
+
+Right clicking a view in the designer gives us additional option, for example to center the view again.
+
+If we don't specify the position for a view, it always appears at (0,0) in the parent. With absolute positioning, we specify the actual coordinates of the view. In relative positioning, we specify where the view goes in relation to the parent and other views. 
+
+Views can relate to each to each other using fixed constraints such as margins. A more powerful way to position views is using **relative constraints** where we specify a relationship between views.
+
+Adding bias gives a preference or more weight to a constraint - like adding a stronger spring that pulls on the view from one side.
+
+* Fixed constraint -> A constraint that is specified using a hardcoded number.
+* Adaptable constraint -> A constraint that defines a relationship in relative and weighted terms.
+* Aboslute positioning -> Positioning is numerical, such as the position in x,y coordinates.
+* Relative positioning -> Views are positioned by specifying a relationship to other views.
