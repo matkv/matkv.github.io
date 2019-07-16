@@ -253,3 +253,23 @@ Adding bias gives a preference or more weight to a constraint - like adding a st
 * Adaptable constraint -> A constraint that defines a relationship in relative and weighted terms.
 * Aboslute positioning -> Positioning is numerical, such as the position in x,y coordinates.
 * Relative positioning -> Views are positioned by specifying a relationship to other views.
+
+### Ratios
+
+We can define one dimension of a widget as a ratio of another dimension of it. For example we can make a square by requiring a 1:1 ratio. For example, setting ```android:layout_height="0dp"``` of a view and setting ```app:layoutConstraintDimensionRatio="2:1"``` so this view will be twice as wide as its height.
+
+Clicking the small grey triangle in the top left corner of the constraints in the designer should open a small ratio editor.
+
+### Chaining
+
+Chains link together views in a horizontal or vertical row and then they behave as a group. Chains are controlled by attributes set at the head of the chain. The head is the element from which the chain was created.
+
+The default behaviour of a chain is to spread the elements equally in the available space. This is called a **Spread Chain**.
+
+A **Spread Inside Chain** will use all available space, but the head and the tail are glued to the parent.
+
+A **Weighted Chain** will use up all space and resize the elements based on values set in the ```layoutConstraintHorizontalWeight``` or ```layoutConstraintVerticalWeight``` attributes.
+
+A **Packed Chain** will do the opposite and use the minimum space. We can use bias to move the elements in a certain direction using the **Packed Chain with Bias** 
+
+
