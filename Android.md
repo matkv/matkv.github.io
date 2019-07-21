@@ -272,4 +272,8 @@ A **Weighted Chain** will use up all space and resize the elements based on valu
 
 A **Packed Chain** will do the opposite and use the minimum space. We can use bias to move the elements in a certain direction using the **Packed Chain with Bias** 
 
+### Baseline Constraint
 
+We can right click the textview and click show baseline and then connect the baseline of one textview to the baseline of another. From each handle, we can only create one baseline constraint. So with, for example, 3 buttons, we can connect the first button's constraint to the middle button, and the third button's constraint to the middle button.
+
+This allows us to align several views by making them align themselves to a specific view's baseline (bottom edge).
