@@ -277,3 +277,67 @@ A **Packed Chain** will do the opposite and use the minimum space. We can use bi
 We can right click the textview and click show baseline and then connect the baseline of one textview to the baseline of another. From each handle, we can only create one baseline constraint. So with, for example, 3 buttons, we can connect the first button's constraint to the middle button, and the third button's constraint to the middle button.
 
 This allows us to align several views by making them align themselves to a specific view's baseline (bottom edge).
+
+# Navigation
+
+At the top of a screen of a standard layout we have the ActionBar. This indicates the users location in the app and gives access to navigation features such as, for example, a navigation drawer or a overflow menu (three dots). The overflow menu is a drop down menu that contains navigation items. The back button in the ActionBar will never navigate us completely out of the app.
+
+Each one of the screens in our app is built using a UI component known as a fragment. A fragment is a portion of a user interface of an activity.
+
+## Fragments
+
+The activity is basically a frame for our fragments and can provide UI elements that surround the fragments. Fragments generally operate like a view within the activity's layout. We must create a subclass of fragments to use them. This gives us a layout along with a convenient place to put UI logic.
+
+With Fragments we can basically treat an activity as the entry point of our operating system to our app. The OS can only open activities but most of our UI is implemented in fragments.
+
+Without fragments:
+
+* We call ```setContentView()``` in ```onCreate``` to tell Android which layout to use. The activity then inflates the layout.
+
+With fragments: 
+
+ * We manually inflate and return the inflated layout within the ```onCreateView```method which is independent from ```onCreate```.
+
+We can navigate between different activites and between fragments in an activity. As we navigate through activities, the previous activities are arranged in a stack called Back Stack. It is ordered based on the activity which is open. The currently opened activity is on the top.
+
+Fragments also have a Back Stack, the Fragment Back Stack. But this whole stack is contained within the activity. All of this is controlled by a class called ```FragmentManager```.
+
+We can design our navigation using:
+
+* An activity containing a series of fragments
+* A series of activities
+* A combination of both techniques
+
+### Creating a fragment
+
+In TitleFragment.kt we return the inflated fragment:
+
+```kotlin
+class TitleFragment : Fragment() {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {      
+
+        return inflater.inflate(R.layout.fragment_title, container, false)
+    }
+}
+```
+
+In activity_main.xml we have to add the fragment with the full class name of the fragment:
+
+```kotlin
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fragment
+            android:name="com.example.android.navigation.TitleFragment"
+            android:id="@+id/title_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+```
+
+
