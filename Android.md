@@ -371,9 +371,9 @@ Setting the nav host fragment in activity_main.xml
 
 Once this is done we can add fragments to the navigation resource in the designer and connect them by the dots.
 
-There is even a helper function that helps us find the nav host fragment of a view. We call ```Navigation.findNavController(view)``` on the view.
+There is even a helper function that helps us find the nav host fragment of a view. We call ```Navigation.findNavController(view)``` on the view. For **buttons**, there is an even simpler method of achieving this - we can directly call ```Navigation.createNavigateOnClickListener(desired action)```.
 
-Example in onCreateVIew of a fragment - we set the onClickListener of a button to navigate from this titleFragment to a gameFragment.
+Example in onCreateVIew of a fragment - we set the onClickListener of a button to navigate from this titleFragment to a gameFragment. We set the action which we created in the navigation designer.
 
 ```kotlin
 override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
