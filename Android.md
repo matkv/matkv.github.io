@@ -340,4 +340,54 @@ In activity_main.xml we have to add the fragment with the full class name of the
     </LinearLayout>
 ```
 
+## Navigation component
 
+The navigation component simplifies many navigation tasks in a consistent way.
+
+### Principles of Navigation
+
+* There's always a starting place - the screen that the user sees when they open the app and the last screen they see when returning to the launcher.
+* You can always go back - last in / first out. Here we have our stack again: the current destination is at the top of the stack and the destination we started from is at the bottom. 
+* Up goes back - the up botton in the action bar and the back button work the same way when navigating within our app's task. The back button will also navigate out of the app. When the user is at the start of the destination, the up button should **not** be shown.
+
+### The Nav Host Fragment
+
+The navigation resource (added as a resource of type navigation), provides its own fragment, called **Nav Host Fragment**, which acts as a host of each of the fragments in the activity navigation graph. The nav host fragment swaps the fragments in and out as necessary and automatically creates and manages the fragment back stack. 
+
+It is the parent of our actual fragment in the view hierarchy. This means we can find it if we go up the hierarchy from any view in our fragment. 
+
+Setting the nav host fragment in activity_main.xml
+
+```kotlin
+<fragment
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:id="@+id/myNavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost = "true" //this has to be set because there can be multiple NavHostFragments
+            app:navGraph="@navigation/navigation"
+            />
+```
+
+Once this is done we can add fragments to the navigation resource in the designer and connect them by the dots.
+
+There is even a helper function that helps us find the nav host fragment of a view. We call ```Navigation.findNavController(view)``` on the view.
+
+Example in onCreateVIew of a fragment - we set the onClickListener of a button to navigate from this titleFragment to a gameFragment.
+
+```kotlin
+override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+
+        val binding: FragmentTitleBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_title, container, false)
+
+        binding.playButton.setOnClickListener( 
+            Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
+        )
+        
+        return binding.root
+    }
+```
+
+It is important to use normal brackets for the setOnClickListener in this case, otherwise it won't work.
