@@ -12,6 +12,8 @@ toc: true
 
 ## Basic Info
 
+Ctrl + Shift + F10 runs the currently selected script in the console.
+
 Expressions are made up of values and operators. They always evaluate down to a single value. Every value belongs to one data type. Comments are added using "#".
 
 In a Python script, we can wait for user input by using ```input()```.
