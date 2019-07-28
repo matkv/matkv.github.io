@@ -346,7 +346,7 @@ The navigation component simplifies many navigation tasks in a consistent way.
 
 ### Principles of Navigation
 
-* There's always a starting place - the screen that the user sees when they open the app and the last screen they see when returning to the launcher.
+* There's always a starting place - the screen that the user sees when they open the app and the last screen they see when returning to the launcher. Apps have a fixed starting location.
 * You can always go back - last in / first out. Here we have our stack again: the current destination is at the top of the stack and the destination we started from is at the bottom. 
 * Up goes back - the up botton in the action bar and the back button work the same way when navigating within our app's task. The back button will also navigate out of the app. When the user is at the start of the destination, the up button should **not** be shown.
 
@@ -391,3 +391,35 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
 ```
 
 It is important to use normal brackets for the setOnClickListener in this case, otherwise it won't work.
+
+### Back Stack Manipulation
+
+Let's say we have an app that starts at a start screen, then let's us answer a view questions in a GameFragment, and depending on our answers it then leads us to the GameWonFragment or the GameOverFragment.
+
+When we click the back button in the GameWonFragment or the GameOverFragment, we don't want to go back to the questions but to go back all the way to the start screen.
+
+We can achieve this by manipulating the back stack: in the designer, we select the action that goes to the gameOverFragment and set the Pop Behaviour to gameFragment and tick the "Inclusive" checkbox.
+
+This sets the behavior of the back button to remove all the fragments that would be in between the gameFragment and the gameOverFragment (in our case there are none), including the gameFragment. This means those Fragments are removed from the back stack. The gameOverFragment takes us directly to our start screen fragment.
+
+#### PopTo Actions
+
+* PopTo Not-Inclusive: Pops off everything on the back stack until it finds the referenced fragment transaction.
+* PopTo Incluse: Pops off everything on the back stack, **including** the referenced fragment transaction.
+
+### Enabling Up Button functionality
+
+In our MainActivity, we find the navController and then use ```NavigationUI.setupActionBarWithNavController``` to link the NavController to our ActionBar.
+
+```kotlin
+val navController = this.findNavController(R.id.myNavHostFragment)
+NavigationUI.setupActionBarWithNavController(this, navController)
+```
+
+Then we override (Control + O) the ```onSupportNavigateUp``` method from the activity and call navigateUp in nav controller.
+
+```kotlin
+override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return navController.navigateUp()
+```
