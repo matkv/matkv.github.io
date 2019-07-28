@@ -20,7 +20,7 @@ This website is a personal wiki for C#, Kotlin & Android development and will be
 ### Tutorials
 Kotlin tutorials on Udacity
 * [Kotlin Bootcamp by Google](https://classroom.udacity.com/courses/ud9011)
-* [Kotlin for Android Programmers](https://classroom.udacity.com/courses/ud9012)
+* [Developing Android Apps with Kotlin](https://classroom.udacity.com/courses/ud9012)
 
 Python Tutorials
 * [Automate The Boring Stuff](https://www.udemy.com/automate/learn/)
