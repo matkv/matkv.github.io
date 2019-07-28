@@ -57,11 +57,14 @@ Check truth table. AND, OR, NOT...
 
 They evaluate to a boolean value. 
 
-* ==
-* !=
-* <
-* >
-* <=
-* >=
+```python
+ ==
+ !=
+ <
+ >
+ <=
+ >=
+```
+
 
 Integers and strings are always not equal to each other. Float values and integer values can be equal to each other.
