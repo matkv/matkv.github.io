@@ -41,3 +41,27 @@ In Python, strings are defined by using ' ' single quotes. Strings can be concat
 ```
 
 If we want to get the length of a string, we can use the ```len(myString)```function.
+
+
+## Flow Control
+
+### Boolean
+
+Two values: True & False (they need to be typed with a capital T or F)
+
+#### Boolean operators
+
+Check truth table. AND, OR, NOT...
+
+### Comparison operators
+
+They evaluate to a boolean value. 
+
+* ==
+* !=
+* <
+* >
+* <=
+* >=
+
+Integers and strings are always not equal to each other. Float values and integer values can be equal to each other.
