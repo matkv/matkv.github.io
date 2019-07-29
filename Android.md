@@ -407,7 +407,7 @@ This sets the behavior of the back button to remove all the fragments that would
 * PopTo Not-Inclusive: Pops off everything on the back stack until it finds the referenced fragment transaction.
 * PopTo Incluse: Pops off everything on the back stack, **including** the referenced fragment transaction.
 
-### Enabling Up Button functionality
+## Enabling Up Button functionality
 
 In our MainActivity, we find the navController and then use ```NavigationUI.setupActionBarWithNavController``` to link the NavController to our ActionBar.
 
@@ -423,3 +423,36 @@ override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return navController.navigateUp()
 ```
+
+## Adding an overflow menu
+
+To add an overflow menu to our app, we have to create a new Android Resource file of type menu. We also add the fragments that we want our menuitems to show to our navigation resource.
+
+By adding a menuitem in the designer to the menu resource, we can then give it a title and an id. It is important to set the id **exactly as the fragment that we want to show** when the user taps on the menu item. If the id doesn't match its destination the menu won't navigate.
+
+In the fragment in which we want to show the overflow menu, we set
+
+```kotlin
+setHasOptionsMenu(true)
+```
+
+We also override the ```onCreateOptionsMenu```function:
+
+```kotlin
+override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+        
+        inflater?.inflate(R.menu.overflow_menu, menu)
+    }
+```
+
+When a menu item is selected, the fragments method ```onOptionsItemSelected``` will be called. We override it and add our functionality. If the navigationItem doesn't handle the selection, we call ```super.onOptionsItemSelected``` instead.
+
+```kotlin
+override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return NavigationUI.onNavDestinationSelected(item!!, view!!.findNavController()) ||
+                super.onOptionsItemSelected(item)
+    }
+```
+
+When we navigate to menu items, we usually use the destinations directly rather than using actions.
