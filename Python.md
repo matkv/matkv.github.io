@@ -68,3 +68,37 @@ They evaluate to a boolean value.
 
 
 Integers and strings are always not equal to each other. Float values and integer values can be equal to each other.
+
+### If - else - elif
+
+```python
+name = 'Alice'
+if name == 'Alice':
+  print('Hi Alice')
+print('Done')
+```
+
+If the condition is true, the indented code is executed, otherwise the non indendet code is executed.
+
+New blocks (part with new intendation) begin only after statements that end with a colon like in the IF statement.
+
+```python
+password = 'swordfish'
+if password == 'swordfish':
+  print('Access granted.')
+else:
+  print('Wrong password.')
+```
+
+Elif can follow an if statement. It let's us check for multiple conditions. As soon as one condition is met, all the other if statements are skipped. This means the order of the conditions **matter*.
+
+```python
+name = 'Bob'
+age = 3000
+if name = 'Alice':
+  print('Hi Alice')
+elif age < 12:
+  print('You are not Alice, kiddo.')
+```
+
+When we set a variable based on ```input()``` a **blank string** would return false, all the other strings return true. For numbers, **0** or **0.0** return false, all others return true. ```bool(0)``` would return false.
