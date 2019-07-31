@@ -102,3 +102,24 @@ elif age < 12:
 ```
 
 When we set a variable based on ```input()``` a **blank string** would return false, all the other strings return true. For numbers, **0** or **0.0** return false, all others return true. ```bool(0)``` would return false.
+
+### While loops
+
+```python
+test = 1
+while test < 5:
+  print('Hello world!')
+  test = test + 1
+```
+
+```python
+name = ''
+while name != 'matko':
+  print('Please type your name.')
+  name = input()
+print('Thank you')
+```
+
+```break``` causes our execution jump out of the loop.
+
+```continue``` jumps back to the start of the loop and reevaluates our loop's condition.
