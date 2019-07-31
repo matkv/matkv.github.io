@@ -494,10 +494,10 @@ view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGam
 We can add arguments right in the desinger by pressing the "+" near Arguments after clicking on a fragment.
 
 Here we pass the two arguments that we created:
-``kotlin
+
+```kotlin
 view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex.toString()))
 ```
-
 In the other Fragment, we use the arguments that were passed and show a toast:
 
 ```kotlin
