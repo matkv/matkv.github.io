@@ -456,3 +456,51 @@ override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 ```
 
 When we navigate to menu items, we usually use the destinations directly rather than using actions.
+
+## Passing arguments from one fragment to another
+
+Fragments contain arguments in the form of an "Android Bundle" which is a dictionary (KeyValueStore). It uses a string to fetch an associated value.
+
+To pass arguments from Fragment A to Fragment B, we have to create an instance of the ```Bundle()``` class in Fragment A, then setting our data in the bundle and finally we set that data into the arguments property in the Fragment B instance. This alone doesn't guarantee that the arguments we are passing are in the correct format that Fragment B would expect.
+
+This is why **safe-args** exist. Safe args is a gradle plugin that generates code that helps guarantee that the arguments on both sides match up while also simplifying argument passing.
+
+In order to use it, we have to change our app module gradle file and our project gradle file:
+
+In the project gradle file we have to make sure that the safe args classpath is added in the dependencies:
+
+```kotlin
+classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha05'
+```
+
+In our app module gradle file underneath the other plugins we add:
+
+```kotlin
+apply plugin: 'androidx.navigation.safeargs'
+```
+
+Now we can start using safe args.
+
+After a clean build, the safe arguments plugin generates navdirection classes to represent navigation from all our actions. We can change all the lines that represented an ```R.id.action...```, to:
+
+```kotlin
+//old
+view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+
+//new
+view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment())
+```
+
+We can add arguments right in the desinger by pressing the "+" near Arguments after clicking on a fragment.
+
+Here we pass the two arguments that we created:
+``kotlin
+view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex.toString()))
+```
+
+In the other Fragment, we use the arguments that were passed and show a toast:
+
+```kotlin
+ var args = GameWonFragmentArgs.fromBundle(arguments)
+ Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
+```
