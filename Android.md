@@ -504,3 +504,25 @@ In the other Fragment, we use the arguments that were passed and show a toast:
  var args = GameWonFragmentArgs.fromBundle(arguments)
  Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
 ```
+
+### Safe args
+
+**Advantages of using safe args:**
+
+* We get type safety, as navigation generates the action and the argument class from the navigation graph.
+* We get argument enforcement, as non-default arguments are required in the action.
+
+## Intents and Sharing
+
+Android allows us to navigate between activites, both within our app, and to activities provided by other apps. For example we can launch the system camera activity to capture a photo for our app.
+
+An intent indicates an intention of our app - a description of something that the app wants the activity to perform. Intents can be **explicit** and **implicit**.
+
+* Explicit -> launches an activity using the name of the target activity class  (mostly used for our own activies)
+* Implicit -> provides an abstract description of what we want to happen and the system chooses the activity (mostly used to launch activities of other apps). The system might not have any apps that can handle the intent. 
+
+When multiple android apps can handle the same intent, Android will pop-up a chooser that let's us pick which app we want to use.
+
+Each implicit intent must have an action. Actions describe the type of thing that needs to be done. Common actions like view, dial or edit are described in the intent class. In addition to an action, implicit intents have a category and datatype. This allows applications to be chosen based on the datatype they accept.
+
+All activities must be registered in the manifest to be launched. Activites that should only be launched explicitly can be declared using just a ```<activity>``` tag in the manifest. Implicitly launched activities require an intent filter. An intent filter is used to expose that our activity can respond to an implicit intent. For example for the launcher to be able to launch an activity, that activity needs to have an intent-filter with the category LAUNCHER. If an activity wouldn't have that kind of intent-filter, the app wouldn't appear in the launcher.
