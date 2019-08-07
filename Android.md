@@ -526,3 +526,82 @@ When multiple android apps can handle the same intent, Android will pop-up a cho
 Each implicit intent must have an action. Actions describe the type of thing that needs to be done. Common actions like view, dial or edit are described in the intent class. In addition to an action, implicit intents have a category and datatype. This allows applications to be chosen based on the datatype they accept.
 
 All activities must be registered in the manifest to be launched. Activites that should only be launched explicitly can be declared using just a ```<activity>``` tag in the manifest. Implicitly launched activities require an intent filter. An intent filter is used to expose that our activity can respond to an implicit intent. For example for the launcher to be able to launch an activity, that activity needs to have an intent-filter with the category LAUNCHER. If an activity wouldn't have that kind of intent-filter, the app wouldn't appear in the launcher.
+
+### Adding a share menu
+
+In the xml for our menu item, the ```app:showAsAction="ifRoom"``` attribute shows the menu item directly in the action bar if there is enough room.
+
+```kotlin
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/share"
+        android:enabled="true"
+        android:icon="@drawable/share"
+        android:title="@string/share"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+</menu>
+```
+
+In the onCreateView method of the fragment in which we want to show the item, we need to set ```setHasOptionsMenu(true)``` and inflate the menu in the overriden onCreateOptionsMenu method:
+
+```kotlin
+ override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.winner_menu, menu)
+    }
+```
+
+```kotlin
+private fun getShareIntent() : Intent{
+        var args = GameWonFragmentArgs.fromBundle(arguments)
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain")
+                .putExtra(Intent.EXTRA_TEXT, getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
+                //used to provide arguments for the intent
+        
+        return shareIntent
+    }
+
+    private fun shareSuccess(){
+        startActivity(getShareIntent()) //this starts an activity (or opens the chooser) which can handle our intent
+    }
+```
+
+Now we need to set the appropriate behaviour for when the button is clicked in the menu. If the selected item is our share button, we run our function that starts an activity (or the chooser) which can handle our intent.
+
+```kotlin
+override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        when(item!!.itemId){
+            R.id.share -> shareSuccess()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+```
+
+#### The simpler way to do this
+
+```kotlin
+private fun getShareIntent() : Intent{
+        var args = GameWonFragmentArgs.fromBundle(arguments)
+
+        return ShareCompat.IntentBuilder.from(activity)
+            .setText(getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
+                  .setType("text/plain").intent        
+```
+
+However, if there is an intent that no activity on our device can handle, this code will cause a crash.
+
+Solution: in onCreateOptionsMenu ->
+
+```kotlin
+//check if the activity resolves
+        if (null == getShareIntent().resolveActivity(activity!!.packageManager)){
+
+            //hide the menu items bc there is no activity that can handle our intent
+            menu?.findItem(R.id.share)?.setVisible(false)
+        }
+```
