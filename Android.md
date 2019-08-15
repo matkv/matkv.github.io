@@ -605,3 +605,70 @@ Solution: in onCreateOptionsMenu ->
             menu?.findItem(R.id.share)?.setVisible(false)
         }
 ```
+
+### Adding a navigation drawer
+
+The navigation drawer appears when a user clicks the hamburger icon in the top left corner and should be used in applications that have 5 or more primary destinations in them.
+
+We start by adding the material dependency in our app gradle file:
+
+```kotlin 
+implementation "com.google.android.material:material:1.0"
+```
+
+The navigation drawer is based on a menu resource. There we add the menuItems (with id as the fragment it should navigate to) that we want our drawer to have.
+
+In activity_main.xml, we add the drawerLayout as the outermost layout, above for example the LinearLayout:
+
+```kotlin
+<androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+  <LinearLayout 
+       .
+       .
+       .
+```
+
+And we add the navigation view right before the drawerLayout closes:
+
+```kotlin
+ <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity = "start"
+            app:menu="@menu/navigation_menu"/>
+        
+    </androidx.drawerlayout.widget.DrawerLayout>
+```
+
+In the MainActivity we add a variable for the drawerlayout, we bind the variable to the drawerLayout view in the xml,
+
+```kotlin
+private lateinit var drawerLayout : DrawerLayout
+ 
+ ...
+ 
+drawerLayout = binding.drawerLayout
+```
+
+We add the drawerLayout as a parameter in setupActionBarWithNavController and set up the NavController with the new navView:
+
+```kotlin
+
+NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+NavigationUI.setupWithNavController(binding.navView, navController)
+```
+
+In onSupportNavigateUp() we also add the drawerLayout as a parameter and use NavigationUI.navigateUp() instead of just the navControllers navigateUp() function:
+
+```kotlin
+override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return NavigationUI.navigateUp(navController, drawerLayout)
+    }
+```
+
+If we want our navigation drawer to have a header, we can set the app:headerLayout property in the xml file.
