@@ -123,3 +123,31 @@ print('Thank you')
 ```break``` causes our execution jump out of the loop.
 
 ```continue``` jumps back to the start of the loop and reevaluates our loop's condition.
+
+### For loops
+
+Loops a specific number of times.
+
+```python
+for i in range(5):
+  print('Number of times this has been printed: ' + str(i+1))
+```
+
+Another example that adds all the numbers from 0 to 100.
+
+```python
+total = 0
+for num in range(101):
+  total = total + num
+print(total)
+```
+
+Range function -> returns a value that's called a range object. Datatype range.
+
+Usage ```range(10)``` gives us a range from 0 to 9. 
+
+```range(12,16)``` starts at 12 and goes up to, but not including, 16.
+
+Calling the range function with 3 arguments -> first is start, second is end, and the third is a **step** argument. It is the amount that the variable is increased after each iteration. Using a negative number for the step argument is possible too.
+
+We can also use break and continue statements in for loops.
