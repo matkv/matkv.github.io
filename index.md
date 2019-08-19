@@ -10,7 +10,7 @@ title: Home
 exclude: true
 ---
 
-This website is a personal wiki for C#, Kotlin & Android development and will be used for quick access to links and the personal notes I take while learning.
+This website is a personal wiki for C#, Kotlin & Android development and for learning Linux and will be used for quick access to links and the personal notes I take while learning.
 
 ## Links
 [Kotlin online sandbox](https://play.kotlinlang.org/)
