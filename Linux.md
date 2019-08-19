@@ -10,4 +10,6 @@ toc: true
 * Un-numbered table of contents
 {:toc}
 
-Test - this has been written in VSCode on Manjaro.
+ **AUR manager - Yay**
+
+ Usage: yay -S <package-name>   //als root
