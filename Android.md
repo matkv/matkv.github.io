@@ -672,3 +672,69 @@ override fun onSupportNavigateUp(): Boolean {
 ```
 
 If we want our navigation drawer to have a header, we can set the app:headerLayout property in the xml file.
+
+We might want to prevent some functionality in certain parts of our app, for example disabling the navigation drawer while we are in the "game" part of our app.
+
+In order to achieve this, we use **navigation listeners**. Navigation listeners are an interface that contains a single method that gets called every time we navigate. They allow us to react during navigation.
+
+Our goal is to disable the drawer as soon as we are not on the start destination (the first screen) of our app.
+
+We add an onDestinationchangeListener in the MainActivity and and depending on the next destination that will be navigated to - we either unlock or lock the drawer.
+
+```kotlin 
+navController.addOnDestinationChangedListener { nc : NavController, nd : NavDestination, args: Bundle? ->
+            if (nd.id == nc.graph.startDestination){
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+            }
+            else {
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+            }
+        }
+```
+
+### Adding animations to our navigation
+
+We can apply animated transitions to our navigation. They can  help the user understand the flow of the application.
+
+These transitions are controlled my xml animation resources. ViewAnimations describe animations of a single view or viewGroup.
+
+To create an animation we create a new resource of type animation.
+
+Android provides standard integer values for the duration of an animation.
+
+```kotlin
+android:duration="@android:integer/config_mediumAnimTime"
+```
+
+Example for an animation that fades in by changing the alpha value:
+```kotlin
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:duration="@android:integer/config_mediumAnimTime"
+        />
+</set>
+```
+
+0 is invisible, 1 is opaque.
+
+Another example: This animation slides in from the left by changing the delta from -100% (not visible, completely to the left of the visible screen) to 0% (completely visible)
+
+```kotlin
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:duration="@android:integer/config_shortAnimTime"
+        android:fromXDelta="-100%"
+        android:fromYDelta="0%"
+        android:toXDelta="0%"
+        android:toYDelta="0%"
+        />
+</set>
+```
+
+We could slide in from the top by changing the Y values instead.
+
+We set our animations in the navigation graph by clicking on an action and setting them under "Animations". Enter -> the animation that happens when we navigate to a fragment, Exit -> the animation that happens when we leave the fragment (the enter animation for the new fragment is played at the same time).
+
+The Pop Enter & Pop Exit animations are played for enter and exit transactions when popping the fragment from the back stack.
