@@ -151,3 +151,34 @@ Usage ```range(10)``` gives us a range from 0 to 9.
 Calling the range function with 3 arguments -> first is start, second is end, and the third is a **step** argument. It is the amount that the variable is increased after each iteration. Using a negative number for the step argument is possible too.
 
 We can also use break and continue statements in for loops.
+
+## Functions
+
+### Built-in Functions
+
+All Python programs can call a basic set of functions called built in functions. For example print, input and length.
+
+Python also comes with a set of modules called the **standard library**. Each module is a Python program that contains a related group of functions that can be used in our programs. For example math module, random module.
+
+First we must import the module.
+
+```python
+import random 
+random.randint(1, 10)
+```
+
+We tell Python to look for a function inside a module by using the module name + the dot.
+
+We can import multiple modules in one import statement.
+
+Alternative form of import:
+
+```python
+from random import *
+```
+
+Now we don't have to add the module name before we use a function from the module. However this makes the code less readable since it is unclear where the function comes from.
+
+If we want to exit a program before the last line we can use ```sys.exit()``` from the sys module. 
+
+Modules that don't come diretly with Python are called **third party modules**. We can install them using the **pip** program which comes with python. It must be run with the terminal. An example for a third party module is the pyperclip module which offers copy and paste functions.
