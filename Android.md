@@ -738,3 +738,33 @@ We could slide in from the top by changing the Y values instead.
 We set our animations in the navigation graph by clicking on an action and setting them under "Animations". Enter -> the animation that happens when we navigate to a fragment, Exit -> the animation that happens when we leave the fragment (the enter animation for the new fragment is played at the same time).
 
 The Pop Enter & Pop Exit animations are played for enter and exit transactions when popping the fragment from the back stack.
+
+## Activity & Fragment Lifecycle
+
+Every Android activity has a lifecycle. It is made up of the different states that an activity goes through.
+
+Here are the general activity states:
+
+* Initialized
+* Created
+* Started
+* Resumed
+* Destroyed
+
+These states represent the status our activity is going through.
+
+To manage our activities and fragments, we need to know their current state in order to prevent unwanted behaviour. (For example having several CPU-intensive activities running in the background without wanting to.)
+
+The Android operating system itself might want to stop our activities sometimes.
+
+We might want to react when our activity lifecycle state changes. Therefore, we have **Activity Lifecycle Callbacks**.
+
+* onCreate
+* onStart
+* onResume
+* onDestroy
+* onPause
+* onStop
+* onRestart
+
+In order to change the behaviour of our app, we might want to override some of these callbacks. 
