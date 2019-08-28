@@ -182,3 +182,32 @@ Now we don't have to add the module name before we use a function from the modul
 If we want to exit a program before the last line we can use ```sys.exit()``` from the sys module. 
 
 Modules that don't come diretly with Python are called **third party modules**. We can install them using the **pip** program which comes with python. It must be run with the terminal. An example for a third party module is the pyperclip module which offers copy and paste functions.
+
+### Writing your own functions
+
+Example function:
+
+```python
+def hello(name):
+  print('Howdy' + name)
+```
+
+Arguments (parameters) go in between the parentheses.
+
+Argument -> variable between parentheses at function call
+Parameter -> variable between parentheses at function declaration
+
+Function calls can be part of expressions because they evaluate to a value returned by the function.
+
+**Every** function call has a return value.
+
+In the function declaration we can specify the type of the return value.
+
+```python
+def plusOne(number):
+  return number + 1
+```
+
+The return value **None** is a value of datatype None which is a datatype to describe a value that represents the lack of a value. If our function doesn't have a return statement, the return value defaults to the None type.
+
+There are optional **keyword** arguments that let us set specific options in functions. For example the ```end``` keyword of the ```print()``` funtion which specifies the character that is added at the end of the value that is printed.
