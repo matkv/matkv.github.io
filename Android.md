@@ -768,3 +768,24 @@ We might want to react when our activity lifecycle state changes. Therefore, we 
 * onRestart
 
 In order to change the behaviour of our app, we might want to override some of these callbacks. 
+
+### Logging
+
+In order to log certain things in our app, we can use the ```log``` function.
+
+For example, logging at the "info" level can be done this way:
+
+```kotlin
+log.i("MainActivity", "OnCreate called")
+```
+
+It's pretty common to use the class name as the tag (like in the example), and then the actual log message. We can then view our logs in the **logcat** tab in Android Studio. We can filter the logs by device, app and info level.
+
+Logs have different levels which are used in different situations. The levels and their usages are listed below:
+
+* Verbose: Show all log messages (the default).
+* Debug: Show debug log messages that are useful during development only, as well as the message levels lower in this list.
+* Info: Show expected log messages for regular usage, as well as the message levels lower in this list.
+* Warn: Show possible issues that are not yet errors, as well as the message levels lower in this list.
+* Error: Show issues that have caused errors, as well as the message level lower in this list.
+* Assert: Show issues that the developer expects should never happen.
