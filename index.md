@@ -18,9 +18,13 @@ This website is a personal wiki for C#, Kotlin & Android development and for lea
 [Android Developers](https://developer.android.com/)
 
 ### Tutorials
-Kotlin tutorials on Udacity
+Kotlin & Android tutorials on Udacity
 * [Kotlin Bootcamp by Google](https://classroom.udacity.com/courses/ud9011)
 * [Developing Android Apps with Kotlin](https://classroom.udacity.com/courses/ud9012)
 
 Python Tutorials
 * [Automate The Boring Stuff](https://www.udemy.com/automate/learn/)
+
+Blender Tutorials
+* [Official Blender 2.8 Tutorial YouTube Playlist](https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6)
+* [Blender Guru Tutorials YouTube Playlist](https://www.youtube.com/playlist?list=PLjEaoINr3zgEq0u2MzVgAaHEBt--xLB6U)
