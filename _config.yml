@@ -3,7 +3,7 @@ author: matkv
 email: 
 description: > # this means to ignore newlines until "show_exerpts:"
   This website is a personal wiki for C#, Python, Kotlin & Android development
-  and is used for quick access to links and the notes I take while learning.
+  and for learning Linux & Blender is used for quick access to links and the notes I take while learning.
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
