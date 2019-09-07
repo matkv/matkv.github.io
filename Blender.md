@@ -59,7 +59,7 @@ Holding shift + middle mouse button enables us to pan and move to other parts of
 The scrollwheel zooms in and out on the viewport.
 
 If we want to focus on a selected object we can press the period key on the numpad.
- 
- ### Adding objects
 
- We can add a new object by pressing Shift+A, we can delete a selcted object using the delete key.
+### Adding objects
+
+We can add a new object by pressing Shift+A, we can delete a selected object using the delete key.
