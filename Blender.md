@@ -26,6 +26,8 @@ motion graphics, interactive 3D applications, and computer games.
 * Shift + Middle mouse in viewport -  Pan camera
 * Shift + A - Add
 * F3 - Searchbar
+* TAB - Edit mode
+* O - Proportional editing in edit mode
 
 
 ## User interface
@@ -63,3 +65,25 @@ If we want to focus on a selected object we can press the period key on the nump
 ### Adding objects
 
 We can add a new object by pressing Shift+A, we can delete a selected object using the delete key.
+
+## Modelling
+
+It is generally a good idea to match the size of the model to its real world counterpart. 
+
+When it comes to setting the resolution of the object (the segments) we generally want to use a lower resulution because that's easier to work with.
+
+We can switch from object mode into edit mode by clicking or using the TAB key. There we can use the same hotkeys as before.
+
+### Making an object look less perfect
+
+To make something look realistic it is often necessary to make it look less perfect. We can go to the edit mode and use the **proportional editing tool** (Shortcut O) . Scrolling up or down while using it will make a circle appear which lets us focus to the area we are editing.
+ 
+ This affects not only the selected dot in edit mode but also the dots around it - this lets us make the object look uneven & less "perfect".   
+
+If we want to make our object look smooth again (it doesn't look smooth with the low segment settings). We can right click it in object mode and select "Shade smooth".
+
+If we want to actually smooth the edges of the object we need to use a **sub surface modifier**. It basically takes a phase (are connected by 4 dots) and adds another one calculated by the average, on it. (Doubles the resolution and averages it).
+
+In the properties on the right, we click on the wrench - the modifier panel, click add modifier, Subdivision Surface.
+
+Modifiers are **non-destructive** - we can always change the settings later, nothing is lost.
