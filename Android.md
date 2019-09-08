@@ -739,7 +739,7 @@ We set our animations in the navigation graph by clicking on an action and setti
 
 The Pop Enter & Pop Exit animations are played for enter and exit transactions when popping the fragment from the back stack.
 
-## Activity & Fragment Lifecycle
+# Activity & Fragment Lifecycle
 
 Every Android activity has a lifecycle. It is made up of the different states that an activity goes through.
 
@@ -769,7 +769,7 @@ We might want to react when our activity lifecycle state changes. Therefore, we 
 
 In order to change the behaviour of our app, we might want to override some of these callbacks. 
 
-### Logging
+## Logging
 
 In order to log certain things in our app, we can use the ```log``` function.
 
@@ -789,3 +789,63 @@ Logs have different levels which are used in different situations. The levels an
 * Warn: Show possible issues that are not yet errors, as well as the message levels lower in this list.
 * Error: Show issues that have caused errors, as well as the message level lower in this list.
 * Assert: Show issues that the developer expects should never happen.
+
+### Logging using a library
+
+Library called Timber:
+
+* Generates tags
+* Avoid logs in released app apks
+* Easy integration with crash reporting
+
+Setting up timber:
+
+1. Add Timber to bild.gradle
+2. Make application class
+3. Add Application to Manifest
+4. Initialize Timber in Application Class
+
+#### Application class
+
+An application class is a base class that contains global application state for the entire app. It is the main object that the operating system uses to interact with our app.
+
+There is a default application class if we don't create one manually.
+
+Sometimes we might want to change that and specify our own functionality instead. For example, we want our logging library Timber to be initialised before anything else.
+
+We will make a subclass of the Application class.
+
+```kotlin
+import android.app.Application
+
+class PusherApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+    }
+}
+```
+
+And add it in the AndroidManifest.xml in order to use this class instead of the default one.
+
+```kotlin
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.dessertpusher">
+
+    <application
+        android:name=".PusherApplication"
+```
+
+Now we can actually start using the library in our app. Here we log using Timber instead of the default logging.
+
+```kotlin
+override fun onStart() {
+        super.onStart()
+
+        //Log.i("MainActivity", "OnStart called")
+        Timber.i("OnStart called")
+    }
+```
+
+Generally it is important to be careful not to add too much unnessecary stuff to the Application class.
