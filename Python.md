@@ -371,5 +371,40 @@ size, color, disposition = cat
 
 To use this, the number of variables and the length of the list must be exactly equal.
 
+### Augmented Assignment Operators
 
+If we want to use the value of a variable when assigning a new value, we can use augmented assignment operators.
 
+```python
+#So instead of writing
+ 
+ apple = apple + 1
+
+ #We can write 
+
+ apple += 1
+```
+
+There are augmented assignment operators for the following operations:
+
+* +=      this can also be used for string contatenation
+* -=
+* *=      this can also be used for list replication
+* /=
+* %=
+
+### Methods
+
+A method is the same thing as a function, except it is called on a value. The method comes after the value, separated by a period.
+
+#### Finding a value in a list
+
+For example, we can find a value in a list with the index() method.
+
+```python
+examplelist = ['hello', 'goodbye']
+examplelist.index('hello')
+
+#this returns 0
+```
+When there are duplicates in a list, the first occurence is returned.
