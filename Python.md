@@ -408,3 +408,70 @@ examplelist.index('hello')
 #this returns 0
 ```
 When there are duplicates in a list, the first occurence is returned.
+
+#### Adding values to lists with append() and insert()
+
+We can add values to the end of a list using the ```append()``` method and insert values at a specific index using the ```insert()``` function.
+
+```python
+listname.append('newvalue')
+
+listname.insert(2, 'anothernewvalue')
+```
+
+In both cases, the lists are modified *in place*.
+
+#### Removing values from lists with remove()
+
+```python
+listname.remove('somevalue')
+```
+
+If the value doesn't exist, this will throw an error. If the value appears multiple times in a list, the first instance of the value will be removed.
+
+If we want to remove a value at a specific index, we use ```remove()```.
+
+#### Sorting the values in a list with sort()
+
+We can sort lists of number values or lists of string values using the ```sort()``` method.
+
+```python
+listname = [3,1,5,8]
+
+listname.sort() #sorts the list
+listname.sort(reverse=True) # sorts the list in reverse order
+```
+
+As with the insert() and remove() functions, the sort() function sorts the list in place.
+
+We also can't use sort on lists that have both number values *and* string values.
+
+Uppercase letters come before lowercase letters. The lowercase a is sorted so that it comes after the uppercase Z. If we need to sort the values in regular alphabetical order, we need to pass ```str.lower``` as the key argument in the sort() method call:
+
+```python 
+listname = ['a', 'z', 'A', 'Z']
+list.sort(key=str.lower)
+```
+
+### Exceptions to indentation rules in Python
+
+Usually the amount of indentation for a line tells us what block it is in.
+
+An exception to this rule occurs when a list spans over several lines. Python knows that until it sees the ending square bracket, the list is not finished.
+
+```python
+spam = ['apples',
+          'oranges',
+                              'bananas',
+'cats']
+print(spam)
+```
+
+We can also split up a single instruction across multiple lines using the \ line continuation character.
+
+```python
+print('Four thousand and ' + \
+'seven years ago')
+```
+
+This is helpful if we want to rearrange long lines of code to be more readable.
