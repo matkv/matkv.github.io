@@ -587,7 +587,7 @@ cheese
 
 If the list we need to copy contains other lists, we need to use **copy.deepcopy()**. This will copy those inner lists as well.
 
-## Dicitonaries and structuring data
+## Dictionaries and structuring data
 
 Dictionaries are a data type which provides a flexible way to access and organize data.
 
@@ -740,3 +740,46 @@ guests = {
 It is a dictionary that contains another dictionary.
 
 Dictionaries are useful because you can map one item (the key) to another (the value), as opposed to lists, which simply contain a series of values in order. Instead of an integer index, dictionaries can have keys of a variety of data types: integers, floats, strings, or tuples.
+
+## Manipulating strings
+
+### String Literals
+
+Typing string values is pretty straightforward: They begin and end with a single quote.  But what if we wanted to use a single quote inside our string?
+
+#### Double quotes
+
+One way to do it is to use double quotes instead of the single quotes. A benefit of doing that is that the string now can have a single quote in it.
+
+```python
+spam = "That is Alice's cat"
+```
+
+However, if we want to use both double quotes and single quotes, we need to use **escape characters**
+
+#### Escape characters
+
+An escape character lets us use characters that are otherwise impossible to use in a string. It consists of a \ followed by the character we want to use.
+
+```python
+spam = 'Say hi to Bob\'s mother.'
+```
+**List of escape characters**
+
+* \\' Single quote
+* \\" Double quote
+* \\t Tab
+* \\n Newline (line break)
+* \\\ Backslash
+
+#### Raw strings
+
+A raw string completely ignores all escape characters and prints any backslash that appears in the string. To create a raw string, we place an "r" before the beginning quotation mark of a string.
+
+```python
+print(r'That is Carol\'s cat.')
+
+#This prints "That is Carol\'s cat."
+```
+
+Python doesn't consider the backslash as a escape character.
