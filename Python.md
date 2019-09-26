@@ -783,3 +783,17 @@ print(r'That is Carol\'s cat.')
 ```
 
 Python doesn't consider the backslash as a escape character.
+
+#### Multiline strings
+
+We can use the ```\n``` character to put a newline into a string. However, it is often easier to simply use multiline strings.
+
+They begin with three single quotes or three double quotes. Any qoutes, tabs or newlines in between the triple qoutes are considered part of the string. Python's indentation rules for blocks do not apply inside a multiline string.
+
+```python
+print('''This string
+is going over multiple
+lines and it works. Even single quotes like this ' work.
+''')
+```
+The single quote, for example, does not need to be escaped.
