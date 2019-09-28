@@ -180,3 +180,18 @@ This is useful when we for example want to look through the camera view but at t
 One way to remove noise is to increase the sample size for the render, but this will also increase render time.
 
 Blender 2.81 has a de-noiser included. Under Layer  Passes -> Data -> Denoising data. (Cycles renderer needs to be selected)
+
+# Modeling 
+## Particle duplication
+
+If we have several small object that we want to scatter across another object (for example sprinkles on a donut) we can use **particle instances**. It is duplicating an object on the surface of another object.
+
+On the object on which we want our smaller objects, we go to the particles menu, and select hair. Then under the submenu Render, and select **Render as object** and set the instance object as the small object. 
+
+There we can set the scale and randomness. For rotation, we need to check the advanced checkbox.
+
+Under the rotation submenu, we set the rotation axis to normal, and modify randomize phase.
+
+To make sure the sprinkles only appear where we want them (on top of the icing and not underneath) we can use the weight paint mode and draw the area that we want, then under Particles -> Vertex Groups, we set the Density to Group so that our painted area will be used. The particles (sprinkles) will be only placed in that area.
+
+The amount of the particles. can be changed under, Emmision - Number.
