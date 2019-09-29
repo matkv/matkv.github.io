@@ -797,3 +797,46 @@ lines and it works. Even single quotes like this ' work.
 ''')
 ```
 The single quote, for example, does not need to be escaped.
+
+#### Multiline comments
+
+The # character marks the beginning of a comment for the rest of the line.
+
+If we want to write a comment that spans over multiple lines, a multiline string is often used.
+
+```python
+"""
+This is a comment
+that spans
+over multiple lines
+"""
+
+print('Hello') #and this is normal code
+```
+
+### Indexing and slicing strings
+
+We can use indexes and slices on strings the same way as on lists.
+
+```python
+spam = 'Hello World'
+
+spam[0] #returns 'H'
+spam[-1] # returns '!'
+spam[6:] # returns 'world!'
+```
+
+This does not modify the original string. It is useful for storing parts of strings in for example a separate variable.
+
+#### The in and not operators
+
+```python
+'Hello' in 'Hello World'
+#returns true
+
+'HELLO' in 'Hello World'
+#returns false
+
+'' in 'spam'
+#returns true
+```
