@@ -195,3 +195,22 @@ Under the rotation submenu, we set the rotation axis to normal, and modify rando
 To make sure the sprinkles only appear where we want them (on top of the icing and not underneath) we can use the weight paint mode and draw the area that we want, then under Particles -> Vertex Groups, we set the Density to Group so that our painted area will be used. The particles (sprinkles) will be only placed in that area.
 
 The amount of the particles. can be changed under, Emmision - Number.
+
+## Randomizing the colours of mulitple objects
+
+Under teh Shading tab, we select our original object (first small sprinkle of the donut). And add a material if there is none, and then shift + a add an object info node (under input).
+
+We can then take the random value from the object info node, and connect it to the base color of our sprinkle! By default, this is giving our small objects a random value between white and black. (so its some grey value.)
+
+If we want other colours to be used to, we need to put a **Color ramp** (submenu Converter) between the object info node and the main one. There we can set the colours that we want to use.
+
+## Randomizing the height of multiple objects
+
+Instead of just referencing one object as the original object of many, we can reference a whole group with, for example, different heights. Under **instance collection** we select the collection of objects that should be used.
+
+
+Control + R creates a loop cut, the scrollwheel selects how many loops.
+
+We can set the origin points of these objects to **Origin to geometry** so that they are only laying on top of the icing.
+
+In order to have less of a certain type of object in our collection be used on the main object, we need to check **use count** and increase the importance/amount of everything else.
