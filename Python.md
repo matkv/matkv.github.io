@@ -840,3 +840,32 @@ This does not modify the original string. It is useful for storing parts of stri
 '' in 'spam'
 #returns true
 ```
+
+### Useful string methods
+
+#### upper(), lower(), isupper() & islower()
+
+When applied to a variable holding a string, the upper()/lower() methods return a string with all uppercase or lowercase letters. They do not change the original string, to change it, we have to set the variable specifically.
+
+```python
+spam = 'hello'
+spam = spam.toupper()
+
+#spam now returns 'HELLO'
+```
+
+This is useful if we want to make case-insensitive comparisons.
+
+The ```isupper()``` and ```islower()``` return true if the string has at least one letter and all of its letters are uppercase/lowercase.
+
+```python
+spam = 'Test'
+spam.islower()  #returns false
+
+spam = 'test'
+spam.islower() #returns true
+
+spam = '12345'
+spam.isupper()  #returns false, no letters
+```
+
