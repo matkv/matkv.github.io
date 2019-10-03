@@ -13,9 +13,9 @@ exclude: true
 This website is a personal wiki for C#, Kotlin & Android development and for learning Linux & Blender and will be used for quick access to links and the personal notes I take while learning.
 
 ## Links
-[Kotlin online sandbox](https://play.kotlinlang.org/)
-
-[Android Developers](https://developer.android.com/)
+* [Kotlin online sandbox](https://play.kotlinlang.org/)
+* [Python online compiler](https://repl.it/languages/python3)
+* [Android Developers](https://developer.android.com/)
 
 ### Tutorials
 Kotlin & Android tutorials on Udacity
