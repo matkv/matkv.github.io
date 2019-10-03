@@ -869,3 +869,24 @@ spam = '12345'
 spam.isupper()  #returns false, no letters
 ```
 
+#### isX String methods
+
+Several other string method's that check whether a string matches a certain condition:
+
+* ```isalpha()``` returns true if a string consists only of letters and is not blank.
+* ```isalnum()``` returns true if a string consists only of letters and  numbers and is not blank.
+* ```isdecimal()``` returns true if a string consists only of numeric characters and is not blank.
+* ```isspace()``` returns true if a string consists only of spaces, tabs and newlines and is not blank.
+* ```istitle()``` returns true if a string consists only of words that begin with an uppercase letter followed by only lowercase letters.
+
+These methods are helpful when we need to validate user input, for example.
+
+#### startswith() and endswith()
+
+These two methods return true if the string starts/ends with the string passed into the method.
+
+```python
+'Hello world!.startswith('Hello')
+
+#returns True
+```
