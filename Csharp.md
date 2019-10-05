@@ -4,6 +4,11 @@ title: C#
 permalink: /csharp/
 ---
 
+**Table of contents**
+
+* Un-numbered table of contents
+{:toc}
+
 ### More fine-grained descriptions with generics
 
 Instead of using
