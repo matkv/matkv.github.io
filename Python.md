@@ -890,3 +890,88 @@ These two methods return true if the string starts/ends with the string passed i
 
 #returns True
 ```
+
+#### join() and split()
+
+The join() method is called on a string, takes a list of string as arguments and returns a string. The returned string is the concatenation of each string in the passed list.
+
+The string on which it is called on is inserted between each string in the list argument.
+
+```python
+', '.join(['cats', 'rats', 'bats'])
+
+#returns 'cats, rats, bats'
+```
+
+The split() method does the opposite. It's called on a string value and returns a list of string. By default, the string is split wherever whitespace characters (space, tab or newline) appear.
+
+```python
+'Hi hello goodbye'.split()
+
+# returns ['Hi', 'hello', 'goodbye']
+```
+
+However, we can pass a specific string on which the string should be split.
+
+```python
+'MyABCnameABCisABCSimon'.split('ABC')
+#returns ['My', 'name', 'is', 'Simon']
+'My name is Simon'.split('m')
+#returns ['My na', 'e is Si', 'on']
+```
+
+A common use of split() is to split a multiline string along the newline characters ('\n').
+
+#### Justifying text with rjust(), ljust() and center()
+
+These methods return a padded version of the string they are called on with spaces inserted to justify the text. The first argument is an integer length for the justified string.
+
+```python
+'Hello'.rjust(10)
+
+#returns '    Hello'
+#total string length is 10
+```
+
+An optional second argument specifies the fill character.
+
+```'Hello'.rjust(20, '*')``` will return a 20 character long string that starts with '*' characters.
+
+The center() method does the same as ljust() or rjust() - but it centers the string.
+
+Using these methods lets us ensure that stirngs are neatly aligned, even if we don't know how many characters long the strings are.
+
+#### Removing whitespace with strip(), rstrip() and lstrip()
+
+The strip() method will return a string without any whitespace characters at the beginning or end. The lstrip() or rstrip() only remove the whitespace on one end.
+
+```python
+spam = '        Hello World       '
+spam.strip()
+'Hello World'
+spam.lstrip()
+'Hello World        '
+spam.rstrip()
+'        Hello World'
+```
+
+Optionally, we can pass a string argument to specify which characters on the ends should be stripped.
+
+```python
+spam = 'SpamSpamBaconSpamEggsSpamSpam'
+spam.strip('ampS')
+#returns 'BaconSpamEggs'
+```
+
+#### Copying and pasting strings with the pyperclip module
+
+```python
+import pyperclip
+pyperclip.copy('Hello world!')
+pyperclip.paste()
+#pastes 'Hello world!'
+```
+
+If something outside our program changes the clipboard contents, the paste() function will return it.
+
+## Automating tasks
