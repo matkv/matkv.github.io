@@ -975,3 +975,7 @@ pyperclip.paste()
 If something outside our program changes the clipboard contents, the paste() function will return it.
 
 ## Automating tasks
+
+### Pattern matching with regular expressions
+
+Regular expressions allow us to specify a *pattern* of text to seach for.
