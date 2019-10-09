@@ -78,4 +78,66 @@ Console.WriteLine(book.Title);
 
 A benefit of using tuples is that the **can** be used as method parameters and return types.
 
-Stopped at 1.1.2 - "Even more consise code"
+### Concise code
+
+#### Construction and initialization
+
+Lambda expression to subscribe a new event handler to a button's click event:
+
+```csharp
+button.Click += (sender, args) => MessageBox.Show("Clicked"!);
+```
+
+Object and collection initializers let us quickly initialize an object and set properties during initialisation:
+
+```csharp
+var order = new Order
+{
+    OrderID = "xyz",
+    Customer = new Customer{ Name = "Jon", Address = "UK"},
+    Items =
+    {   
+        new OrderItem { ItemId = "abcd123", Quantity = 1 },
+        new OrderItem { ItemId = "fghi456", Quantity = 2 }
+    }
+}
+```
+
+#### Method and property declarations
+
+Instead of doing:
+
+```csharp
+private string name;
+public string Name
+{
+    get { return name; }
+    set { name = value; }
+}
+```
+
+We can use an automatically implemented property:
+
+```csharp
+public string Name {get; set;}
+```
+
+Let's say we have a class with the members ```Count``` and ```GetEnumerator``` and we have a list (a collection of strings for example) and we want to delegate the ```Count``` and ```GetEnumerator()``` members of our class to that collection.
+
+```csharp
+public int Count => list.Count;
+
+public IEnumerator<string> GetEnumerator() => list.GetEnumerator();
+```
+
+#### String handling
+
+* Information attributes -> ability for compiler to automatically populate method and filenames as parameter values.
+* ```nameof``` -> allows names of variables, types, methods and other members to be represented in a refactoring-friendly form.
+* Interpolated string literals -> value of a variable or property can be used directly
+
+Interpolated string literals example:
+
+```csharp
+throw new KeyNotFoundException($"No calendar system for ID {id} exists");
+```
