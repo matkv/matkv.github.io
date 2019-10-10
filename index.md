@@ -18,9 +18,10 @@ This website is a personal wiki for C#, Kotlin & Android development and for lea
 * [Android Developers](https://developer.android.com/)
 
 ### Tutorials
-Kotlin & Android tutorials on Udacity
+Kotlin, Android & Flutter tutorials on Udacity
 * [Kotlin Bootcamp by Google](https://classroom.udacity.com/courses/ud9011)
 * [Developing Android Apps with Kotlin](https://classroom.udacity.com/courses/ud9012)
+* [Build Native Mobile Apps with Flutter](https://classroom.udacity.com/courses/ud905)
 
 Python Tutorials
 * [Automate The Boring Stuff](https://www.udemy.com/automate/learn/)
