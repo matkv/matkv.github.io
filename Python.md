@@ -1009,4 +1009,4 @@ print('Phone number found: ' + mo.group())
 #Phone number found: 415-555-4242
 ```
 
-A good online tester for regular expressions is https://regexpal.com
+A good online tester for regular expressions is [Regex Pal](https://regexpal.com).
