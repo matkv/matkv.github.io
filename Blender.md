@@ -238,3 +238,21 @@ Under Texture Mask we create a new texture, then under the Texture menu of our m
 We can also set the Mask Mapping of the texture mask to "Random", this will make our texture look less even and repetitive.
 
 To darken the texture, we can select a black color and set the blend mode to "Overlay".
+
+# Procedual displacement
+
+To make our donut look more realistic, we are going to add a procedual texture. In the Shading tab, we add (with Shift + A) a **Noise texture**.
+
+If we enable the "Node wrangler" addon, we can Ctrl + Shift + Left Click a node to preview it in our model.
+
+We also add a "Texture Coordinate" node and connect its "object" output to the "vector" input of the noise texture node. Now the noise texture node will use the object data.
+
+Then we add a "Displacement" node (Vector -> Displacement) and connect the "Fac" (Factor) output of the noise texture node and connect it to the "heigth" input of the displacement node.
+
+Then we connect the "Displacement" output of the displacement node to the "Displacement" input of the Material output node.
+
+This, however, will not change the actual shape of our mesh yet - so far it is just changing the look of the texture. 
+
+With the Cycles rendering engine active (!!!) - >Under the Material tab on the right, under Settings -> Surface -> we change the Displacement setting to "Displacement and Bump". (We need to make sure that the Scale of the displacement node is not set too high).
+
+Then we can play with the Scale setting for the displacement node and the Scale setting of the Noise texture node to get the result that we want.
