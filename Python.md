@@ -1010,3 +1010,27 @@ print('Phone number found: ' + mo.group())
 ```
 
 A good online tester for regular expressions is [Regex Pal](https://regexpal.com).
+
+### Grouping with parentheses
+
+Adding parentheses will create *groups* in the regex: (\d\d\d)-(\d\d\d-\d\d\d\d).
+
+We can then use the ```group()``` match object method to grab the matching text from must one group.
+
+```python
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My number is 415-555-4242.')
+
+mo.group(1)
+# returns '415'
+```
+
+To retrieve all the groups at once, we can use the ```groups()``` method:
+
+```python
+mo.groups()
+# returns ('415', '555-4242')
+``` 
+This returns a tuple of multiple values.
+
+If we need to actually match a parenthesis in our text, we need to escape the ( and ) characters with a backslash.
