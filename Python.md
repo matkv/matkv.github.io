@@ -1011,7 +1011,7 @@ print('Phone number found: ' + mo.group())
 
 A good online tester for regular expressions is [Regex Pal](https://regexpal.com).
 
-### Grouping with parentheses
+#### Grouping with parentheses
 
 Adding parentheses will create *groups* in the regex: (\d\d\d)-(\d\d\d-\d\d\d\d).
 
@@ -1034,3 +1034,21 @@ mo.groups()
 This returns a tuple of multiple values.
 
 If we need to actually match a parenthesis in our text, we need to escape the ( and ) characters with a backslash.
+
+#### Matching multiple groups with the pipe
+
+When we want to match multiple expressions, we can use the pipe character '|'.
+
+For example: ```r'Batman|Tina Fey'``` will match both 'Batman' or 'Tina Fey'. When both occur in the searched string, the first occurance of matching text will be returned as the Match object.
+
+When we want to match one of several patterns, the pipe is also useful. Let's say we want to match any of the strings 'Batman', 'Batmobile', 'Batcopter' and 'Batbat'.
+
+We can do this:
+
+```python
+batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
+```
+
+If we would search for the string 'Batmobile lost a wheel' ```mo.group()``` would return the whole text it found -> 'Batmobile', ```mo.group(1)``` would return just the text inside the first parentheses group -> 'mobile'.
+
+This way we can specify several alternative patterns that we would like our regex to match.  If we need to match an actual pipe character, we would need to escape it with a backslash '\|'.
