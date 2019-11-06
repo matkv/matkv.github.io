@@ -1052,3 +1052,24 @@ batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
 If we would search for the string 'Batmobile lost a wheel' ```mo.group()``` would return the whole text it found -> 'Batmobile', ```mo.group(1)``` would return just the text inside the first parentheses group -> 'mobile'.
 
 This way we can specify several alternative patterns that we would like our regex to match.  If we need to match an actual pipe character, we would need to escape it with a backslash '\|'.
+
+#### Optional matching with the question mark
+
+Sometimes we might want to match a pattern only optionally: The regex should find a match whether or nat that bit of text is there. 
+
+The "?" character flags the group that precedes it (comes before it) as an optional part of the pattern:
+
+```python
+batRegex = re.compile(r'Bat(wo)?man')
+
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+# returns 'Batman'
+
+mo1 = batRegex.search('The Adventures of Batwoman')
+mo1.group()
+# returns 'Batwoman'
+```
+
+The regex will match text that has **zero** instances of our optional group or **one** instance of it ('wo') in it. If we want it to be possible for the optional group to occur any number of times in our text we have two options: the '''*''' or the '''+''' characters.
+
