@@ -141,3 +141,46 @@ Interpolated string literals example:
 ```csharp
 throw new KeyNotFoundException($"No calendar system for ID {id} exists");
 ```
+
+#### Simple data access with LINQ
+
+LINQ lets us use SQL-like queries in our code while still having compile-time checking and IntelliSense support. We can use that same syntax for regular collections as well via **expression trees**. These represent code as data, and LINQ can analize the code to convert it into SQL or other query languages.
+
+```csharp
+var offers =
+  from product in db.Products
+  where product.SalePrice <= product.Price / 2
+  orderby product.SalePrice
+  select new {
+    product.Id, product.Description,
+    product.SalePrice, product.Price
+  };
+```
+
+#### Asynchrony
+
+The ```async/await``` feature consists of two complementary parts around async methods:
+
+* Aync methods produce a result representing an asynchronous operation - this is usually ```Task``` or ```Task<T>```
+* Async methods use await expressions to consume asynchronous operations. If the method tries to await an operation that **hasn't finished yet**, the method **pauses asynchronously** until the operation completes and then continues.
+
+An example:
+
+```csharp
+private async Task UpdateStatus()
+{
+  // this starts two operations concurrently (side by side)
+  Task<Weather> weatherTask = GetWeatherAsync();
+  Task<EmailStatus> emailTask = GetEmailStatusAsync();
+  
+  // this asynchrounously waits for them to complete
+  Weather weather = await weatherTask;
+  EmailStatus email = await emailTask;
+  
+  // update GUI
+  weatherLabel.Text = weather.Description;
+  inboxLabel.Text = email.InboxCount.ToString();  
+}
+```
+
+Async/await takes away a lot of the boilerplate code that was previously required to achieve asynchrony.
