@@ -15,6 +15,8 @@ Here are some of the most important themes of C# evolution and brief examples of
 
 ## Type system, concise code, LINQ, asynchrony, efficiency & C# versions
 
+### Generics
+
 In C# 1, we might have used code like this:
 
 ```csharp
@@ -231,3 +233,30 @@ Another way C# runs these days is **Xamarin** which provides a rich multiplatfor
 In 2010, the **NuGet** package manager was launched, which made it much easier to produce and consume class libraries, whether commercial or open source.
 
 Under the umbrella of the .NET Foundation, .NET Core was announced. .Net Core, ASP.NET Core, Entity Framework Core and Visual Studio Code were all open source on GitHub - which increased third-party open source packages. It is now possible to for example run an ASP.NET Core service in a Docker image and deploy it with Kubernetes.
+
+# C# 2-5
+
+## C# 2
+
+### Generics
+
+Generics allow us to write general-purpose code thats type-safe (compiler validates the types) at compile-time using the same type in multiple places without knowing what that type is beforehand.
+
+They are most heavily used in:
+
+* Collections
+* Delegates, particularly in LINQ
+* Asynchronous code, ```Task<T>``` is a promise of a future value of type ```T```
+* Nullable value types
+
+#### Collections before generics
+
+.NET 1 had three broad kinds of collections:
+
+* Arrays -> direct language and runtime support, size is fixed at initialization
+* Object-based collections -> Values are described in the API by using System.Object, no collection-specific language or runtime support, but language features such as indexers and ```foreach``` statements can be used with them. Examples: ```ArrayList``` & ```Hashtable```.
+* Specialized collections -> Values are described in the API with a specific type, and the collection can only be used for that type. Example: ```StringCollection``` -> API looks like ```ArrayList``` but using ```String``` instead of ```Object``` for anything referring to a value.
+
+Arrays & specialized collections are **statically typed**. The API prevents us from putting the wrong kind of value in a collection.
+
+
