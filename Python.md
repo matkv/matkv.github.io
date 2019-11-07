@@ -1073,3 +1073,61 @@ mo1.group()
 
 The regex will match text that has **zero** instances of our optional group or **one** instance of it ('wo') in it. If we want it to be possible for the optional group to occur any number of times in our text we have two options: the '''*''' or the '''+''' characters.
 
+#### Matching Zero or More with the Star
+
+The group that precedes the star (asterisk) "\*" character can occur **any** number of times in the text. It can be **completely absent** or repeated over and over again:
+
+```python
+batRegex = re.compile(r'Bat(wo)*man')
+
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+# returns 'Batman'
+
+mo1 = batRegex.search('The Adventures of Batwoman')
+mo1.group()
+# returns 'Batwoman'
+
+mo1 = batRegex.search('The Adventures of Batwowowowoman')
+mo1.group()
+# returns 'Batwowowowoman'
+```
+
+#### Matching One or More with the Plus
+
+Unlike the star, the group preceeding a plus (+) **must appear at least once**. It is not optional.
+
+```python
+batRegex = re.compile(r'Bat(wo)+man')
+
+mo1 = batRegex.search('The Adventures of Batwoman')
+mo1.group()
+# returns 'Batwoman'
+
+mo1 = batRegex.search('The Adventures of Batwowowowoman')
+mo1.group()
+# returns 'Batwowowowoman'
+
+
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group()
+# returns None
+```
+
+#### Matching specific repetitions with curly brackets
+
+If we have a group that we want to repeat a specific number of times, we can the a number in curly brackets. Instead of one number, we can also specify a range by writing a minimum, a comma, and a maximum between the curly brackets. We can also leave out the first or second number to leave the maximum or minimum unbounded.
+
+Example: these two regular expressions match identical patterns:
+
+```python
+(Ha){3}
+(Ha)(Ha)(Ha)
+```
+
+Another example:
+
+```python
+(Ha){3,5}
+((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha)(Ha))
+```
