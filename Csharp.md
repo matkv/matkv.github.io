@@ -184,3 +184,31 @@ private async Task UpdateStatus()
 ```
 
 Async/await takes away a lot of the boilerplate code that was previously required to achieve asynchrony.
+
+#### Efficiency vs. complexity
+
+C# 7 was the most performance-sensitive release: ```Read-only structs``` & ```ref``` features helped to avoid redundant copying. The ```Span<T>``` reduces unnecessary allocation and garbage collection.
+
+#### Minor C# versions
+
+The C# compiler defaults to using the earliest minor version of the latest major version it supports. If we want to use a later minor version, we have to specify that manually (in the project file or the project properties in Visual Studio).
+
+This doesn't change the version of the compiler we run, it changes the set of language features available to you.
+
+#### Platform support
+
+For many years, running C# code would almost always mean running on Windows - either a client-side app written in WinForms or WPF or a server-side app written with ASP.NET and running behind Internet Information Server (IIS). The **Mono** project allowed C# projects to run on Linux, but most of the .NET development was still on Windows.
+
+With the development of **.NET Core** - a runtime and framework that is portable and open source that is fully supported by Microsoft on multiple operating systems - this changed. Added to that there is a portable and open source IDE in the form of Visual Studio code.
+
+Another way C# runs these days is **Xamarin** which provides a rich multiplatform mobile experience. With its GUI framework Xamarin Forms it allows developers to create user interfaces that are fairly uniform across different devices but can take advantage of the underlying platform.
+
+**Unity** is one of the most popular game-development platforms in the world. But with its customized Mono runtime and ahead-of-time compilation, it can provide challenges to C# developers who are used to more-traditional runtime environments.
+
+**Try .NET** allows users to try C# code in a browser with autocompletion and running the code. **Blazor** is a platform for running Razor pages directly in a browser.
+
+#### Community
+
+In 2010, the **NuGet** package manager was launched, which made it much easier to produce and consume class libraries, whether commercial or open source.
+
+Under the umbrella of the .NET Foundation, .NET Core was announced. .Net Core, ASP.NET Core, Entity Framework Core and Visual Studio Code were all open source on GitHub - which increased third-party open source packages. It is now possible to for example run an ASP.NET Core service in a Docker image and deploy it with Kubernetes.
