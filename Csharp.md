@@ -9,9 +9,13 @@ permalink: /csharp/
 * Un-numbered table of contents
 {:toc}
 
-### More fine-grained descriptions with generics
+# Evolution of C#
 
-Instead of using
+Here are some of the most important themes of C# evolution and brief examples of them
+
+## Type system, concise code, LINQ, asynchrony, efficiency & C# versions
+
+In C# 1, we might have used code like this:
 
 ```csharp
 public class Bookshelf
@@ -20,7 +24,7 @@ public class Bookshelf
 }
 ```
 
-we can specify the type of the IEnumerable and communicate more effectively
+With **generics**, introduced in C#2, we can specify the type of the IEnumerable and communicate more effectively:
 
 ```csharp
 public class Bookshelf
@@ -31,7 +35,9 @@ public class Bookshelf
 
 ### Nullable reference types
 
-C#8 will expect that anything not explicitely nullable is intended not to be nullable.
+C#2 also brought **nullable value types**, allowing the absence of information to be expressed effectively. C#7 made it possible to tell the compiler that a user-defined struct should be immutable using ```readonly struct``` declarations.
+
+The plans for C#8 include **nullable reference types**. Right now, nothing in the language lets us express whether a reference (return value, parameter, local variable) might be null. C#8 will expect that anything not explicitly nullable is intended not to be nullable:
 
 ```csharp
 string Method(string x, string? y)
@@ -41,9 +47,7 @@ This means x shouldn't be ```null```, y may be ```null``` and the method won't r
 
 ### Anonymous types and implicitly typed local variables (var)
 
-These help address the downside of some statically typed languages: verbosity.
-
-Sometimes we don't necessarily need to create a extra type for a partical data shape within a single method.
+These help address the downside of some statically typed languages: verbosity. Sometimes we don't necessarily need to create a extra type for a partical data shape within a single method.
 
 ```csharp
 var book = new {Title = "The Road", Author = "Cormac McCarthy"};
@@ -62,9 +66,7 @@ Dictionary<string, string> map1 = new Dictionary<string, string>();
 var map2 = new Dictionary<string, string>();
 ```
 
-The second variable is still statically typed (not dynamically), but we didn't have to write the type explicitly.
-
-We can't use anonymouse types as method parameters or return types.
+The second variable is still statically typed (not dynamically), but we didn't have to write the type explicitly. We can't use anonymouse types as method parameters or return types.
 
 #### Tuples instead of anonymous types
 
@@ -80,6 +82,8 @@ A benefit of using tuples is that the **can** be used as method parameters and r
 
 ### Concise code
 
+C#'s new features allow us to remove ***boilerplate code*** - redundant code that was distracting and unnecessary.
+
 #### Construction and initialization
 
 Lambda expression to subscribe a new event handler to a button's click event:
@@ -88,7 +92,7 @@ Lambda expression to subscribe a new event handler to a button's click event:
 button.Click += (sender, args) => MessageBox.Show("Clicked"!);
 ```
 
-Object and collection initializers let us quickly initialize an object and set properties during initialisation:
+Object and collection initializers introduced in C#3 let us quickly initialize an object and set properties during initialisation:
 
 ```csharp
 var order = new Order
@@ -105,7 +109,7 @@ var order = new Order
 
 #### Method and property declarations
 
-Instead of doing:
+**Automatically implemented properties** allows us to go from this:
 
 ```csharp
 private string name;
@@ -116,13 +120,26 @@ public string Name
 }
 ```
 
-We can use an automatically implemented property:
+To This:
 
 ```csharp
 public string Name {get; set;}
 ```
 
-Let's say we have a class with the members ```Count``` and ```GetEnumerator``` and we have a list (a collection of strings for example) and we want to delegate the ```Count``` and ```GetEnumerator()``` members of our class to that collection.
+**Expression-bodied members** also remove boilerplate code. Let's say we have a class with the members ```Count``` and ```GetEnumerator``` and we have a list (a collection of strings for example) and we want to delegate the ```Count``` and ```GetEnumerator()``` members of our class to that collection.
+
+Instead of having to do this:
+
+```csharp
+public int Count {get {return list.Count;} }
+
+public Ienumerator<string> GetEnumerator()
+{
+  return list.GetEnumerator();
+}
+```
+
+We can remove a lot of the unnecessary code and use this shorter version:
 
 ```csharp
 public int Count => list.Count;
@@ -134,7 +151,7 @@ public IEnumerator<string> GetEnumerator() => list.GetEnumerator();
 
 * Information attributes -> ability for compiler to automatically populate method and filenames as parameter values.
 * ```nameof``` -> allows names of variables, types, methods and other members to be represented in a refactoring-friendly form.
-* Interpolated string literals -> value of a variable or property can be used directly
+* Interpolated string literals -> value of a variable or property can be used directly instead of having to use string.Format{}
 
 Interpolated string literals example:
 
@@ -183,7 +200,9 @@ private async Task UpdateStatus()
 }
 ```
 
-Async/await takes away a lot of the boilerplate code that was previously required to achieve asynchrony.
+Async/await is aware of synchronization contexts. In that example, we're updating the user interface, which can be done only in a UI thread, despite also starting and waiting for long running operations. 
+
+It takes away a lot of the boilerplate code that was previously required to achieve asynchrony.
 
 #### Efficiency vs. complexity
 
@@ -195,7 +214,7 @@ The C# compiler defaults to using the earliest minor version of the latest major
 
 This doesn't change the version of the compiler we run, it changes the set of language features available to you.
 
-#### Platform support
+### C# as an evolving platform
 
 For many years, running C# code would almost always mean running on Windows - either a client-side app written in WinForms or WPF or a server-side app written with ASP.NET and running behind Internet Information Server (IIS). The **Mono** project allowed C# projects to run on Linux, but most of the .NET development was still on Windows.
 
