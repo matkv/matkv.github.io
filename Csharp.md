@@ -341,3 +341,34 @@ static void PrintNames(List<string> names)
 }
 ```
 
+This solves all the previous problems:
+
+* We don't need to know the size of the collection beforehand
+* We get compile-time error if we try to use anything other than a ```List<string>```
+* We can change the element type without having to worry about generating code and and having to manage it
+
+##### Type parameters and type arguments
+
+Parameter -> inputs declared by the method
+Arguments -> are provided by calling code - in the form of arguments
+
+```csharp
+public static void Method(string name, int value) {} //string name & int value are parameters
+
+Method(customerName, 5) //customername is the Argument for the "name" parameter
+```
+
+In generics, we have ```type parameters``` and ```type arguments``` - which are the same idea but applied to types. The declaration of a generic type or method includes type parameters in angle brackets after the name.
+
+```csharp
+public class List<T>  //T is the type parameter
+{
+  ...
+}
+
+List<String> list = new List<string>(); //<string> is the type argument
+```
+
+A list has an ```Add(T item)``` method. If we for example try to type "list.Add(" into Visual Studio, IntelliSense will prompt us as if the the ```item``` parameter has been declared with a type of string. If we try to pass an argument of another type, there will be a compile time error. 
+
+Methods can be generic as well.
