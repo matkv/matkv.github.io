@@ -259,4 +259,85 @@ They are most heavily used in:
 
 Arrays & specialized collections are **statically typed**. The API prevents us from putting the wrong kind of value in a collection.
 
+**Example:**
+
+Let's say we want to create a collection of strings in one method (GenerateNames), and print them out in another method (PrintNames).
+
+Doing it with arrays:
+
+```csharp
+static string[] GenerateNames()
+{
+  string[] names = new string[4];
+  names[0] = "Gamma";
+  names[1] = "Vlissides";
+  names[2] = "Johnson";
+  names[3] = "Helm";
+  return names;
+}
+
+static void PrintNames(string[] names)
+{
+  foreach (string name in names)
+  {
+    Console.WriteLine(name);
+  }
+}
+```
+
+This isn't ideal, because we have to know exactly how many names there will be. Either finding out before we create the array or always creating a bigger one and copying the contents of earlier smaller arrays.
+
+A type that keeps track of the size is the ```ArrayList```.
+
+```csharp
+static ArrayList GenerateNames()
+{
+  ArrayList names = new ArrayList();
+  names.Add("Gamma");
+  names.Add("Vlissides");
+  names.Add("Johnson");
+  names.Add("Helm");
+  return names;
+}
+
+static void PrintNames(ArrayList names)
+{
+  foreach (string name in names)
+  {
+    Console.WriteLine(name);
+  }
+}
+```
+
+While this is cleaner because we don't need to know the amount of names beforehand, the big problem is that there's nothing that stops us from adding a nonstring to the collection. The type of the ```ArrayList-Add``` parameter is just ```Object```.
+
+Also, ```PrintNames``` can contain any kind of object reference. If we tried to print types that can't be printed we'd get an error, yet nothing checks whether the type is a correct one.
+
+One way of solving this would be using a ```StringCollection```as the return type of the ```GenerateNames()``` method & taking a ```StringCollection``` parameter in ```PrintNames```.
+
+This would solve the errors mentioned above and would be great if we would always need strings. But if we needed a collection of some other type we'd either have to find a suitable collection framework or write it ourselves.
+
+#### Using generics instead
+
+```List<T>``` is a generic type. It is a collection in which ```T``` is the element type of the collection.
+
+```csharp
+static List<string> GenerateNames()
+{
+  List<string> names = new List<string>();
+  names.Add("Gamma");
+  names.Add("Vlissides");
+  names.Add("Johnson");
+  names.Add("Helm");
+  return names;
+}
+
+static void PrintNames(List<string> names)
+{
+  foreach (string name in names)
+  {
+    Console.WriteLine(name);
+  }
+}
+```
 
