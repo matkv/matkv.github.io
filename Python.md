@@ -1131,3 +1131,17 @@ Another example:
 (Ha){3,5}
 ((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha)(Ha))
 ```
+
+### Greedy and Nongreedy Matching
+
+Python's regular expressions are ***greedy*** by default - in ambiguous situations they will match the longest string possible.
+
+The ***non-greedy*** version of the curly brackets matches the shortest string possible - it has the closing curly bracket followed by a question mark.
+
+```python
+greedyRegex = re.compile(r'(Ha){3,5}')
+# this will match the longest possible string
+
+nongreedyRegex = re.compile(r'(Ha){3,5}?')
+#this will match the shortest string possible
+```
