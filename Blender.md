@@ -270,3 +270,15 @@ So we want to use the different values that are produced with our noise texture 
 We add another MixRGB node between the donut texture node and the BSDF node for the whole donut. We take the color output of the first mixRGB node ("Add") and connect it to the "Fac" input of the new MixRGB node.
 
 Now we can change the Blend type of the new MixRGB node to "Overlay" and change the color2 property and this will actually affect the color of the bumps that we created with the displacement.
+
+# Tutorial - Coffee Cup
+
+## Adding a reference photo
+
+We can add a reference image with Shift + A -> Image -> Reference (Align To View checked off).
+
+Then we model a cylinder along it with edge loops (adding more with Control + R). And then scaling along it. Control R -> then S and scale it to fit the shape.
+
+Selecting a face with Shift + Alt + Left Click, then pressing X lets us delete that specific face. (For example the top of the rough model of the coffee cup so that it is hollow.)
+
+To make the cylinder thicker, we add a solidify modifier. To clean up some details, we also add the subdivision surface modifier.
