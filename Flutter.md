@@ -15,6 +15,8 @@ permalink: /flutter/
 
 [Udacity Course](https://classroom.udacity.com/courses/ud905)
 
+[Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+
 # Flutter
 
 Advantages of using Flutter:
