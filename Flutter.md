@@ -15,6 +15,8 @@ permalink: /flutter/
 
 [Udacity Course](https://classroom.udacity.com/courses/ud905)
 
+[First Flutter App Example](https://matkv.github.io/flutterfirstapp.html)
+
 # Flutter
 
 Advantages of using Flutter:
