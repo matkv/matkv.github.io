@@ -17,6 +17,8 @@ permalink: /flutter/
 
 [Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 
+[Write your first Flutter app part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)
+
 [First Flutter App Example](https://matkv.github.io/flutterfirstapp.html)
 
 # Flutter

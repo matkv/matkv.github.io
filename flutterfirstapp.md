@@ -195,3 +195,204 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+# Part 2 - Adding functionality to favorite names & viewing favorites
+
+Now we will add functionality to select and unselect names, saving our favorites. The user will also be able to tap a list icon in the upper right of the app and navigate to a new page (called a ***route***) and view the favorited names.
+
+## Adding icons to the list
+
+We add a ```Set``` called _saved to ```RandomWordsState```. We use a Set instead of a List because a Set does not allow duplicate entries.
+
+```dart
+lass RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final Set<WordPair> _saved = Set<WordPair>();
+  final _biggerFont = const TextStyle(fontSize: 18.0);
+
+```
+
+In the function that actually creates the ListTile -> ```_buildRow``` we add a bool that lets us check whether or not a word pair has already been marked as favorite.
+
+```dart
+  Widget _buildRow(WordPair pair) {
+    final bool alreadySaved = _saved.contains(pair);
+```
+
+And we add the heart icon. Depending on whether or not the current wordpair is already marked as favorite, the icon is either full and red or just the border with no color:
+
+```dart
+Widget _buildRow(WordPair pair) {
+    final bool alreadySaved = _saved.contains(pair);
+    return ListTile(
+      title: Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+      trailing: Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.red : null,
+      ),
+    );
+  }
+```
+
+## Adding interactivity
+
+Now we'll make the icons tappable. Whenever the user taps an entry in the list, it toggles its "favorited" state and the word pairing is added or removed from a set of saved favorites.
+
+We modify the ```_buildRow``` function by adding an ```onTap``` property:
+
+```dart
+onTap: () {
+        setState(() {
+          if (alreadySaved){
+            _saved.remove(pair);
+          }
+          else {
+            _saved.add(pair);
+          }
+        });
+      },
+```
+This is added after the Icon widget in _buildRow.
+
+## Navigating to a new screen
+
+We will add a new page (called a ***route***) that displays the favorites.
+
+In Flutter, the Navigator manages a stack containing the app's routes. **Pushing** a route onto the Navigator's stack, updates the display to that route. **Popping** a route from the Navigator's stack, returns the display to the previous route.
+
+We'll also add a list icon to the AppBar in the build method for ```RandomWordsState```. When the user clicks the icon, a new route that contains the saved favorites is pushed to the Navigator, displaying the icon.
+
+### Adding the icon and its action
+
+In the build method of ```RandomWordsState``` we add the actions property:
+
+```dart
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Startup Name Generator'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved,)
+        ],
+      ),
+      body: buildSuggestions(),
+    );
+  }
+```
+
+Some widgets properties take a single widget (child) - other properties, such as action, take an array of widgets (children). This is indicated by the square brackets.
+
+Now we add a ```_pushSaved()``` function to the RandomWordsState class.
+
+```dart
+void _pushSaved() {
+    
+  }
+```
+
+### Adding a route and pushing it to the Navigator's stack
+
+Pushing a route to the Navigator's stack changes the screen to display that new route.
+
+The content for the new page is built in ```MaterialPageRoute```'s builder property, in an anonymous function.
+
+We call ```Navigator.push```, which pushes the route to the Navigators stack.
+
+```dart
+void _pushSaved() {
+    Navigator.of(context).push();
+  }
+```
+
+The ```divideTiles()``` method of ListTile adds horizontal spacing between each listTile. The ```divided``` variable holds the final rows, converted to a list by the convenience function, ```toList()```.
+
+```dart
+ void _pushSaved() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          final Iterable<ListTile> tiles = _saved.map(
+              (WordPair pair) {
+                return ListTile(
+                  title: Text(
+                    pair.asPascalCase,
+                    style: _biggerFont,
+                  ),
+                );
+              },
+          );
+```
+
+This creates an Iterable (basically a collection or list) of ```ListTiles```, and maps each of the ```WordPair``` values in ```_saved``` to one ListTile.
+
+```dart
+final List<Widget> divided = ListTile
+              .divideTiles(
+              context: context,
+              tiles: tiles,
+          ).toList();
+```
+Then we actually create a list using the ListTiles in ```tiles```. ```divideTiles``` adds horizontal spacing between each ListTile - ```toList()``` actually converts the tiles with the dividers, to a list.
+
+So ```divided``` holds the final rows with the dividers.
+
+The ```builder``` property returns a ```Scaffold```, containing the app bar for the new route. The body consists of a ListView containing the ListTiles rows; each row is separated by a divider.
+
+```dart
+return Scaffold(
+            appBar: AppBar(
+              title: Text('Saved Suggestions'),
+            ),
+            body: ListView(children: divided),
+          );
+```
+
+The complete _pushSaved function:
+
+```dart
+void _pushSaved() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          final Iterable<ListTile> tiles = _saved.map(
+              (WordPair pair) {
+                return ListTile(
+                  title: Text(
+                    pair.asPascalCase,
+                    style: _biggerFont,
+                  ),
+                );
+              },
+          );
+          final List<Widget> divided = ListTile
+              .divideTiles(
+              context: context,
+              tiles: tiles,
+          ).toList();
+          return Scaffold(
+            appBar: AppBar(
+              title: Text('Saved Suggestions'),
+            ),
+            body: ListView(children: divided),
+          );
+        },
+      ),
+    );
+  }
+```
+
+## Change the UI using Themes
+
+We can change our app's theme by adding the ```theme``` property in the ```MyApp``` class:
+
+```dart
+Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Startup Name Generator',
+      theme: ThemeData(
+        primaryColor: Colors.white,
+      ),
+```
