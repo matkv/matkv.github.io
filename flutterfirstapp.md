@@ -108,4 +108,90 @@ body: Center(
         ),
 ```
 
-Stopped at "Step 4: Create an infinite scrolling widget".
+## Adding an infinite scrolling ListView
+
+We add a ```_suggestions``` list to the RandomWordsState class for saving suggested word pairings. We also add a ```_biggerFont``` variable for making the font size larger.
+
+```dart
+class RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 18.0);
+  // ··· Rest of the class
+}
+```
+
+Then we add a ```_buildSuggestions()``` function to the RandomWordState class. This method builds the ListView that displays the words.
+
+The ```ListView``` class provides a builder property - itemBuilder. That's a factory builder and callback function specified as an anonymous function.
+
+Two parameters are passed to the function - the ```BuildContext``` and the row iterator. The iterator increments each time the function is called. In our case, it increments twice for every suggested word pairing (once for the ```ListTile``` and once for the ```Divider```). This allows the list to grow infinitely as the user scrolls.
+
+```dart
+class RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 18.0);
+
+  Widget buildSuggestions() {
+    return ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: (context, i) {
+          if (i.isOdd) return Divider();
+
+          final index = i ~/ 2;
+          if (index >= _suggestions.length) {
+            _suggestions.addAll(prefix0.generateWordPairs().take(10));
+          }
+          return _buildRow(_suggestions[index]);
+        });
+  }
+```
+
+The ```itemBuilder``` is called once per suggested word pairing. For even rows, it adds a ```ListTile``` row for the word pairing. For odd rows, it adds a ```Divider``` widget to visually separate the entries.
+
+```final index = i ~/ 2;``` divides ```i``` by 2 and returns an integer. This calculates the actual number of word pairings in the listView, minus the divider widgets.
+
+Once we reach the end of the already created word pairings in ```suggestions```, we generate 10 more and add them to the suggestions list.
+
+This method calls the ```_buildRow()``` function once per word pair. This function displays each new pair in a ```ListTile```.
+
+Let's add the ```_buildRow()``` function to ```RandomWordsState```:
+
+```dart
+Widget _buildRow(WordPair pair) {
+    return ListTile(
+      title: Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+    );
+  }
+  ```
+
+This is the function that actually creates the ListTile.
+
+Now we want to call the ```buildSuggestions()``` function in the ```build()``` method of the ```RandomWordsState``` class.
+
+```dart
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Startup Name Generator'),
+      ),
+      body: buildSuggestions(),
+    );
+  }
+```
+
+Finally, in the ```MyApp``` class, we update the ```build()``` method by changing the home to be a ```RandomWords``` widget:
+
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Startup Name Generator',
+      home: RandomWords(),
+    );
+  }
+}
+```
