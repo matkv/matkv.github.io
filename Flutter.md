@@ -21,6 +21,8 @@ permalink: /flutter/
 
 [First Flutter App Example](https://matkv.github.io/flutterfirstapp.html)
 
+[Flutter For Web Developers](https://flutter.dev/docs/get-started/flutter-for/web-devs)
+
 # Flutter
 
 Advantages of using Flutter:
