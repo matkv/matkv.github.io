@@ -308,3 +308,41 @@ Calling ```setState()``` schedules a rebuild on the next frame.
 When a widget state changes, **only** the widgets that changed are rebuilt.
 
 When the state object is initialized, we can add custom code by overriding the ```initState``` method.
+
+# Building interactive apps
+
+## Material Design
+
+In Flutter, material components are widgets that follow the Material design guidelines.
+
+These widgets have properties that enable customization. For example, buttons and outlines can be given different shapes, gridviews can be heavily customized beyond the standard table like layout.
+
+## Platforms and Themes
+
+A Flutter app is native to both iOS and Android, using the same codebase.
+
+To use Cupertino widgets (iOS) too, we need to import the cupertino package as well:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+```
+
+Then we can choose whether we want to show a material widget or a cupertino styled widget.
+
+We can customize the master theme and its properties. Child widgets are able to inherit the master theme's styling. 
+
+For example: Let's say we always want our text to be blue. We set the ```textTheme``` property of our ```MaterialApp``` widget to be the existing theme.
+
+```dart
+theme: ThemeData(
+  textTheme: Theme.of(context).textTheme.apply(
+    bodyColor: Colors.blue[700],
+    displayColor: Colors.grey[600],
+
+    //... continued
+  )
+)
+```
+
+We override the default theme with the ```apply``` function. We can do this with all the properties within the theme widget.
