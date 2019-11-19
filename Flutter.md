@@ -49,6 +49,10 @@ Arrow notation is used for one-line functions or methods.
 void main() => runApp(MyApp());
 ```
 
+**Naming convention**
+
+Private classes should start with an underscore "_".
+
 ## Reactive framework
 
 In Flutter, a view is built as an immutable tree of widgets.
@@ -225,3 +229,82 @@ class HelloRectangle extends StatelessWidget {
   }
 }
 ```
+
+### Custom widgets
+
+Widgets are really customizable, we can extend and customize the exisiting widgets.
+
+For example, we can use the basic ```ListTile``` widget and customize it.
+
+We can use Container, Row, Padding, Center, And Inkwell widgets to position our Icon and Text widgets the way we want.
+
+The ```Inkwell``` widgets provides an animation when we tap a widget.  We can adjust the inkwell's border radius to get rounded corners for our inkwell animation.
+
+## App layout
+
+All layout is done with widgets. Each widget is responsible for its own layout.
+
+### Route
+
+A route takes us to a page or a screen in our app. Inside ```MaterialApp``` we often set the home property to a widget that is our home route.
+
+An ```AppBar``` is useful for telling the user where they are in the app and can offer actions for the user.
+
+Most apps have some sort of ```ListView``` or ``'GridView```
+
+### Grouping
+
+Grouping several widgets together makes it easier to customize just specific ones and leaving other widgets unmodified.
+
+## Navigation
+
+How do we navigate between our routes?
+
+The ```Navigator``` widget manages our routes. It can push and pop routes to help a user move form screen to screen.
+
+A route takes us to a page or screen. We can pass context between routes.
+
+Each ```InkWell``` widget, for example, has an ```onTap``` property. We can use it to navigate to a certain route.
+
+## Stateful widgets
+
+Widgets can change, allowing for user interactivity. To save states and respond to user ineraction, we use a ```StatefulWidget```.
+
+Example:
+
+```dart
+class HelloRectangle extends StatefulWidget{
+  final String text;
+
+  HelloRectangle(
+    {
+      this.text,
+    } );
+
+    @override
+    createState() => _HelloRectangleState();
+}
+```
+
+The ```StatefulWidget``` instance itself is immutable, but it creates a state object using ```createState```.
+
+The state object stores the widget state and can change throughout the widgets lifetime. Things that are specified within that object can be changed.
+
+Let's say we want to change the color of a widget every time it is pressed:
+
+```dart
+FlatButton(
+  onPressed: () {
+    print('I was pressed!');
+    setState(() {
+        _color = _generateRandomColor();
+    });
+  }
+)
+```
+
+Calling ```setState()``` schedules a rebuild on the next frame.
+
+When a widget state changes, **only** the widgets that changed are rebuilt.
+
+When the state object is initialized, we can add custom code by overriding the ```initState``` method.
