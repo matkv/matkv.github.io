@@ -12,18 +12,15 @@ permalink: /flutter/
 # Links
 
 * [Flutter Get Started](https://flutter.dev/docs/get-started/)
-
 * [Udacity Course](https://classroom.udacity.com/courses/ud905)
-
 * [Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-
 * [Write your first Flutter app part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)
-
 * [First Flutter App Example](https://matkv.github.io/flutterfirstapp.html)
-
 * [Flutter For Web Developers](https://flutter.dev/docs/get-started/flutter-for/web-devs)
 
 # Flutter
+
+Flutter is an SDK for creating mobile 2D apps + Programming Framework built on Dart.
 
 Advantages of using Flutter:
 
@@ -38,7 +35,17 @@ Dart is performant in development and in production. It supports both just-in-ti
 
 JIT compilation enables us to recompile code directly on the device, allowing a **hot reload**.
 
+Flutter apps can be customised for different platforms (iOS / Android) and the Flutter framework gives us tools to build and publish our dart code to native apps.
+
+Flutter
+
+* Flutter Framework - A Dart framework, providing Utility functions & UI Elements (Widgets)
+* Dart - the programming language
+* Flutter SDK - A set of tools
+
 **Debug, profile or release runs**
+
+Flutter apps can be run in several different "modes".
 
 Debug mode trades performance for useful developer features such as hot reload and step debugging. Once we are ready to analyze performance or release our app, we'll want to use Flutter’s “profile” or “release” build modes. 
 
@@ -53,11 +60,15 @@ void main() => runApp(MyApp());
 
 Private classes should start with an underscore "_".
 
-## Reactive framework
+## Flutter Architecture
 
-In Flutter, a view is built as an immutable tree of widgets.
+A Flutter app is just a **tree of widgets**.
 
-Widgets are the foundation of Flutter apps. A widget is a description of part of a user interface. **Nearly everything in Flutter is a widget.**
+It runs from one codebase on both platforms, but when needed we can run different parts of code for each platform.
+
+In Flutter, a view is built as an immutable tree of widgets. Widgets are the foundation of Flutter apps. A widget is a description of part of a user interface. **Nearly everything in Flutter is a widget.**
+
+There are root widgets that have child wigets.
 
 There are no separate files for layout,customization or text alignment. It is all defined in the Flutter widget.
 
@@ -65,7 +76,21 @@ When a widget state changes, the widget rebuilds itself according to the new sta
 
 The UI can be described as functions of state.
 
-## Flutter's Development Tools
+### Flutter/Dart to a Native App
+
+The Flutter SDK has tools that compile the Dart code to native Android/iOS code.
+
+## Development with Flutter & development tools
+
+### Folder structure
+
+* The "android" and "ios" folders that are created when creating a new Flutter project hold the respective native code.
+
+* The "lib" folder is where we write our entire Flutter app. 
+
+* The "test" folder allows us to write automated tests.
+
+* The "pubspec.yaml" file configures our overall project and our dependencies. There we can add third party packages or add static assets.
 
 ### Hot reload
 
@@ -81,7 +106,23 @@ This enables us to see the composition of existing widgets. By pressing the insp
 
 Under Code-> Reformat Code with Dart format, we can let Android Studio format our code according to Dart Style Guides.
 
+# Flutter Apps
+
+The entry point to a Flutter app is its ```main``` function. It is in the ```main.dart``` file (we shouldn't rename this file). This function is the first function that is called when the Flutter app is run by the operating system.
+
+```dart
+void main() {
+
+}
+```
+To make this function do anything, we need to attach a **widget** to the screen.
+
 ## Widgets
+
+TODO continue with youtube tutorial here. Timestamp: 1:16:40.
+
+# Everything below title this needs to be reorganized
+# ------------------------------------------------------------------
 
 Flutter UI is composed exclusively of widgets. They are the foundation of Flutter apps. A widget is a description of part of a user interface.
 
@@ -113,7 +154,7 @@ We are, however, allowed to create widgets without a child, we don't have to spe
 
 ### Overview
 
-The entry point to a Flutter app is its ```main``` function.
+
 
 To show something on the app screen, we need to import the material package. A package is a library of functions we can use.
 
@@ -313,7 +354,9 @@ When the state object is initialized, we can add custom code by overriding the `
 
 ## Material Design
 
-In Flutter, material components are widgets that follow the Material design guidelines.
+In Flutter, material components are widgets that follow the Material design guidelines. Material Design is built into Flutter, Flutter embraces the Material design language.
+
+Material Design is a design system developed by Google.
 
 These widgets have properties that enable customization. For example, buttons and outlines can be given different shapes, gridviews can be heavily customized beyond the standard table like layout.
 
