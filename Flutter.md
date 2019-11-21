@@ -119,7 +119,109 @@ To make this function do anything, we need to attach a **widget** to the screen.
 
 ## Widgets
 
-TODO continue with youtube tutorial here. Timestamp: 1:16:40.
+Widgets are user interface components - what the user sees on the screen. A Flutter app typically consists of multiple widgets. The entire app is wrapped in one root widget. Widgets often contain other widgets - child widgets.
+
+They are not just about the user interface, they also contain logic.
+
+We can think of our Flutter app as a tree of widgets. We have one **root** widget for our app, and then we might have widgets for the different pages between we can navigate around and nested sub-widgets.
+
+### Classes
+
+Dart is an object oriented programming language. Classes allow us to create blueprints of new objects.  
+
+We want to create a widget. A widget will be an object, so we want to define a class to specify what the object should look like. To be able to use our class as a widget, it needs to inherit from the base class.
+
+We want to inherit from a class that is exposed through the Flutter SDK & Framework. In order to do that, we need to **import** from a package that Flutter provides for us.
+
+```dart
+import 'package:flutter/material.dart'; 
+```
+
+Now we can use features from that package in our app. We inherit from ```StatelessWidget``` in order to be able to use functionality that a widget would have.
+
+```dart
+class MyApp extends StatelessWidget {
+  build(context){
+    return MaterialApp();
+  }
+}
+```
+The ```build()``` method makes sure that our class will be drawable as a widget. Flutter will always call this method when the widget is inserted into the tree.
+
+It takes one **argument** - ```context```. This will, for example, provide information about the theme of our application.
+
+The ```build()``` method needs to return something to be drawn on the screen.
+We return a ```MaterialApp``` widget. This is the **core root widget** which we use in every Flutter app we create.
+
+Using ```return MaterialApp();``` we call the constructor method of the class. We create an object based on the class.
+
+### Passing information into the MaterialApp class
+
+The ```MaterialApp()``` class expects arguments. We pass a ***named*** argument. We target the argument named "home" and pass a value to it.
+
+```dart
+return MaterialApp(home: )
+```
+
+The "home" argument requires another widget. This is the widget that will be drawn on the screen when the app loads. Here we typically use the ```Scaffold``` widget. This adds a screen with a background and the ability to add an ```AppBar```.
+
+Scaffold also takes arguments:
+
+One of them is ```appBar:```, which takes an ```AppBar``` widget as an argument.   AppBar takes a ```Text``` widget as its ```title:``` argument.
+
+The text widget simply takes a string as its argument.
+
+This is what our code looks like so far:
+
+```dart
+import 'package:flutter/material.dart';
+
+main() {}
+
+class MyApp extends StatelessWidget {
+  build(context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Test'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+However, this won't show anything on the screen yet because we are not excecuting any code in our ```main``` function.
+
+We need to call ```runApp()``` in the ```main``` function. ```runApp()``` takes a widget as an argument. Here we will pass the constructor of our ```MyApp``` class -  so we create an actual object based on that class.
+
+```dart
+main(){
+  runApp(MyApp());
+}
+```
+
+If we run our app now, we should see an empty screen with an ```AppBar``` at the top.
+
+### Optimising our dart code
+
+Dart is a ***typed*** language. This means we should define the types our methods use or our variables store.
+
+The IDE can use that information and warn us if we use a wrong type. Dart is often able to **infer** the type of an object without explicitly specifying it.
+
+For example, we  could do:
+
+```dart
+class MyApp extends StatelessWidget{
+  Widget build(BuildContext context){
+    //continued
+  }
+}
+```
+
+But we don't actually need to specify that the ```build()``` method expects that something of type "Widget" will be returned - Dart already knows that. The same is true for "context", we don't actually need to specify that "context" is of type ```BuildContext```. 
+
+Stopped at 1:37:15
 
 # Everything below title this needs to be reorganized
 # ------------------------------------------------------------------
