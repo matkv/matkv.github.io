@@ -219,9 +219,153 @@ class MyApp extends StatelessWidget{
 }
 ```
 
-But we don't actually need to specify that the ```build()``` method expects that something of type "Widget" will be returned - Dart already knows that. The same is true for "context", we don't actually need to specify that "context" is of type ```BuildContext```. 
+But we don't actually need to specify that the ```build()``` method expects that something of type "Widget" will be returned - Dart already knows that. The same is true for "context", we don't actually need to specify that "context" is of type ```BuildContext```.  However, it can be helpful to specify the type in order to improve readability.
+
+If we have a function that only contains one line, like for example:
+
+```dart
+void main() {
+  runApp(MyApp());
+}
+```
+
+We can instead use the **fat arrow notation**:
+
+```dart
+void main() => runApp(MyApp());
+```
+
+To be exact, the ```build()```method of a widget needs to be ***overriden*** in order to be able to modify it. We override a method defined by another class - in this case ```StatelessWidget```. So technically we could add the ```@override``` above our build method, but it is not required.
+
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // continued..
+```
 
 Stopped at 1:37:15
+
+### The widget's body
+
+The ```body``` property of the ```Scaffold``` widget contains the actual content that we will see in it.
+
+While we will modify our widgets and customize them, at the end, we will always use Flutter's built in widgets as a base.
+
+Let's say we want the body of our Scaffold to have a ```Card```widget in it, and the card itself should have **two** other widgets as its children. For that, we can use the ```Column``` widget.
+
+```Column``` takes multiple wigets, ***children** as arguments wich will be positioned from top to bottom above each other.
+
+```dart
+body: Card(child: Column(children: <Widget>[
+          Image(),
+          Text('Food Paradise')
+        ],),),
+```
+
+In order to add a source image to our Image widget, we create a folder for our assets (it's good to name it 'assets'), and specify that folder in the **pubspec.yaml** file.,
+
+We uncomment the ```assets``` property, and add the path to our file (with an indentation) like this:
+
+```yaml
+  assets:
+    - assets/food.jpg
+```
+
+If we want our image to use an asset directly, we can use a special constructor:
+
+```dart
+ body: Card(child: Column(children: <Widget>[
+          Image.asset('assets/food.jpg'),
+          Text('Food Paradise')
+        ],),),
+```
+
+### Finding examples of widgets
+
+The most important widgets that we will be using are the **Material Components** widgets. They can be found [here](https://flutter.dev/docs/development/ui/widgets/material).
+
+### Adding more cards to the list
+
+We wrap our first card into a column, and add a button above the first card:
+
+```dart
+ body: Column(
+            children: <Widget>[
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Add Product'),
+              ),
+              Card(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('assets/food.jpg'),
+                    Text('Food Paradise')
+                  ],
+                ),
+              ),
+            ],
+          )),
+```
+
+The ```RaisedButton``` widget takes a child widget - the text we display (this could also be an icon for example), and it needs to have an ```onPressed``` property: this is what happens when the button is pressed.
+
+For now, we have added an ***anonymous function*** (empty arguments, empty body) that does nothing:
+
+```dart
+onPressed: () {},
+```
+
+We also wrap the button in a ```Container``` widget with some margin to make it have some spacing at the bottom edge of our AppBar.
+
+Creating the margin:
+
+```dart
+ Container(
+   margin: EdgeInsets.all(10.0),
+```
+
+### Stateless vs. Stateful widgets
+
+Now let's add some functionality to the button:
+
+We typically manage a list of data. The ```build()``` method will be called whenever the app first starts or **when some of our data changes**.
+
+We want to be able to add a new card whenever the button is pressed -  a new card should be added to our list of cards. **We can't do that in a stateless widget.** A stateless widget is simply able to accept external data and build a widget tree. It **can't work with internal data** and will not **rebuild when some of the data changes**.
+
+A stateless widget will only rebuild when it is called for the first time or when it receives some ***external*** data.
+
+```State``` can simply be translated as "data that we are working with". Data that we are storing in our widget and that we plan to change.
+
+That's why we change our ```MyApp``` widget to inherit from a ```StatefulWidget``` instead.
+
+#### Stateless widget
+
+```dart
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return null;
+  }
+}
+```
+
+The ```createState``` function returns a ```State```. This object will belong to a ```StatefulWidget```. The way we work with state in Flutter is that we have **two classes that will work together**.
+
+```createState()``` will return a state object with a state that is configured to work with a ```StatefulWidget```.
+
+Let's create the second class that is needed to work with states:
+
+```dart
+class _MyAppState
+```
+
+The "_" at the beginning is a convention for classes that should not be usable by other files - only from inside the current file.
+
+The ```State``` class provided by flutter has a build method
+
+STOPPED AT 01:57:38
 
 # Everything below title this needs to be reorganized
 # ------------------------------------------------------------------
