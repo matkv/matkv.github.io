@@ -361,11 +361,264 @@ Let's create the second class that is needed to work with states:
 class _MyAppState
 ```
 
-The "_" at the beginning is a convention for classes that should not be usable by other files - only from inside the current file.
+The "_" at the beginning is a convention for classes that should not be usable by other files - only from inside the current file. Flutter will respect this.
 
-The ```State``` class provided by flutter has a build method
+The ```State``` class provided by flutter has a build method. Now we need to tell Flutter that our class inheriting from ```State``` belongs to a specific widget.
 
-STOPPED AT 01:57:38
+We add the name of the class to which this state belongs in angle brackets:
+
+```dart
+class _MyAppState extends State<MyApp> {
+  //...
+}
+```
+In our ```MyApp``` class, we return and instantiate our new state:
+
+```dart
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _MyAppState();
+  }
+}
+```
+Now the ```StatefulWidget``` creates a new state object based on our own ```_MyAppState``` class. Flutter will internally call the ```build()``` method for it.
+
+Now we add a property to the ```_MyAppState``` class:
+
+```dart
+class _MyAppState extends State<MyApp> {
+  List<String> _products = ['Food Tester'];
+```
+
+We want that list to be converted to a list of cards. In order to do that, we will use the ```map()``` function of the list. It allows us to transform every element in the list into something new.
+
+```dart
+_products.map((element) => Card(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('assets/food.jpg'),
+                    Text(element)
+                  ],
+                ),
+              )) 
+```
+
+We take each element in the products list, and map it to a ```Card``` widget. For the widget's text, we can use ```element``` directly, since it is just a string.
+
+Because the ```children``` property expects an actual widget and not a "iterable<Card>" that we currently create, we additionally need to wrap all of this into a new Column widget and convert it to a List:
+
+```dart
+Column(
+                children: _products
+                    .map((element) => Card(
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset('assets/food.jpg'),
+                              Text(element)
+                            ],
+                          ),
+                        ))
+                    .toList(),
+              ),
+``` 
+
+Now a separate card will be created for each element in the ```_products``` list.
+
+##### Adding functionality to the button
+
+For now, let's add a hardcoded additional element to _products when the button is tapped:
+
+```dart
+child: RaisedButton(
+                  onPressed: () {
+                    _products.add('Advanced Food Tester');
+                  },
+```
+
+This alone however won't change anything visibly. Flutter doesn't watch all data by default, we have to tell it that we are changing the state of our ```StatefulWidget```.
+
+We do this by calling a special method, the ```setState()``` method, and then calling the code that changes our data inside of it.
+
+```dart
+ child: RaisedButton(
+                  onPressed: () {
+                    setState(() {
+                      _products.add('Advanced Food Tester');
+                    });
+                  },
+                  child: Text('Add Product'),
+                ),
+```
+
+Now pressing the button will actually add a new card.
+
+### Splitting up our code
+
+We typically don't put all of our code into one root widget or its state. We split our app into granular pieces and distribute them into multiple files. That way each file stays maintanable and readable.
+
+We can create a new file that holds just one class. When creating new files, we need to import everything we need again, it doesn't take over from our main.dart file.
+
+Let's create a separate file that holds our Card widget that displays one element from the products list. Our products widget actually just receives a list of products and that list might be changed -  but it is changed outside of our products widget.
+
+The widget itself can actually be a **stateless** widget.
+
+Our new products.dart file:
+
+```dart
+import 'package:flutter/material.dart';
+
+class Products extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+                children: _products
+                    .map((element) => Card(
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset('assets/food.jpg'),
+                              Text(element)
+                            ],
+                          ),
+                        ))
+                    .toList(),
+              );
+  }
+}
+```
+
+Now the only problem is that we don't know the ```_products``` list in this file. We have to get that data from outside. We can do this by adding a **constructor** and a **property** to our class:
+
+This would be a normal constructor:
+
+```dart
+Products() {
+
+  }
+```
+But we actually just want to take an argument in our constructor, and then write it to a property. We can do that in this short way, Flutter automatically sets the ```products``` property to the value of the constructor argument:
+
+```dart
+class Products extends StatelessWidget {
+  List<String> products;
+  
+  Products(this.products);
+```
+This allows us to pass data into ```Products``` and immediately bind it to a property.
+
+Because we have a StatelessWidget, we have to specifically mark our property as immutable (not changeable). We do this with the ```final``` keyword.
+
+```dart
+final List<String> products;
+```
+
+This tells Flutter that the value of ```products``` will never change after being initialised once.
+
+Let's create another file that will handle adding something to the ```products``` list.
+
+We create a ```_ProductManager``` class and its ```_ProductManagerState``` containing the button code:
+
+```dart
+import 'package:flutter/material.dart';
+
+class ProductManager extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {    
+    return _ProductManagerState();
+  }
+}
+
+class _ProductManagerState extends State<ProductManager> {
+  List<String> _products = ['Food Tester'];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      margin: EdgeInsets.all(10.0),
+      child: RaisedButton(
+        onPressed: () {
+          setState(() {
+            _products.add('Advanced Food Tester');
+          });
+        },
+        child: Text('Add Product'),
+      ),
+    );
+  }
+}
+```
+
+Now we want to use our ```Products``` class inside here. We have to import it:
+
+```dart
+import './products.dart';
+```
+The products widget (the list of cards) should appear below the button. We wrap both the button and the products widget in a Column and pass the ```_products``` list as an argument for the ```Products()``` constructor:
+
+```dart
+class _ProductManagerState extends State<ProductManager> {
+  List<String> _products = ['Food Tester'];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(children: [
+      Container(
+        margin: EdgeInsets.all(10.0),
+        child: RaisedButton(
+          onPressed: () {
+            setState(() {
+              _products.add('Advanced Food Tester');
+            });
+          },
+          child: Text('Add Product'),
+        ),
+      ),
+      Products(_products)
+    ]);
+  }
+}
+```
+
+Now we can use our new ```ProductManager``` in the main.dart file. Also, because we are not handling any state in the main.dart file anymore, we can change it to a ```StatelessWidget```.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_course/product_manager.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.deepOrangeAccent,
+          title: Text('EasyList'),
+        ),
+        body: ProductManager(),
+      ),
+    );
+  }
+}
+
+```
+
+The body of the Scaffold is now created completely in the ```ProductManager``` class. This code is now way easier to read and to manage.
+
+This is how we generally want to structure our Flutter apps:
+
+* We want to split up our user interfaces & components across multiple files
+* Work with Stateful and Stateless widgets
+* Use as many Stateless widgets as possible
+* A few selected Stateful widgets which manage our data
+
+STOPPED AT 2:19:55
+
 
 # Everything below title this needs to be reorganized
 # ------------------------------------------------------------------
