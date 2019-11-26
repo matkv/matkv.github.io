@@ -617,7 +617,50 @@ This is how we generally want to structure our Flutter apps:
 * Use as many Stateless widgets as possible
 * A few selected Stateful widgets which manage our data
 
-STOPPED AT 2:19:55
+
+What if our stateful widget wants to receive some data from outside?
+
+Let's say that we don't have the starting values for the  ```_products``` list in the ```product_manager``` file and instead get it from ```main.dart```.
+
+We again create a constructor and property for the ```ProductMananager``` class:
+
+```dart
+class ProductManager extends StatefulWidget {
+  final String startingProduct;
+  ProductManager(this.startingProduct);
+```
+
+The ```State``` changes in the ```_ProductManagerState``` class, not in the widget class. So here we have to use the ```final``` keyword. The only way to change it would be to recall the build function of the parent object.
+
+A helpful property that gives us access to all the properties of the widget that belongs to the state is called ```widget```.  But we can only use it inside of methods, not directly at the properties.
+
+The ```State``` class let's us implement some special methods, like the ```initState``` method.
+
+```dart
+ @override
+  void initState() {
+    super.initState();
+  }
+```
+
+This method will be called whenever this ```State``` object is created. It runs even before ```build()``` runs. So we can actually use the ```widget``` property inside here:
+
+```dart
+  @override
+  void initState() {
+    _products.add(widget.startingProduct);
+    super.initState();
+  }
+```
+
+Now in order to use our new functionality we obviously need to actually pass in an argument when creating a new ```ProductTester``` object in main.dart
+
+```dart
+
+        body: ProductManager('Food Tester New'),
+```
+
+Stopped at 2:26:56
 
 
 # Everything below title this needs to be reorganized
