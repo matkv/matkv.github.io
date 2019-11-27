@@ -660,8 +660,23 @@ Now in order to use our new functionality we obviously need to actually pass in 
         body: ProductManager('Food Tester New'),
 ```
 
-Stopped at 2:26:56
+### Stateless vs. Stateful Lifecycle
 
+#### Stateless Widget
+Input Data (Data can change externally) --> Widget --> Renders UI (Gets (re)-rendered when input data changes)
+
+It has a ```Constructor Function``` and a ```build()``` function to draw something on the screen. **That is all.** These are the two functions that will be called in the life of a stateless widget.
+
+#### Stateful Widget
+Input Data (Data can change externally) --> Widget & Internal State --> Renders UI (Gets (re)rendered when input data changes)
+
+It also has a ```Constructor Function```, then ```initState()``` is called before we call the ```build()``` method for the first time.
+
+After that we can call the ```setState()``` function (for example when a button is pressed or an HTTP request finishes) and that would rebuild it.
+
+We can also have some changes to our external data - in this case ```didUpdateWidget()``` would execute -  for example if we pass data to the widget - and then ```build()``` would run again.
+
+STOPPED AT 2:29:35
 
 # Everything below title this needs to be reorganized
 # ------------------------------------------------------------------
