@@ -17,6 +17,7 @@ permalink: /flutter/
 * [Write your first Flutter app part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)
 * [First Flutter App Example](https://matkv.github.io/flutterfirstapp.html)
 * [Flutter For Web Developers](https://flutter.dev/docs/get-started/flutter-for/web-devs)
+* [Dart Language](https:dartlang.org)
 
 # Flutter
 
@@ -676,7 +677,173 @@ After that we can call the ```setState()``` function (for example when a button 
 
 We can also have some changes to our external data - in this case ```didUpdateWidget()``` would execute -  for example if we pass data to the widget - and then ```build()``` would run again.
 
-STOPPED AT 2:29:35
+We can check this by printing some messages that will be visible in the debug console.
+
+The new ```didUpdateWidget()``` method will be executed whenever ProductManager receives new external data.
+
+```dart
+  @override
+  void didUpdateWidget(ProductManager oldWidget) {
+    // this will be executed whenever ProductManager receives new external data
+    super.didUpdateWidget(oldWidget);
+  }
+```
+
+This also gives us access to the old version of the widget - ```oldWidget``` - containing the data before the widget updated. This can be useful if we want to compare the new data to the old one.
+
+## Material Design
+
+Material Design is Google's design system. It is a design system with a lot of guides & best practises. We can still adjust the look to fit iOS's cupertino styles. It is **not** Google's style for everyone, it is highly customisable.
+
+It is built into Flutter.
+
+### Adjusting the theme & looks
+
+The ```theme``` property takes a ```ThemeData``` object.
+
+```dart
+return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.green
+      ),
+```
+
+The primarySwatch property is not just a color, many colors inside the app will be infered from this color.
+
+If we want to set that theme data for a certain element, we can then refer to the the ```Theme``` object.
+
+```dart
+ child: RaisedButton(
+          color: Theme.of(context).primaryColor,
+```
+
+This button would now use the color specified in our ```ThemeData```.
+
+#### Static properties
+
+When we use something like ```Colors.green``` we are actually using static properties - properties we can import from a class without instantiating the class.
+
+#### Named arguments
+
+So far, in our constructors we only used ***positional arguments***. If we only have one or two arguments, using them makes sense.
+
+For example:
+
+```dart
+ProductManager(this.startingProduct){
+  ...
+}
+```
+
+But if we want to use multiple arguments and want to target them by name (also allowing us **not** to set values for some of them) - we can wrap the argument in curly braces - making it a ***named*** argument:
+
+```dart
+ProductManager({this.startingProduct}){
+  ...
+}
+```
+
+Now when we want to set it - we can call it by its name:
+
+```dart
+body: ProductManager(startingProduct: 'Food Tester')
+```
+
+We can also set a default value for an argument by specifying it in the constructor (optional arguments):
+
+```dart
+ProductManager({this.startingProduct = 'Sweets Tester'}
+```
+
+This will set ```startingProduct``` to "Sweets Tester" unless it is set to something else when ```ProductManager``` is constructed.
+
+We can also set optional arguments for positional arguments. Here we have to wrap the positional argment in **square** braces. Curly braces for named arguments, square braces for positional arguments.
+
+```dart
+Products([this.products = const []]
+```
+
+```const``` needs to be added because we can't add to the list. (check again)
+
+## Raising an "event" / calling a method when a button is pressed
+
+We have a ```ProductControl``` that returns a button:
+
+```dart
+import 'package:flutter/material.dart';
+
+class ProductControl extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+          color: Theme.of(context).primaryColor,
+          onPressed: () {            
+          },
+          child: Text('Add Product'),
+        );
+  }
+}
+```
+
+We have a method called ```_addProduct``` that should add a string to a list.
+
+```dart
+void _addProduct(String product) {
+    setState(() {
+      _products.add(product);
+    });
+  }
+```
+
+Now we want to call ```addProduct``` whenever this button is pressed - but the button is in a different widget. The button is in ```ProductControl```.
+
+We can pass a reference down to the widget which should have access. We pass the reference to this function - but we don't call it (no parentheses)
+
+```dart
+    child: ProductControl(_addProduct),
+```
+
+We can store the reference to this function in our ```ProductControl``` class and receive it there through the constructor -  and set it as a property.
+
+```dart
+class ProductControl extends StatelessWidget{
+final Function addProduct;
+ProductControl(this.addProduct);
+```
+
+And now we can **call the addProduct method** and **pass an argument to it** inside of the ```ProductControl``` class when the button is pressed:
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+          color: Theme.of(context).primaryColor,
+          onPressed: () {       
+            addProduct('Sweets');     
+          },
+          child: Text('Add Product'),
+        );
+  }
+}
+```
+
+### The final keyword
+
+Even when we set a, for example, list to ```final```, it doesn't mean we can't add to the list - it only means that the list itself can't change. We are **not assigning a new list** but **editing the existing one**. Only the existing object in memory is changed.
+
+It does not create a new one.
+
+Changing a number that is marked as ```final``` for example, would not work because we would be actually assigning a new value.
+
+### The const keyword
+
+If we want to actually make it impossible to **add** values to the list, we use the ```const``` keyword.
+
+```dart
+final List<String> _products = const [];
+```
+
+Now we wouldn't be able to add to that list.
 
 # Everything below title this needs to be reorganized
 # ------------------------------------------------------------------
