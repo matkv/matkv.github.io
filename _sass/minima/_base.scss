@@ -108,7 +108,7 @@ a {
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: $brand-color;
   }
 
   &:hover {
@@ -150,9 +150,9 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #fff;
+  border: 1p solid $brand-color;
+  border-radius: 15px;
+  background-color: lighten(#1A1A1D,10%);
 }
 
 code {
