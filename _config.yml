@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "show_exerpts:"
   This website is a personal wiki for C#, Python, Kotlin, Flutter & Android development
   and for learning Linux & Blender.
 
-show_excerpts: false # set to true to show excerpts on the homepage
+show_excerpts: true # set to true to show excerpts on the homepage
 
 markdown: kramdown
 highlighter: rouge
@@ -13,7 +13,7 @@ highlighter: rouge
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
-  date_format: "%b %-d, %Y"
+  date_format: "%-d. %B %Y"
 
   # generate social links in footer
   social_links:
@@ -43,6 +43,7 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 header_pages:
+  - Blog.md
   - Android.md
   - Blender.md
   - Csharp.md
@@ -61,6 +62,7 @@ plugins:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
+
 exclude:
 - Gemfile
 - Gemfile.lock
@@ -69,6 +71,5 @@ exclude:
 - vendor/cache/
 - vendor/gems/
 - vendor/ruby/
-- _posts/
 - _includes/head.html
 - History.markdown

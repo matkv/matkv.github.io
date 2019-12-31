@@ -236,12 +236,13 @@
 
 .post-title,
 .post-content h1 {
-  @include relative-font-size(2.625);
-  letter-spacing: -1px;
+  font-weight: bold;
+  @include relative-font-size(1.75);
+  //letter-spacing: -1px;
   line-height: 1;
 
   @media screen and (min-width: $on-large) {
-    @include relative-font-size(2.625);
+    @include relative-font-size(1.75);
   }
 }
 
@@ -249,14 +250,17 @@
   margin-bottom: $spacing-unit;
 
   h2 {
-    @include relative-font-size(1.75);
+    font-weight: bold;
+    @include relative-font-size(1.5);
+    font-weight: bold;
 
     @media screen and (min-width: $on-large) {
-      @include relative-font-size(2);
+      @include relative-font-size(1.5);
     }
   }
 
   h3 {
+    font-weight: bold;
     @include relative-font-size(1.375);
 
     @media screen and (min-width: $on-large) {
@@ -265,6 +269,7 @@
   }
 
   h4 {
+    font-weight: bold;
     @include relative-font-size(1.125);
 
     @media screen and (min-width: $on-large) {
