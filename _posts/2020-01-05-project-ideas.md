@@ -3,6 +3,8 @@ layout: post
 title: "Project ideas"
 ---
 
+Here are some ideas for projects that I want to work on in the future and topics that I want to learn more about.
+
 * Some project using [Firebase](https://github.com/topics/firebase)
 * Python flask
 * Ruby on Rails
