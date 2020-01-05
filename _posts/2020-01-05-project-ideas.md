@@ -15,6 +15,7 @@ Here are some ideas for projects that I want to work on in the future and topics
     * [Synology Download station](https://www.reddit.com/r/raspberry_pi/comments/dej6jq/_/)
     * [Bittorrent box](https://www.howtogeek.com/142044/how-to-turn-a-raspberry-pi-into-an-always-on-bittorrent-box/)
 * Python Django
+* Twitter Bot (Node.js)
 * Flutter app
     * Drinking water reminder app
     * Workout app
