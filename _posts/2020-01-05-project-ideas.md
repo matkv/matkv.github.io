@@ -3,7 +3,7 @@ layout: post
 title: "Project ideas"
 ---
 
-Here are some ideas for projects that I want to work on in the future and topics that I want to learn more about.
+Here are some ideas for projects that I want to work on in the future and topics that I want to learn more about. Here are [all my starred topics](https://github.com/stars/matkv?filter=topics) on GitHub.
 
 * Some project using [Firebase](https://github.com/topics/firebase)
 * Python flask
@@ -20,4 +20,3 @@ Here are some ideas for projects that I want to work on in the future and topics
     * Workout app
     * Decider app
 
-[All my starred topics on GitHub](https://github.com/stars/matkv?filter=topics)

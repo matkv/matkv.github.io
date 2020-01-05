@@ -25,14 +25,14 @@ layout: default
             <br>
             <br>
             {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
+            {{ post.content }}
             {%- endif -%}
            
-            <p >
+            <!-- <p >
                 <a class="post-meta" href="{{ post.url | relative_url }}">
                     {{ "Read more" | escape }}
                 </a>
-            </p>
+            </p> -->
         </li>
         
         {%- endfor -%}
