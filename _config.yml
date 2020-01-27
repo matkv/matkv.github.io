@@ -51,6 +51,7 @@ header_pages:
   - Kotlin.md
   - Linux.md
   - Python.md
+  - PHP.md
 
 # Build settings
 theme: minima
