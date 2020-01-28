@@ -5,6 +5,11 @@ permalink: /php/
 toc: true
 ---
 
+**Table of contents**
+
+* Un-numbered table of contents
+{:toc}
+
 # PHP
 
 YouTube Tutorial: [Full Course](https://www.youtube.com/watch?v=OK_JCtrrv-c)
@@ -140,6 +145,175 @@ $zahl1 = 2.5;
 $zahl2 = 5.5;
 $ergebnis = $zahl1 * $zahl2;
 echo "Ergebnis: $ergebnis";
+?>
+```
+
+## $_GET und $_POST
+
+These two variables can be used to transfer values from one php page to another.
+
+### $_GET
+
+These values are transfered via the **URL**. We can use them like this:
+
+```php
+<?php
+$vorname = $_GET['vorname'];
+$nachname = $_GET['nachname'];
+echo "Hallo $vorname $nachname";
+?>
+```
+
+So if a page asks for ```get.php?vorname=Max&nachname=Meier```, these two variables will be used. They are separated with the ```$``` symbol, the order is not important.
+
+GET variables are usually used to implement dynamic values in links - for example showing a specific article with a unique ID in a webshop.
+
+### $_POST
+
+Unlike GET, POST variables are transfered via a **form**.
+
+On the first page, we can add our form:
+
+```php
+<form action="page2.php" method="post">
+Vorname: <input type="text" name="vorname" /><br />
+Nachname: <input type="text" name="nachname" /><br />
+<input type="Submit" value="Absenden" />
+</form>
+```
+
+And on page2.php, we can use the values that were transfered:
+```php
+<?php
+$vorname = $_POST["vorname"];
+$nachname = $_POST["nachname"];
+echo "Hallo $vorname $nachname";
+?>
+```
+
+We request the value with the exact name of the input field on the first page.
+
+GET and POST values can be combined. We could, for example, add a GET variable directly in the form on the first page ```<form action "page2.php?wochentag=Sonntag">```
+
+### Deciding between POST or GET
+
+Whenever we want to use a form, we should use POST. GET restricts the length because the values are added directly in the URL + the values are also seen directly in the URL.
+
+Advantages of GET - it should be used for simple information that should be transfered, such as a selection in a link for, for example, a specific id of an article.
+
+```html
+<a href="artikel.php?id=234">Das PHP Einsteiger Buch</a>
+```
+
+## If-clauses
+
+```php
+<?php
+$user = "Klaus";
+
+if($user == "Nils") 
+   {
+   echo "Hallo Nils";
+   } 
+else 
+   {
+   echo "Du bist nicht Nils!";
+   }
+?>
+```
+
+This example would return "Du bist nicht Nils!".
+
+Another example: A form that takes a password + checking if the password is the correct one on the second page.
+
+```html
+<form action="seite2.php" method="post">
+<input type="Password" name="passwort" />
+<input type="Submit" value="Absenden" />
+</form>
+```
+
+On the second page we check if the password is "geheim":
+
+```php
+<?php
+$passwort = $_POST["passwort"];
+ 
+if($passwort=="geheim")
+   {
+   echo "Herzlich Willkommen im internen Bereich";
+   }
+else
+   {
+   echo "Das Passwort ist leider falsch";
+   }
+?>
+```
+
+We can also use if clauses inside of other if clauses or inside an else clause:
+
+```php
+<?php
+$user = "Nils";
+
+if($user=="Nils")
+   {
+   echo "Hallo Nils";
+   }
+else
+   {
+   if($user=="Reimers")
+      {
+      echo "Hallo Herr Reimers";
+      }
+   else
+      {
+      echo "Du bist nicht Nils Reimers";
+      }
+   }
+?>
+```
+
+It is also possible to use "else if" - this is only checked if the previous if has not been true:
+
+```php
+<?php
+$user = "Nils";
+
+if($user=="Nils")
+   {
+   echo "Hallo Nils";
+   }
+else if($user == "Reimers")
+   {
+   echo "Hallo Herr Reimers";
+   }
+else if($user == "Meier")
+   {
+   echo "Hallo Herr Meier";
+   }
+else
+   {
+   echo "Du bist weder Herr Reimers noch Herr Meier";
+   }
+
+?>
+```
+
+We can also check if a condition has not been met:
+
+```php
+<?php
+$user = $_POST["user"];
+ 
+if($user!="")
+   {
+   echo "Herzlich Willkommen $user";
+   }
+else
+   {
+   echo "Das Feld User wurde nicht ausgefüllt";
+   }
 ?>
 ```
 
