@@ -205,3 +205,54 @@ Getting the names of all people that have children (an entry in the children tab
 ```sql
 SELECT DISTINCT p.vorname, p.zuname FROM personen p INNER JOIN kinder k ON k.pnr = p.pnr
 ```
+
+
+Another example:
+
+Creating a database:
+
+```sql
+CREATE database lap;
+```
+
+Creating a table:
+
+```sql
+use lap;
+
+CREATE TABLE testtable(id INTEGER NOT NULL, column1 VARCHAR(100), column2 VARCHAR(100), PRIMARY KEY (id));
+```
+
+Show the structure of the table:
+
+```sql
+describe testtable;
+
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| column1 | varchar(100) | YES  |     | NULL    |       |
+| column2 | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+```
+
+Making the "id" column auto increment itself so it doesn't have to be specified:
+
+```sql
+ALTER TABLE `testtable` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
+```
+
+Inserting a value into the table:
+
+```sql
+INSERT INTO testtable(column1, column2) VALUES ("test", "haha");
+
+#returns
++----+---------+---------+
+| id | column1 | column2 |
++----+---------+---------+
+|  1 | test    | haha    |
++----+---------+---------+
+```
+
