@@ -20,4 +20,5 @@ Here are some ideas for projects that I want to work on in the future and topics
     * Drinking water reminder app
     * Workout app
     * Decider app
+* Try out React Native as an alternative to Flutter
 
