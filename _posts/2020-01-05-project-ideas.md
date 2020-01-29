@@ -21,4 +21,5 @@ Here are some ideas for projects that I want to work on in the future and topics
     * Workout app
     * Decider app
 * Try out React Native as an alternative to Flutter
+* PyTorch
 
