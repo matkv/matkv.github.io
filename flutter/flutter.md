@@ -1,14 +1,13 @@
 ---
 layout: default
-title: C#
+title: Flutter
 has_children: true
-permalink: /csharp/
-nav_order: 5
+permalink: /flutter/
+nav_order: 6
 ---
 
-# C#
+# Flutter
 
 Sample text blablabla
-
 
 
