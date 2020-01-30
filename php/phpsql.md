@@ -8,4 +8,6 @@ nav_order: 8
 
 # PHP & SQL
 
-Sample text blablabla
+YouTube Tutorial: [Full Course](https://www.youtube.com/watch?v=OK_JCtrrv-c)
+
+Tutorial: [https://www.php-einfach.de/php-tutorial/erste-schritte/](https://www.php-einfach.de/php-tutorial/erste-schritte/)
