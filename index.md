@@ -1,18 +1,23 @@
 ---
-#
-# By default, content added below the "---" mark will appear in the home page
-# between the top bar and the list of recent posts.
-# To change the home page layout, edit the _layouts/home.html file.
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
-layout: page
+layout: default
 title: Home
-exclude: true
+nav_order: 1
+description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+permalink: /
 ---
 
-This website is a personal wiki for C#, Kotlin, Android, Python & Flutter development and for learning Linux & Blender and will be used for quick access to links and the personal notes I take while learning.
+# Home
+{: .fs-9 }
 
-## Links
+This website is a personal wiki for C#, Kotlin, Android, Python & Flutter development and for learning Linux & Blender and will be used for quick access to links and the personal notes I take while learning.
+{: .fs-6 .fw-300 }
+
+[GitHub](https://github.com/matkv){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
+---
+
+## Quick links
+
 * [Kotlin online sandbox](https://play.kotlinlang.org/)
 * [Python online compiler](https://repl.it/languages/python3)
 * [Android Developers](https://developer.android.com/)
