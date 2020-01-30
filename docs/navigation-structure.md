@@ -2,6 +2,7 @@
 layout: default
 title: Navigation Structure
 nav_order: 5
+nav_exclude: true
 ---
 
 # Navigation Structure
@@ -200,8 +201,8 @@ To add a auxiliary navigation item to your site (in the upper right on all pages
 ```yaml
 # Aux links for the upper right navigation
 aux_links:
-  "Just the Docs on GitHub":
-    - "//github.com/pmarsceill/just-the-docs"
+  "GitHub":
+    - "//github.com/matkv/"
 ```
 
 ---

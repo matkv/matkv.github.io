@@ -2,6 +2,7 @@
 layout: default
 title: Configuration
 nav_order: 2
+nav_exclude: true
 ---
 
 # Configuration
@@ -46,8 +47,8 @@ search_tokenizer_separator: /[\s/]+/
 ```yaml
 # Aux links for the upper right navigation
 aux_links:
-  "Just the Docs on GitHub":
-    - "//github.com/pmarsceill/just-the-docs"
+  "GitHub":
+    - "//github.com/matkv/"
 ```
 
 ## Heading anchor links
