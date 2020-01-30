@@ -3,7 +3,7 @@ layout: default
 title: Blender
 has_children: true
 permalink: /blender/
-nav_order: 4
+nav_order: 5
 ---
 
 # Blender
