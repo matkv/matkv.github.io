@@ -806,3 +806,123 @@ foreach($mitarbeiter AS $vorname => $nachname) {
    echo "$vorname $nachname <br>";
 }
 ```
+
+## Reading files
+
+We can read the content of a file using the ```file_get_contents()``` function:
+
+```php
+<?php
+$zitate = file_get_contents('zitate.txt');
+echo $zitate;
+?>
+```
+
+This however, would return the whole text without any line breaks. In order to convert the line breaks in the file to html line breaks, we use the ```nl2br()``` function:
+
+```php
+<?php
+$zitate = file_get_contents('zitate.txt');
+echo nl2br($zitate);
+?>
+```
+
+### Reading files line by line
+
+We can use the ```file()``` function to read each line one by one and save each as an array element:
+
+```php
+<?php
+$zitate = file("zitate.txt");
+for($i=0;$i < count($zitate); $i++){
+   echo $i.": ".$zitate[$i]."<br><br>";
+}
+?>
+```
+
+If we, for example, wanted to get a random entry in this array, we could use the ```rand()``` function:
+
+```php
+<?php
+$zitate = file("zitate.txt");
+$zitat_nummer = rand(0, count($zitate)-1);
+echo $zitate[$zitat_nummer];
+?>
+```
+
+## Writing files
+
+The ```file_put_contents()``` functions takes a file name as the first argument, and the data that should be written as the second argument.
+
+If the file does not exist yet, it will be created.
+
+```php
+<?php
+$name = $_GET["name"];
+$zeile = "Per GET wurde der Name $name übergeben \r\n";
+file_put_contents("beispiel.txt", $zeile);
+echo "beispiel.txt wurde überschrieben";
+?>
+```
+
+Example of reading a file, gettings its value and increasing it by 1, then writing the new value back into file:
+
+```php
+<?php
+$counter = file_get_contents("counter.txt"); //Einlesen des Wertes
+$counter++; //Wert um 1 erhöhen
+file_put_contents("counter.txt", $counter); //Abspeichern des Wertes
+echo "Diese Datei wurde bereits $counter mal aufgerufen";
+?>
+```
+
+### Appending to a file
+
+```php
+<?php
+$name = $_GET["name"];
+$zeile = "Per GET wurde der Name $name übergeben \r\n";
+file_put_contents("beispiel.txt", $zeile, FILE_APPEND);
+echo "beispiel.txt aktualisiert";
+?>
+```
+
+This doesn't overwrite the file but appends the value to the existing file.
+
+Example of using the ```implode()``` function with the ```file_put_contents()``` function to save values entered in a form:
+
+```php
+<?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$passwort = $_POST['passwort'];
+$user_info = array($email, $passwort, $name);
+ 
+if(!empty($name) AND !empty($email) and !empty($passwort)) {
+   $eintrag = implode(";", $user_info)."\r\n";
+   file_put_contents("users.txt", $eintrag, FILE_APPEND);
+   echo "$email wurde erfolgreich registriert";
+} else {
+   echo "Bitte alle Felder ausfüllen";
+}
+?>
+```
+
+This way, each entry in the users.txt file would look like: ```email;passwort;name```
+
+Let's say we want to check for these usernames and passwords in a login page:
+
+```php
+<?php
+$email = $_POST["email"];
+$passwort = $_POST["passwort"];
+ 
+$users = file("users.txt");
+foreach($users AS $line)  {
+   $user_info = explode(";", $line);
+   if($user_info[0] == $email AND $user_info[1] == $passwort) {
+       echo "Hallo ".$user_info[2];
+   }
+}
+?>
+```
