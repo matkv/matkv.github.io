@@ -1046,3 +1046,121 @@ verschickt";
 mail($empfaenger, $betreff, $text, $from);
 ?>
 ```
+
+## Search and replace
+
+### Search for text
+
+```strpos()``` returns the position of the first appearance of the searched text, or ```false``` if the text has not been found. Is **is** case sensitive (```stripos()``` is insensitive) & also returns true if the word is found inside another word.
+
+```php
+<?php
+$text = "Dies ist ein kleines Beispiel zum Durchsuchen. Eine andere Möglichkeit lernen wir später.";
+$position = strpos($text, "ein");
+echo "Gefunden an Position: $position";
+?>
+```
+
+Another example how we can use this:
+
+```php
+<?php
+$text = "Dies ist ein kleines Beispiel zum Durchsuchen. Eine andere Möglichkeit lernen wir später.";
+$suchwort = "Ich existiere nicht";
+$position = strpos($text, $suchwort);
+
+if($position === false) {
+   echo "String wurde nicht gefunden";
+} else {
+   echo "Gefunden an Position: $position";
+}
+?>
+```
+
+(Here we again use "===" because otherwise 0 would be interpreted as false, but 0 can be valid here bc the searched word could be in the first position).
+
+### Return part of a string
+
+With ```substr()``` we can extract just a part of some text.
+
+The three parameters are the text, the starting position, and the length. The length parameter is optional.
+
+```php
+<?php
+$text = "Dies ist ein kleines Beispiel zum Durchsuchen. Eine andere Möglichkeit lernen wir später.";
+echo substr($text, 9, 11); //Ausgabe: ein kleines
+?>
+```
+
+This would return "ein kleines".
+
+Some more examples:
+
+```php
+<?php
+$text = "Dies ist ein kleines Beispiel zum Durchsuchen. Eine andere Möglichkeit lernen wir später.";
+echo substr($text, 0, 15)."<br />"; //Gibt den Anfang des Textes aus
+echo substr($text, 12)."<br />"; //Gibt alles ab dem 12. Zeichen aus
+echo substr($text, strlen($text)-15)."<br />"; //Gibt die letzten 15 Zeichen aus
+?>
+```
+
+Instead of using the length of the string and substracting an amount of it, we can just set the start value as negative - this way we **count from the end of the text**.
+
+If the value of the length is negative, everything until the end of the text is returned.
+
+```php
+<?php
+$text = "Dies ist ein kleines Beispiel zum Durchsuchen. Eine andere Möglichkeit lernen wir später.";
+echo substr($text, 0, 15)."<br />"; //Gibt den Anfang des Textes aus
+echo substr($text, 12)."<br />"; //Gibt alles ab dem 12. Zeichen aus
+echo substr($text, strlen($text)-15)."<br />"; //Gibt die letzten 15 Zeichen aus
+?>
+```
+
+### Replacing
+
+```str_replace()``` let's us search and replace a value. It **is** case sensitive (case insensitive would be ```str_ireplace()```).
+
+```php
+<?php
+$text = "Dies ist ein kleines Beispiel";
+$text = str_replace("ist", "war", $text);
+echo $text;
+?>
+```
+
+**Caution:** This can also replace values inside other words - For example replacing "er" with "sie" - would result in "Peter" turning into "Petsie".
+
+One option to prevent that would be adding spaces in front and after the search word.
+
+We can also replace multiple values at once using arrays:
+
+```php
+<?php
+$text= "Sie sollten täglich Früchte, Gemüse und Ballaststoffe essen.";
+$gesund = array("Früchte", "Gemüse", "Ballaststoffe");
+$lecker = array("Pizza", "Bier", "Eiscreme");
+
+$new_text = str_replace($gesund, $lecker, $text); 
+echo $new_text; //Sie sollten täglich Pizza, Bier und Eiscreme essen.
+?>
+```
+
+Example of replacing line breaks using both the ```str_replace()``` function and the ```nl2br()``` function:
+
+```php
+<?php
+$text = $_POST['text'];
+echo "Unformatiert sieht der Text so aus: <br />";
+echo $text;
+ 
+echo "<br /><br /> Mit str_replace sieht dies so aus: <br />";
+echo str_replace("\n", "<br />", $text);
+ 
+echo "<br /><br /> Mit nl2br sieht dies so aus: <br />";
+echo nl2br($text);
+?>
+```
+
+Stopped at sessions chapter.
