@@ -926,3 +926,92 @@ foreach($users AS $line)  {
 }
 ?>
 ```
+
+## Time and date
+
+```php
+<?php
+$timestamp = time();
+echo $timestamp;
+?>
+```
+
+This returns the UNIX timestamp.
+
+```php
+<?php
+$timestamp = time();
+$datum = date("d.m.Y - H:i", $timestamp);
+echo $datum;
+?>
+```
+
+The ```date()``` function formats the timestamp into a formatted date: 03.02.2020 - 18:25. 
+
+If we don't add a second parameter to the ```date()``` function, it will automatically use the current timestamp.
+
+Getting the duration of the timestamp at 500 seconds - in minutes:
+
+```php
+<?php
+$timestamp = "500";
+echo round($timestamp / 60);
+?>
+```
+This would return 8.
+
+### Getting the weekday
+
+```php
+<?php
+$tag = date("w");
+?>
+```
+
+This returns 0 - 7 (starts at 0 for Sunday). 
+
+In order to get the german weekday as a normal string, we'd have to create an array with all weekdays and then choose the value corresponding to the current weekday number.
+
+### Getting the timestamp from a string
+
+The ```strtotime()``` function lets us convert a string to a timestamp:
+
+```php
+<?php
+echo strtotime("09 October 2015")."<br />";
+echo strtotime("09.10.2015")."<br />";
+echo strtotime("09.10.2015 14:03:02");
+?>
+```
+
+### Working with timestamps
+
+Getting the timestamp of the current time + an hour:
+
+```php
+<?php
+$in_einer_stunde = time() + 60*60;
+echo "In einer Stunde ist es: ".date("H:i:s", $in_einer_stunde);
+?>
+```
+
+We add "60*60" seconds to the current timestamp (60 seconds for each of the 60 minutes).
+
+We can also use the ```strtotime()``` function to work with timestamps:
+
+```php
+<?php
+echo strtotime("+1 day")."<br />";
+echo strtotime("+1 week")."<br />";
+echo strtotime("+1 week 2 days 4 hours 2 seconds")."<br />";
+echo strtotime("next Thursday")."<br />";
+echo strtotime("last Monday")."<br />";
+?>
+```
+
+```php
+<?php
+$heute_in_einem_monat = strtotime("+1 month");
+echo date("d.m.Y", $heute_in_einem_monat)."<br />";
+?>
+```
