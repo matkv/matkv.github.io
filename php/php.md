@@ -537,3 +537,272 @@ $wochentage["mo"] = "Monday";
 echo $wochentage["mo"];
 ?>
 ```
+
+### Adding more values to an array
+
+We can add more values by using "[]" after the array name:
+
+```php
+<?php
+$mitarbeiter = array("Bob","Peter");
+$mitarbeiter[] = "Lisa";
+
+echo $mitarbeiter[2];
+?>
+```
+
+This would return "Lisa". This would also work for an empty array.
+
+For associative array, we have to specify the key first:
+
+```php
+<?php
+$mitarbeiter = array(
+   "Bob" => "Bob Meier",
+   "Peter" => "Peter Schröder");
+$mitarbeiter["Lisa"] = "Lisa Müller";
+
+echo $mitarbeiter["Lisa"];
+?>
+```
+
+This would return "Lisa Müller".
+
+### Returning & formatting array values with implode()
+
+With the ```implode()``` function, we can combine all elements of an array to a string. We can also specify what should be inserted between each value:
+
+```php
+<?php
+$namen = array("Paul", "Max", "Hans");
+
+echo "Namen per Komma trennen: <br>";
+$namenStr = implode(", ", $namen);
+echo $namenStr; 
+
+echo "<br><br>";
+echo "Ein Name pro Zeile: <br>";
+echo implode("<br>", $namen);
+```
+
+This would return:
+
+```
+Namen per Komma trennen:
+Paul, Max, Hans
+
+Ein Name pro Zeile:
+Paul
+Max
+Hans
+```
+
+### Creating an array from a string
+
+We can do the reverse with the ```explode()``` function. We can specify a character & the string will be split at this character and the parts will be added to an array.
+
+```php
+<?php
+$text = "Paul,Max,Hannes";
+$namen = explode(",", $text ); //Konvertierung des Strings in ein Array
+echo "<pre>"; var_dump($namen); echo "</pre>"; //Formartierte Ausgabe des Arrays
+
+
+//Ersetze die 1. Person durch neuen Namen
+$namen[1] = "Lisa";
+
+//Verwandel das Array zurück in einen String
+$text = implode(", ", $namen);
+echo $text;
+```
+
+### Multi-dimensional arrays
+
+A multidimensional array is an array that contains other arrays:
+
+```php
+<?php
+$mitarbeiter = array(
+  array("Klaus", "Zabel"),
+  array("Arnie", "Meier"),
+  array("Willi", "Brand")
+);
+
+//Daten ausgeben
+echo "Vorname: ".$mitarbeiter[0][0];
+echo " Nachname: ".$mitarbeiter[0][1];
+?>
+```
+
+This would return "Vorname: Klaus Nachname: Zabel".
+
+This also works with associative arrays:
+
+```php
+<?php
+$mitarbeiter = array();
+$mitarbeiter[] = array("Vorname"=>"Klaus",
+                       "Nachname"=>"Zabel");
+
+$mitarbeiter[] = array("Vorname"=>"Arnie",
+                       "Nachname"=>"Meier");
+
+$mitarbeiter[] = array("Vorname"=>"Willi",
+                       "Nachname"=>"Brand");
+
+//Daten ausgeben
+echo "Vorname: ".$mitarbeiter[0]["Vorname"];
+echo " Nachname: ".$mitarbeiter[0]["Nachname"];
+?>
+```
+
+### Searching through arrays
+
+By using ```in_array()``` we can check if a value exists in an array:
+
+```php
+<?php
+$mitarbeiter = array("Bob","Peter","Lisa");
+$name = "Bob";
+if(in_array($name,$mitarbeiter)) {
+   echo "Der Name $name ist in dem Array enthalten";
+}
+?>
+```
+
+It returns ```true``` if the search was successful.
+
+For associative arrays, we use ```array_key_exists()```
+
+```php
+<?php
+$mitarbeiter = array("Bob" => "Baumeister", "Klaus" => "Muster");
+$key = "Bob";
+
+if(array_key_exists($key, $mitarbeiter)) {
+  echo "Das Element $key hat den Wert: ".$mitarbeiter[$key];
+} else {
+  echo "Das Array hat keinen Schlüssel $key";
+}
+?>
+```
+
+### Iterating over all values of an array
+
+The ```count()``` function lets us get the number of elements in an array.
+
+We usually use a **for-loop** for normal arrays and a **foreach-loop** for associative arrays (because we don't have normal indexes anymore):
+
+```php
+<?php
+$namen = array("Klaus", "Anna", "Dieter");
+
+echo "<br> Durchlaufen des Arrays mittels for-Schleife: ";
+for($i=0; $i<count($namen); $i++) {
+  echo $namen[$i].", ";
+}
+
+echo "<br> Durchlaufen des Arrays mittels foreach-Schleife: ";
+foreach($namen AS $name) {
+  echo $name.", ";
+}
+?>
+```
+
+### Sorting arrays
+
+By using ```sort()``` we can sort ascending, ```rsort()``` lets us sort descending:
+
+```php
+<?php
+$namen = array("Klaus", "Dieter", "Anna", "Melissa", "arne");
+
+sort($namen);
+echo implode(", ", $namen);
+?>
+```
+
+This returns: Anna, Dieter, Klaus, Melissa, arne
+
+### Other useful array functions & examples using arrays
+
+```shuffle()``` randomizes the order of the values in an array.
+
+**Getting the last entry of an array**
+
+```php
+<?php
+$mitarbeiter = array("Bob","Peter");
+
+echo "Letzer Eintrag des Arrays: ".$mitarbeiter[count($mitarbeiter)-1];
+?>
+```
+
+**Echo-ing all values in an array using a for loop or a while loop**
+
+```php
+echo "Ausgabe des Arrays mittels for-Schleife: <br>";
+for($i=0; $i < count($mitarbeiter); $i++) {
+   echo $mitarbeiter[$i]."<br>";
+}
+
+$i = 0;
+while($i < count($mitarbeiter)) {
+   echo $mitarbeiter[$i]."<br>";
+   $i++;
+}
+```
+
+For an associative array, we would use a **foreach loop**:
+
+```php
+<?php
+$mitarbeiter = array("Klaus" => "Müller", "Bob" => "Baumeister");
+
+foreach($mitarbeiter AS $vorname => $nachname) {
+ echo "$vorname $nachname <br>";
+}
+?>
+```
+
+For **multidimensional arrays** we would have to use nested foreach loop:
+
+```php
+foreach($unternehmen AS $abteilung => $mitarbeiter_der_abteilung) {
+  echo "Mitarbeiter der Abteilung: $abteilung <br>";
+  foreach($mitarbeiter_der_abteilung AS $mitarbeiter) {
+    echo "$mitarbeiter <br>";
+  }
+  echo "<br>";
+}
+```
+
+**Sorting arrays**
+
+* asort() - sorts a-z (works for associative too)
+* arsort() - sorts z-a (works for associative too)
+* ksort() - sorts the key a-z
+* krsort() - sorts the key z-a
+* natsort() -  sorts a-z (natural order)
+* natcasesort() - sorts a-z natural order without upper/lowercase
+* sort() - sorts a-z (doesn't work for associative)
+* sort() - sorts z-a (doesn't work for associative)
+* shuffle() - mixes values randomly
+
+```asort()``` and ```arsort()``` maintain the correct association of a value with its key. It is not lost after sorting.
+
+Normal order -> for example: 1, 10, 12, 2, 25
+
+Natural order -> for example: 1, 2, 10, 12, 25
+
+Sorting the keys of an array:
+
+```php
+ksort($mitarbeiter);
+
+//Array ausgeben
+echo "Ausgabe des Arrays mittels foreach-Schleife: <br>";
+foreach($mitarbeiter AS $vorname => $nachname) {
+   echo "$vorname $nachname <br>";
+}
+```
