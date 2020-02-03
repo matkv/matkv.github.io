@@ -1015,3 +1015,34 @@ $heute_in_einem_monat = strtotime("+1 month");
 echo date("d.m.Y", $heute_in_einem_monat)."<br />";
 ?>
 ```
+
+## Sending e-mails with PHP
+
+There is a pre-built php functions that lets servers send e-mails:
+
+```php
+<?php
+$empfaenger = "empfaenger@domain.de";
+$betreff = "Die Mail-Funktion";
+$from = "From: Vorname Nachname <absender@domain.de>";
+$text = "Hier lernt Ihr, wie man mit PHP Mails verschickt";
+ 
+mail($empfaenger, $betreff, $text, $from);
+?>
+```
+
+If the e-mail should be a html email we have to add some more info to the $from variable:
+
+```php
+<?php
+$empfaenger = "empfaenger@domain.de";
+$betreff = "Die Mail-Funktion";
+$from = "From: Vorname Nachname <absender@domain.de>\r\n";
+$from .= "Reply-To: antwort@domain.de\r\n";
+$from .= "Content-Type: text/html\r\n";
+$text = "Hier lernt Ihr, wie man mit <b>PHP</b> Mails
+verschickt";
+ 
+mail($empfaenger, $betreff, $text, $from);
+?>
+```
