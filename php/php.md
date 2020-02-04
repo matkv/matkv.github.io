@@ -1163,4 +1163,92 @@ echo nl2br($text);
 ?>
 ```
 
-Stopped at sessions chapter.
+## Sessions
+
+HTTP doesn't save information between multiple accesses of the website of a user. So if we want to save certain information of a user, for example the username they used to log in -  we use **PHP-Sessions**.
+
+Every user gets a specific **session-id**, so that the webserver is able to identify the user. The session id is either added to the URL as a GET-Parameter or, more commonly and safer, saved in a lokal cookie.
+
+This way the webserver can store information (session-variables) about the visitor, for example which username they use or which articles are in the shopping cart.
+
+The user **can't** see the session variables.
+
+### Register a session
+
+```php
+<?php
+session_start();
+?>
+```
+
+It is recommended to have this code at the top, before we access any sessions values.
+
+In order to save a value over multiple page-views inside the session, we do this:
+
+```php
+<?php
+$_SESSION['name'] = "wert";
+?>
+```
+
+And we access it like this:
+
+```php
+<?php
+$name = $_SESSION['name'];
+echo $name;
+?>
+```
+
+**Important**: whenever we work with sessions somewhere, ```session_start()``` has to have been run already! On ANY site.
+
+### Checking if a session variable is registered already
+
+```php
+<?php
+session_start();
+ 
+ 
+if (!isset($_SESSION['visited'])) {
+   echo "Du hast diese Seite noch nicht besucht";
+   $_SESSION['visited'] = true;
+} else {
+   echo "Du hast diese Seite zuvor schon aufgerufen";
+}
+?>
+```
+
+Another example:
+
+```php
+<?php
+session_start();
+ 
+ 
+if (isset($_SESSION['username'])) {
+   echo "Herzlich Willkommen ".$_SESSION['username'];
+} else {
+   echo "Bitte erst einloggen";
+}
+?>
+```
+
+### Deleting a session
+
+Deleting all session data
+
+```php
+<?php
+session_destroy();
+?>
+```
+
+This is useful when the user wants to log out for example.
+
+If we just want to delete one variable we use ```unset()```.
+
+```php
+<?php
+unset($_SESSION['name']);
+?>
+```
