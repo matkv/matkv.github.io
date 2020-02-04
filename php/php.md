@@ -1365,3 +1365,70 @@ echo "Neuer Text: ".$ergebnis[1];
 If we want to return a lot of values, using an associative array might be easier than using numbers for choosing the value we want.
 
 We generally don't want to use ```echo``` functions inside of function. Rather use the return value and echo it where there function was called.
+
+## Embedding other php files
+
+Generally we want to split up our code into different files. In order to change the menu, we should only have to change one file - not having to make the same change in multiple files.
+
+We can use the ```include()``` and ```require()``` functions, to load code from a different file. If the file is not found, include shows a warning, but require **cancels the code execution.**
+
+We could have these files:
+
+**header.php**
+```php
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meine Website</title>
+    <style>
+      .content {border: 1px solid #000000;}
+    </style>
+  </head>
+```
+
+**menu.php**
+```php
+<body>
+Menu:
+<ul>
+<li><a href="seite1.php">Seite 1</a></li>
+<li><a href="seite2.php">Seite 2</a></li>
+</ul>
+```
+**footer.php**
+
+```php
+Footer: <a href="impressum.php">Impressum</a> | <a href="contact.php">Kontakt</a>
+</body>
+</html>
+```
+
+Using these files would look like this:
+
+```php
+<?php
+include('header.php');
+include('menu.php');
+?>
+<div class="content">Hier steht der Inhalt von Seite 1</div>
+ 
+<?php
+include('footer.php');
+?>
+```
+
+We have to keep in mind that the code from these files is basically **copied** into the current file. So if we use the same variable names in the loaded file and the current one, they can be overwritten.
+
+The include functions should always be at the beginning of the script (except if the file contains purely html)
+
+It makes sense to move functions and variables that we are using often into separate files and load them with include in several different places.
+
+For example:
+
+* a config file for central configuration values
+* a file for connecting to the database
+* a file for all your own functions
+
+
+Stopped at file upload
