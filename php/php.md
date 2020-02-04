@@ -1252,3 +1252,116 @@ If we just want to delete one variable we use ```unset()```.
 unset($_SESSION['name']);
 ?>
 ```
+
+## Own functions
+
+```php
+<?php
+function zusammenrechnen($a, $b) {
+   $addition = $a+$b;
+   $multiplikation = $a*$b;
+   if($addition > $multiplikation) {
+      return $addition;
+   } else {
+      return $multiplikation;
+   }
+}
+echo zusammenrechnen(1,10)."<br />";
+echo zusammenrechnen(2,3)."<br />";
+echo zusammenrechnen(-5,8)."<br />";
+?>
+```
+
+A function starts with the key word ```function``` followed by the name + optional parameters.
+
+The variables used inside a function are only valid inside it - if we change a variable inside a function, it won't affect variables outside of it (except for global variables).
+
+So this, for example, **won't** work:
+
+```php
+<?php
+$wochentag = "Sonntag";
+
+function begruessung($name) {
+   echo "Hallo $name, ich wünsche dir einen schönen $wochentag";
+}
+
+begruessung("John");
+?>
+```
+
+because the variable "wochentag" is not known inside the function.
+
+We would have to actually pass it into the function:
+
+```php
+<?php
+$wochentag = "Sonntag";
+
+function begruessung($name, $tag_in_der_woche) {
+   echo "Hallo $name, ich wünsche dir einen schönen $tag_in_der_woche";
+}
+
+begruessung("John", $wochentag);
+?>
+```
+
+### Optional parameters
+
+To define a parameter as optional, we simply give it a default value.
+
+```php
+<?php
+function zeilenumbrueche_ersetzen($text, $neues_zeichen = "<br />") {
+   return str_replace("\n", $neues_zeichen, $text);
+}
+
+$text = "Dies \n ist \n ein \n Beispiel \n\n";
+echo zeilenumbrueche_ersetzen($text);
+echo zeilenumbrueche_ersetzen($text, " --UMBRUCH --");
+?>
+```
+
+We can either pass both parameters, or just the $text parameter.
+
+We **can't mix optional and non-optional parameters** -  we first define all non-optional parameters, and then we can define optional ones too.
+
+It makes sense to define the most used parameters first.
+
+### Return values
+
+Once the return value is returned, the function does not continue.
+
+```php
+<?php
+function rechnen($a, $b) {
+   if($a == 0 or $b == 0) {
+      return null;
+   }
+   
+   echo "Berechne Ergebnis für $a und $b:";
+   return 10.0/$a + 100.0/$b;
+}
+```
+
+If we want to return multiple values, we use an array.
+
+```php
+<?php
+function suchen_und_ersetzen($text, $suche, $ersetzen) {
+   $anzahl = substr_count($text, $suche);
+   $neuer_text = str_replace($suche, $ersetzen, $text);
+   return array($anzahl, $neuer_text);
+}
+
+$text = "Dies ist ein Beispiel und es ist ein ziehmlich einfaches Beispiel";
+$ergebnis = suchen_und_ersetzen($text, "ist", "war");
+
+echo "Anzahl: ".$ergebnis[0]."<br />";
+echo "Neuer Text: ".$ergebnis[1];
+?>
+```
+
+If we want to return a lot of values, using an associative array might be easier than using numbers for choosing the value we want.
+
+We generally don't want to use ```echo``` functions inside of function. Rather use the return value and echo it where there function was called.
