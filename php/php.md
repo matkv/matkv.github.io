@@ -1449,3 +1449,53 @@ move_uploaded_file($_FILES['datei']['tmp_name'], 'upload/'.$_FILES['datei']['nam
 ```
 
 For safety reasons we however shouldn't actually use this file.
+
+## Cookies
+
+Just like Sessions, we can use cookies to save certain data over muliple site accesses. But by using **cookies** we can save data for even longer than just the session - cookies are saved as a file on the computer of the visitor.
+
+They are, for example, used to remember and identify a user even after the session, when he has already left the homepage.
+
+### Setting a cookie
+
+```php
+<?php
+setcookie("username","Max",0); 
+?>
+```
+
+The first value is the name of the cookie, the second value is the value saved inside it. The third value is the time how long the cookie is valid.
+
+0 means the cookie is valid until the user closes the browser.
+
+To set the time, we do something like this:
+
+```php
+<?php 
+setcookie("username","Max",time()+(3600*24));
+?>
+```
+
+This cookie would last 24 hours.
+
+### Reading a cookie
+
+```php
+<?php 
+$cookie = $_COOKIE["username"]; 
+echo "Der Inhalt des Cookies: $cookie"; 
+?>
+```
+
+### Deleting a cookie
+
+```php
+<?php
+setcookie("username","",time() - 3600);
+```
+
+To delete a cookie, we have to specify a time in the past. This way the browser sees the cookie as invalid and deletes it.
+
+**Warning** - Cookies can be faked and edited!
+
+Cookies are often used to implement a "Stay signed in" function. A cookie with a certain value is saved on the computer of the user and is then again read and the user is logged in.
