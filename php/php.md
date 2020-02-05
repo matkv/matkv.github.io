@@ -1431,4 +1431,21 @@ For example:
 * a file for all your own functions
 
 
-Stopped at file upload
+## File upload
+
+```php
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<input type="file" name="datei"><br>
+<input type="submit" value="Hochladen">
+</form>
+``` 
+
+We have to set the ```enctype``` tag.
+
+We can then accesss the uploaded file within the ```$_FILES``` variable.
+
+```php
+move_uploaded_file($_FILES['datei']['tmp_name'], 'upload/'.$_FILES['datei']['name']);
+```
+
+For safety reasons we however shouldn't actually use this file.
