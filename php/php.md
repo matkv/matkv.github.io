@@ -7,6 +7,9 @@ nav_order: 1
 
 # PHP
 
+* [Object Oriented PHP](https://www.php-einfach.de/experte/objektorientierte-programmierung-oop/)
+* [SQL Tutorial](https://www.php-einfach.de/mysql-tutorial/)
+
 
 
 Example of using PHP code:
@@ -1604,3 +1607,21 @@ We can also write ```[0-9]``` to specify number ranges.
 We can check for letters the same way.
 
 There are lists online that specify lists of regex expressions, such as length, the first letter, the end, the exact number of occurences...
+
+## Additional functions
+
+### SQL functions
+
+**$pdo = new PDO('mysql:host=localhost;dbname=databasename', 'username', 'password');** - Erzeugt eine neue Datenbankverbindung mittels PDO.
+
+**$pdo->query($sql)** - Sendet einen SQL-Query an die Datenbank.
+
+**$statement = $pdo->prepare($sql)** - Erzeugt ein prepared Statement.
+
+**$statement->execute($parameter)** - Führt ein prepared Statement aus.
+
+**$statement->fetch()** - Iteriert über das Ergebnis des prepared Statements.
+
+**$statement->rowCount()** - Gibt die Anzahl der Zeilen des Ergebnisses zurück.
+
+**$statement->errorInfo()** - Gibt bei einem SQL-Fehler die Fehlerinformationen zurück.
