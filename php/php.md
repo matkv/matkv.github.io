@@ -1499,3 +1499,108 @@ To delete a cookie, we have to specify a time in the past. This way the browser 
 **Warning** - Cookies can be faked and edited!
 
 Cookies are often used to implement a "Stay signed in" function. A cookie with a certain value is saved on the computer of the user and is then again read and the user is logged in.
+
+## Constants
+
+A constant can't be changed once it is defined. This is useful if we want to specify, for example, the length of an entry or the version of something.
+
+```php
+<?php
+const VERSION = "1.0.5";
+const MAX_EMAIL_LENGTH = 10;
+
+$email = "info@php-einfach.de";
+
+echo "Dies ist Version ".VERSION;
+
+if( strlen($email) > MAX_EMAIL_LENGTH) {
+   echo "<br /> Die E-Mail darf maximal ".MAX_EMAIL_LENGTH." Zeichen lang sein.";
+}
+?>
+```
+
+We usually name constants with UPPER CASE LETTERS.
+
+### Class constants
+
+Class constants are only valid in combination with a class and are accessed  by  ```classname::NAME_OF_THE_CONSTANT``` or, when inside the class ```self:NAME_OF_THE_CONSTANT```
+
+```php
+<?php
+class User {
+	const VERSION = "1.0.5";
+	const MAX_EMAIL_LENGTH = 10;
+
+	public function checkEmail($email) {
+		if(strlen($email) > self::MAX_EMAIL_LENGTH) {
+			return false;
+		}
+		return true;
+	}
+}
+
+$user = new User();
+echo "Die maximale Länge ist ".User::MAX_EMAIL_LENGTH."<br />";
+
+if(!$user->checkEmail("info@php-einfach.de")) {
+	echo "Die E-Mail Adresse ist zu lang";
+}
+?>
+```
+
+### Pre-defined constants
+
+There are some pre defined constants, for example the OS or the PHP version:
+
+```php
+<?php
+echo "Aktuelle PHP-Version: ".PHP_VERSION;
+echo "<br /> Betriebssystem des Server: ".PHP_OS;
+echo "<br /> Maximale Größe für ein Integer: ".PHP_INT_SIZE;
+?>
+```
+
+```php
+<?php
+echo "Aktuelle Programmzeile: ".__LINE__;
+echo "<br /> Aktuelle Programmzeile: ".__LINE__;
+echo "<br /> Aktueller Dateiname: ".__FILE__;
+echo "<br /> Aktuelles Verzeichnis: ".__DIR__;
+?>
+```
+
+The ```LINE``` constant returns the current code line, for example.
+
+## Regular expressions
+
+Regular expressions let us check for patterns in a string. The regular expressions starts and ends with a ```/```.
+
+The function ```preg_mach()``` returns true if the pattern has been found, ```preg_replace()``` lets us replace certain text areas.
+
+```php
+<?php
+$text = "Wir haben 13 Katzen";
+$muster = "/1[0123456789]/";
+if(preg_match($muster, $text)) {
+   echo "Eingabe enthält das Muster";
+} else {
+   echo "Eingabe enthält nicht das Muster";
+}
+?>
+```
+
+This checks if the string has a number between 10 and 19.
+
+Another example:
+
+```php
+$muster = "/[89][0123456789][13579]/";
+```
+
+This checks if the first number is 8 or 9, then any number from 0 to 9, and the last number has to be uneven, so 1,3,5 or 7.
+
+We can also write ```[0-9]``` to specify number ranges.
+
+We can check for letters the same way.
+
+There are lists online that specify lists of regex expressions, such as length, the first letter, the end, the exact number of occurences...
