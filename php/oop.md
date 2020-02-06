@@ -274,3 +274,48 @@ class Buch extends Produkt {
 ```
 
 The "deepest" version of the overwritten method will be called.
+
+## Get & Set Methods
+
+Get and set methods let us protect our class variables from access from outside.
+
+```php
+<?php
+class User {
+	protected $email;
+	protected $password;
+	
+	public function getEmail() {
+		return $this->email;
+	}
+	
+	public function setEmail($email) {
+		$this->email = $email;
+	}
+}
+?>
+```
+
+```php
+<?php
+$user = new User();
+$user->setEmail("info@php-einfach.de");
+$user->setPassword("geheim");
+ 
+echo "Die E-Mail-Adresse: ".$user->getEmail();
+?>
+```
+
+The big advantage in using getters and setters is that we can add additional checks to prevent the variable from getting an invalid value.
+
+```php
+public function setEmail($email) {
+		if(filter_var($email, FILTER_VALIDATE_EMAIL)) { //eine gültige E-Mail-Adresse wurde übergeben 
+			$this->email = $email;
+			return true;
+		}
+		return false;
+	}
+```
+
+By leaving out a set-method, we can make something **read only**.
