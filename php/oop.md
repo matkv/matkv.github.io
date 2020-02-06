@@ -177,3 +177,100 @@ $playstation = Product::find("Playstation");
 echo $playstation->price;
 ?>
 ```
+
+## Inheritance
+
+We use the ```extends``` keyword:
+
+```php
+<?php
+class Oberklasse {
+	function HelloWorld() {
+		echo "Hello World <br>";	
+	}
+}
+
+class Unterklasse extends Oberklasse {
+	function HelloWorld() {
+		parent::HelloWorld();
+		echo "Hallo Welt <br>";				
+	}
+}
+
+class Unterunterklasse extends Unterklasse {
+	function HelloWorld() {
+		echo "Bonjour monde <br>";	
+	}
+}
+
+$object = new Unterklasse();
+$object->HelloWorld();
+?>
+```
+
+We use ```parent::functionName()``` to access functions of the parent class.
+
+Another example:
+
+```php
+<?php
+class Produkt {
+	public $titel;
+	public $preis;
+	
+	function gesamtpreis($stueckzahl) {
+		$gesamtpreis = $this->preis*$stueckzahl;
+		
+		if($stueckzahl >= 10) {
+			$gesamtpreis = $gesamtpreis*0.8;
+		}
+		return $gesamtpreis;
+	}
+}
+
+class Buch extends Produkt {
+	public $autor;
+}
+
+$buch = new Buch();
+$buch->titel = "PHP lernen leicht gemacht";
+$buch->preis = 20.00;
+$menge = 5;
+echo  "$menge Bücher von <i>$buch->titel</i> je $buch->preis Euro  kosten: ".$buch->gesamtpreis($menge)."<br>";
+
+```
+
+We can also overwrite functions in children classes:
+
+```php
+<?php
+class Produkt {
+	public $titel;
+	public $preis;
+	
+	function gesamtpreis($stueckzahl) {
+		$gesamtpreis = $this->preis*$stueckzahl*$this->mengenrabatt($stueckzahl);
+		return $gesamtpreis;
+	}
+	
+	function mengenrabatt($stueckzahl) {
+		return 1;
+	}
+}
+
+class Buch extends Produkt {
+	public $autor;
+	
+	function mengenrabatt($stueckzahl) {
+		if($stueckzahl >= 10) {
+			return 0.8; //20% Rabatt
+		} else {
+			return 1;
+		}
+	}
+}
+
+?>
+```
+
+The "deepest" version of the overwritten method will be called.
