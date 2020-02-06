@@ -319,3 +319,129 @@ public function setEmail($email) {
 ```
 
 By leaving out a set-method, we can make something **read only**.
+
+## Model-View-Controller
+
+One of the most common design patterns in PHP. The class design is split into 3 parts:
+
+* Model - the data layer - responsible for loading and saving data from the database
+* View - responsible for the presentation of the data - for exxample html and css templates - no actual logic/database queries or checking of values
+* Controller - combines the model with the view. defines the logic of the application.
+
+Goals of MVC - separation of data in our model (creating, searching, deleting), presentation of that data (html pages) and application logic (for example getting user input and sending it to the model).
+
+**Example**
+
+Model:
+
+```php
+<?php
+//$pdo enthält die Datenbankverbindung
+ 
+class User {
+   // Klasse zur Abbildung eurer Benutzer
+ 
+   public static function newUser($email, $vorname, $nachname, $passwort) {
+   }
+ 
+   public static function findByEmail($email) {
+   }
+ 
+ 
+   public function delete() {
+   }
+ 
+   public function setPassword($newPassword) {
+   }
+ 
+}
+ 
+class Product {
+   // Klasse zur Darstellung von Produkten im Online-Shop ähnlich wie oben
+   //...
+}
+ 
+class ProductOrder {
+   // Klasse zur Darstellung neuer Produktbestellungen
+   public function __constructor(User $user) {
+   }
+ 
+   public function addProduct(Product $product) {
+   }
+ 
+   public function addProductById($productId) {
+   }
+ 
+   public function buy() {
+   } 
+}
+?>
+```
+
+```php
+<?php
+$max = User::findByEmail("max@muster.de");
+ 
+$order = new ProductOrder($max);
+$order->addProductById(23);
+$order->addProductById(42);
+ 
+if($order->buy()) {
+   echo "Gesamtpreis der Bestellung: ".$order->price();
+}
+ 
+?>
+```
+
+View:
+
+```php
+<?php
+$max = User::findByEmail("max@muster.de");
+ 
+$order = new ProductOrder($max);
+$order->addProductById(23);
+$order->addProductById(42);
+ 
+if($order->buy()) {
+   include("order-successful.view.php");
+} else {
+   include("order-failed.view.php");
+}
+?>
+```
+
+Controller:
+
+```php
+<?php
+class UserController {
+ public function registerNewUser($email, $password) {
+ //Entsprechende Überprüfungen und SQL Queries zum Registrieren des Nutzers
+ //Gibt z.B. true zurück, falls die Registrierung funktioniert hat
+ }
+ 
+ public function changeUserPassword(User $user, $new_password) {
+ //Ändert das Benutzerpasswort für den Nutzer $user
+ }
+ 
+ public function sendNewPassword(User $user) {
+ //Sendet dem Benutzer ein neues Passwort zu
+ }
+}
+?>
+```
+
+```php
+<?php
+$userController = new UserController();
+ 
+if($userController->registerNewUser($_POST['email'], $_POST['password'])) {
+  include("templates/registerSuccess.inc.php");
+} else {
+  include("templates/registerFailed.inc.php");
+}
+?>
+```
+
+The MVC is useful for bigger applications, with very big applications we might want to use a MVC Framework like Laravel.
