@@ -113,3 +113,67 @@ echo "Das Objekt von $max->name wurde erstellt am $max->erstellungsdatum";
 The ```__construct()``` is called as soon as the object is created. We can use it to, for example, specify properties.
 
 In this example, if we want to create a new ```User``` object, we have to call ```new User("Name");```, or ```new User("Name", "Email");```
+
+## Static methods and properties
+
+```Static``` methods or properties are not connected to a specific object, but are **global**.
+
+```php
+<?php
+class User {
+	public $name;
+	
+	public static $allUsers = array();
+	
+	public static function numberOfUsers() {
+		return count(self::$allUsers);
+	}
+	
+	public static function createNewUser($name) {
+		if(strlen($name) < 10) {
+			echo "Nur User mit langen Namen sind erlaubt!<br>";
+			return null;
+		} else {
+			$user = new User();
+			$user->name = $name;
+		
+			self::$allUsers[] = $user;
+		
+			return $user;
+		}
+	}
+}
+
+User::createNewUser("Max Mustermann");
+echo "Anzahl Nutzer: ".User::numberOfUsers()."<br>";
+User::createNewUser("Lisa Kurz");
+echo "Anzahl Nutzer: ".User::numberOfUsers()."<br>";
+?>
+```
+
+We should use static methods to encapsulate certain functionality - for example:
+
+```php
+<?php
+class User {
+ // Entsprechender Code für eure Benutzerverwaltung
+}
+ 
+class Product {
+ // Entsprechender Code für eure Produktverwaltung
+}
+ 
+//Erstellung neuer Nutzer
+User::createNewUser("Max Muster", "max@muster.de", "geheimes passwort");
+ 
+//Finden eines Users
+$lisa = User::find("lisa@muster.de");
+echo $lisa->email; 
+ 
+//Erzeugen eines Produkts
+Product::createNewProduct("Spielekonsole", "19,99 Euro");
+ 
+$playstation = Product::find("Playstation");
+echo $playstation->price;
+?>
+```
