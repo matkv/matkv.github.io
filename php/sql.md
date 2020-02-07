@@ -139,4 +139,339 @@ unique -> this makes sure that the email column can't have duplicate values.
 
 DEFAULT CURRENT_TIMESTAMP -> when creating a new record, the current time will be entered by default
 
-Stopped at https://www.php-einfach.de/mysql-tutorial/phpmyadmin-datenbank-verwalten/phpmyadmin-tabelle-erstellen/
+Most important types:
+
+* tinyint - -128 to 127 (useful for saving boolean values true/false)
+* int
+* double
+* varchar - text (up to 65 000 characters)
+* text - text, 65 000, no need to specify the length
+* longtext - up until 16 billion characters
+* blob - binary large object, saving binary data
+* date - in the format YYYY-MM-DD
+* time - in the format HH:MM:SS
+* datetime/timestamp - 'YYY-MM-DD HH:MM:SS' 
+
+We can specify the length and a default value (for timestamp or datetime columns we can for example set the CURRENT_TIMESTAMP as the default value),
+
+For our "id" column we usually want to set the index as "primary".
+
+A_I -> auto increment
+
+## Accessing a MySQL database
+
+There are two main ways to access a mysql database
+
+* MySQLi (MySQL Improved Extension)
+* PDO (PHP Data Objects)
+
+PDO is newer, but the differences aren't huge.
+
+### Connecting to the database
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+?>
+```
+
+Usually we want to use the "UTF-8" charset. We can manually specify it:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'username', 'password');
+?>
+```
+
+### SQL statements
+
+We can sort results using ```ORDER BY```
+
+```php
+$sql = "SELECT * FROM users ORDER BY vorname, nachname";
+```
+
+We can limit the results using ```LIMIT```
+
+```php
+$sql = "SELECT * FROM users ORDER BY vorname LIMIT 5, 3";
+```
+
+This example uses an offset additionally, so we skip the first 5 results, and then show 3.
+
+We can filter our results using the ```WHERE``` keyword:
+
+```php
+$sql = "SELECT * FROM users WHERE id = 1";
+```
+
+We can use ```AND``` and ```OR``` to further specify the results we want:
+
+```php
+$sql = "SELECT * FROM users WHERE (vorname = 'Max' AND nachname = 'Mustermann') OR (email = 'info@php-einfach.de)"; 
+```
+
+More examples:
+
+* ```WHERE id < 5```
+* ```WHERE id >= 7```
+* ```WHERE id IN (2,3,5,7)```
+* ```WHERE id NOT IN (4,6,8)```
+* ```WHERE last_order IS NULL```
+* ```WHERE last_order IS NOT NULL```
+
+
+Adding a ```%``` - the wildcard character, stands for a any amount of characters:
+
+```php 
+$sql = "SELECT * FROM users WHERE vorname LIKE 'Ma%'";
+```
+
+This gets all the entries where the "vorname" starts with "Ma" + any amount of additional characters.
+
+An example of a simple search for the database:
+
+```php
+$sql = "SELECT * FROM tabelle WHERE spalte LIKE '%Suchwort%'"; 
+```
+
+In order to prevent duplicate results, we can use the ```DISTINCT``` keyword:
+
+```php
+$sql = "SELECT DISTINCT vorname FROM users ORDER BY vorname";
+```
+
+## Prepared statements
+
+In order to avoid SQL Injections, we use prepared statements whenever we work with inputs from the user.
+
+Let's say we have an sql statement that gets a user with a specific id & and we get that id with a $_GET request.
+
+```php
+$sql = "SELECT * FROM users WHERE id = $id";
+```
+
+If the user adds "seite.php?id=1 OR id > 1" to the end of the URL, we would actually get **all** the users, not just the ones with a specific id.
+
+In order to prevent that, we use **prepared statements**.
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+
+if(isset($_GET['id'])) {
+   $id = $_GET['id'];
+} else {
+   die("Bitte eine ?id übergeben");
+} 
+
+echo "User mit der ID $id: <br>";
+$statement = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+$statement->execute(array($id));   
+while($row = $statement->fetch()) {
+   echo $row['vorname']." ".$row['nachname']."<br />";
+   echo "E-Mail: ".$row['email']."<br /><br />";
+}
+?>
+```
+
+The "?" stands for the value that we want to receive from the user.
+
+Let's try the same example as earlier: the database would now check in advance if there is an entry with the id "1 OR id > 1" - this is not the case so we wouldn't show all results by mistake.
+
+### Named parameters
+
+Apart from using the "?" to get anonymous parameters, we can use **named parameters**. We use a colon followed by the name.
+
+This is useful if we have multiple parameters in one SQL query.
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+
+$vorname = "Max";
+$nachname = "Mustermann";
+$email = "info@php-einfach.de";
+
+$statement = $pdo->prepare("SELECT * FROM users WHERE vorname = :vorname OR nachname = :nachname OR email = :email");
+$statement->execute(array('vorname' => $vorname, 'nachname' => $nachname, 'email' => $email));   
+while($row = $statement->fetch()) {
+   echo $row['vorname']." ".$row['nachname']."<br />";
+   echo "E-Mail: ".$row['email']."<br /><br />";
+}
+?>
+```
+
+Another example. Here we have to turn of emulated statements of PDO, because unlike the actual prepared statements of MySQL, the emulated statements of PDO don't distinguish between a number or a string for the parameter?
+
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+$statement = $pdo->prepare("SELECT * FROM users LIMIT :limit");
+$statement->execute(array('limit' => 5));   
+while($row = $statement->fetch()) {
+   echo $row['vorname']." ".$row['nachname']."<br />";
+   echo "E-Mail: ".$row['email']."<br /><br />";
+}
+?>
+```
+
+## Inserting values
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("INSERT INTO tabelle (spalte1, spalte2, splate3) VALUES (?, ?, ?)");
+$statement->execute(array('wert1', 'wert2', 'wert3'));   
+?>
+```
+
+Actual example with values:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("INSERT INTO users (email, vorname, nachname) VALUES (?, ?, ?)");
+$statement->execute(array('info@php-einfach.de', 'Klaus', 'Neumann'));   
+?>
+```
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+$neuer_user = array();
+$neuer_user['email'] = 'info@php-einfach.de';
+$neuer_user['vorname'] = 'Klaus';
+$neuer_user['nachname'] = 'Neumann';
+$neuer_user['weiteres_feld'] = 'Dieses wird beim Eintragen ignoriert';
+ 
+$statement = $pdo->prepare("INSERT INTO users (email, vorname, nachname) VALUES (:email, :vorname, :nachname)");
+$statement->execute($neuer_user);   
+?>
+```
+
+Inserting multiple rows at once:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("INSERT INTO users (email, vorname, nachname) VALUES (:email, :vorname, :nachname)");
+ 
+for($i=0;$i<10; $i++) {
+   $neuer_user = array('email' => 'email'.$i, 'vorname' => 'Vorname'.$i, 'nachname' => 'Nachname'.$i)
+   $statement->execute($neuer_user);   
+}
+?>
+```
+
+This would create users with names from "Vorname0" to "Vorname9".
+
+
+Usually we always have a column with the id, which is auto incremented.
+
+In order to get the newest id, we can use the ```$pdo->lastInsertId()``` function:
+
+```php
+$neue_id = $pdo->lastInsertId();
+echo "Neuer Nutzer mit id $neue_id angelegt";
+```
+
+## Updating values
+
+Updating a single row:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET email = ? WHERE id = ?");
+$statement->execute(array('neu@php-einfach.de', 1));
+?>
+```
+
+We can also use named parameters:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET email = :email_neu WHERE id = :id");
+$statement->execute(array('id' => 1, 'email_neu' => 'neu@php-einfach.de'));
+?>
+```
+
+Let's say we always want to change the entry with the id "1"
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET email = :email_neu WHERE id = 1");
+$statement->execute(array('email_neu' => 'neu@php-einfach.de'));
+?>
+```
+
+This would update the email of **all** users:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET email = :email_neu");
+$statement->execute(array('email_neu' => 'neu@php-einfach.de'));
+?>
+```
+
+Updating the email of all users named "Max":
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET email = :email_neu WHERE vorname = :vorname");
+$statement->execute(array('email_neu' => 'neu@php-einfach.de', 'vorname' => 'Max'));
+?>
+```
+
+### Updating multiple fields
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET vorname = :vorname_neu, email = :email_neu, nachname = :nachname_neu WHERE id = :id");
+$statement->execute(array('id' => 1, 'email_neu' => 'neu@php-einfach.de', 'vorname_neu' => 'Neuer Vorname', 'nachname_neu' => 'Neuer Nachname'));
+?>
+```
+
+### Updating fields with values of other fields
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET vorname = nachname WHERE id = :id");
+$statement->execute(array('id' => 1));
+?>
+```
+
+Here we set the value of "vorname" to the value of "nachname".
+
+Another example: incrementing the amount of logins:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE users SET anzahl_logins = anzahl_logins+1 WHERE id = :id");
+$statement->execute(array('id' => 1));
+?>
+```
+
+Stopped at https://www.php-einfach.de/mysql-tutorial/daten-loeschen/
