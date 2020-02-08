@@ -669,3 +669,42 @@ The most important date and time functions:
 * NOW()
 * DATE_SUB()
 * DATE_ADD()
+
+## MySQL error messages
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password'); 
+
+$statement = $pdo->prepare("SELECT email, password FROM user");
+
+if($statement->execute()) {
+    while($row = $statement->fetch()) {
+        echo $row['email']."<br />";
+    }    
+} else {
+    echo "SQL Error <br />";
+    echo $statement->queryString."<br />";
+    echo $statement->errorInfo()[2];
+}
+?>
+```
+
+Execute() returns true if the statement works, else we show the error message.
+
+In a productive environment we might actually also want to log the errors:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("INSERT INTO tabelle (spalte1, spalte2, splate3) VALUES (?, ?, ?)");
+if($statement->execute(array('wert1', 'wert2', 'wert3'))) {
+  echo "Dein Eintrag wurde erfolgreich gespeichert.";
+} else {
+  echo "Leider ist ein Fehler beim Abspeichern aufgetreten. Sollte das Problem häufiger auftreten, bitte kontaktieren unseren Administrator unter admin@website.de";
+  $error = date("Y-m-d H:i:s")." - ".__FILE__." - ".$statement->queryString." - ".$statement->errorInfo()[2]."\n";
+  file_put_contents("sqlerrors.log", $error, FILE_APPEND); 
+}   
+?>
+```
