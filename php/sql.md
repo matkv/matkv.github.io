@@ -790,3 +790,64 @@ It's basically the same as a left join, but the table that is added in the join 
 ### INNER JOIN
 
 For an inner join we need to find a fitting row in the tables - if nothing is found, nothing is returned?
+
+## Indexes
+
+Important in big tables + if we often use WHERE or ORDER BY statements.
+
+Options for indexes:
+
+* Primary Key: only one per table - usually the id column. No difference to the "Unique" index except that there can be only one per table
+* Unique: Columns with this type can only have distinct values - no two rows can have the same value in that column - useful for "email" columns for example
+* Index: duplicate values are possible
+* Fulltext: used for columns with long text, every word is indexed and search for text or part-words is possible. Makes sense to use this if we work with the full-text-search of MySQL
+
+We can either set the index when creating the table or later on in phpMyAdmin.
+
+Indexes help with performance - they save all values of a column in an additional data structure. Specific values can be retrieved a lot more efficiently.
+
+Disadvantages are additional storage space needed +  INSERT, UPDATE and DELETE commands are slowed down bc the index might have to be updated.
+
+### When to use an index
+
+When we have more than 1000 or 10 000 records it makes sense to create an index for all columns that **regularly** occur in WHERE or ORDER BY statements.
+
+## MySQL Normalization
+
+The "Normalformen" give us rules, how we should split up our data.
+
+The goal is to reduce unneccesary data redunancy and improve consistency.
+
+Generally only one piece of information should be saved per column.
+
+Each entity in our database should have its own table.
+
+### 1.NF
+
+Achieved if **no column has multiple values**. For example splitting up **one** column with the address into street, house number, PLZ, city ....
+
+### 2.NF
+
+1st NF + Each column is functionally independent of the primary key column
+
+For example we have a table for songs of different albums
+
+We have an albumid, songnr, album, artist, song
+
+We can identify each record with either the albumid or the songnr. But the album and interpret are only dependent on the albumid, not of the songnr.
+
+So in order to reach the 2.NF, we split up our data into a "songs" table, containing an id, the albumid and the song
+
+And another table "album" containing an id, the album name and the artist.
+
+### 3.NF
+
+2.NF + no "non-key" columns are dependent on other "non-key" values.
+
+Each "non-key" column is **only directly dependent** on the primary key.
+
+In the earlier example, the "artist" column is dependend on the "album name".
+
+By creating a separate table for the artist containing the id and the artist name +  having a separate table "album" with the id, the album name and the artist id.
+
+If we now, for example, want to add the founding date of a band, we only have to change one entry per band/artist.
