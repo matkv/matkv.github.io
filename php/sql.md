@@ -851,3 +851,57 @@ In the earlier example, the "artist" column is dependend on the "album name".
 By creating a separate table for the artist containing the id and the artist name +  having a separate table "album" with the id, the album name and the artist id.
 
 If we now, for example, want to add the founding date of a band, we only have to change one entry per band/artist.
+
+## Foreign keys
+
+Primary keys identify each record in a table clearly.
+
+**Foreign keys** instead refer to foreign keys of other tables.
+
+### Creating a foreign key in phpMyAdmin
+
+We create a column that is UNIQUE or INDEX. Under the "structure" tab of a table, we select a column of a different table and set it as a foreign key.
+
+We can leave the name empty, and we can set what should happen on DELETE and on UPDATE:
+
+For DELETE:
+
+* Restrict - deletion is prevented if there are entries with that foreign key
+* CASCADE - the entries are deleted
+* SET NULL - the column is set NULL for all entries with it
+* NO ACTION - identical to RESTRICT
+
+For UPDATE:
+
+* Restrict - the update is prevented
+* CASCADE - the new value is accepted and taken
+
+## PDO Examples
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=databasename', 'username', 'password');
+ 
+$sql = "SELECT * FROM users";
+foreach ($pdo->query($sql) as $row) {
+   echo $row['email']."<br />";
+   echo $row['vorname']."<br />";
+   echo $row['nachname']."<br /><br />";
+}
+?>
+```
+
+Prepared statements:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=databasename', 'username', 'password');
+ 
+$statement = $pdo->prepare("SELECT * FROM users WHERE vorname = :vorname AND nachname = :nachname");
+$statement->execute(array(':vorname' => 'Max', ':nachname' => 'Mustermann'));   
+while($row = $statement->fetch()) {
+   echo $row['vorname']." ".$row['nachname']."<br />";
+   echo "E-Mail: ".$row['email']."<br /><br />";
+}
+?>
+```
