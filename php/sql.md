@@ -708,3 +708,85 @@ if($statement->execute(array('wert1', 'wert2', 'wert3'))) {
 }   
 ?>
 ```
+
+## Closing the database connection
+
+Generally it is not necessary to close the connection to the database. It is automatically closed at the end of the script.
+
+If we however still want to manually do it:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=datenbankname', 'username', 'passwort');
+// hier die Verbindung nutzen
+ 
+ 
+// Die Verbindung wie folgt schließen
+$pdo = null;
+?>
+```
+
+## MySQL Joins
+
+With join statements we can combine values from several tables.
+
+With a single statement we can access multiple tables - all tables need to be connected by a single commmon column.
+
+There are four join types:
+
+* INNER JOIN
+* LEFT JOIN
+* RIGHT JOIN
+* FULL JOIN
+
+The left join is probably the most common and used join.
+
+Lets say we have two tables:
+
+* users: id, vorname, nachname
+* kommentare: id, beitragid, userid, text
+
+We want all the comments for the post number 1 + the name of the author.
+
+```php
+SELECT kommentare.*, users.vorname, users.nachname FROM kommentare
+LEFT JOIN users ON kommentare.userid = users.id
+WHERE beitragid = 1
+```
+
+We select everything from the kommentare table, and then we check if there is a fitting id in the users table compared to the kommentare.userid value.
+
+Here is the full code for this example:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("SELECT kommentare.*, users.vorname, users.nachname FROM kommentare
+LEFT JOIN users ON kommentare.userid = users.id
+WHERE beitragid = 1");
+$statement->execute(array('beitragid' => 1));   
+while($kommentar = $statement->fetch()) {
+   echo $kommentar['vorname']." ".$kommentar['nachname']." schrieb:<br />";
+   echo $kommentar['text']."<br /><br />";
+}
+?>
+```
+
+### JOINS with identically named columns
+
+```php
+SELECT buecher.name AS buch_name, autoren.name AS autor_name FROM buecher
+LEFT JOIN autoren ON autoren.id = buecher.autorid
+```
+
+We can specify an alternative name using the ```AS``` keyword if we have columns with the same name in different tables.
+
+
+### RIGHT JOIN
+
+It's basically the same as a left join, but the table that is added in the join is the basis. Every right join can be written as a left join. The left join is usually more intuitive.
+
+### INNER JOIN
+
+For an inner join we need to find a fitting row in the tables - if nothing is found, nothing is returned?
