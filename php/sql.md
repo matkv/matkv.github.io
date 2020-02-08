@@ -474,4 +474,80 @@ $statement->execute(array('id' => 1));
 ?>
 ```
 
-Stopped at https://www.php-einfach.de/mysql-tutorial/daten-loeschen/
+## Deleting values
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("DELETE FROM tabelle WHERE spalte = ?");
+$statement->execute(array('Wert für Spalte'));
+?>
+```
+
+We can also use where clauses and multiple conditions:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("DELETE FROM users WHERE vorname = :vorname AND nachname = :nachname");
+$statement->execute(array('vorname' => 'Max', 'nachname' => 'Mustermann')); //Löscht Benutzer mit Namen Max Mustermann
+?>
+```
+
+## Counting entries
+
+To count entries we can use ```rowCount()```
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+  
+$statement = $pdo->prepare("SELECT * FROM users WHERE vorname = ?");
+$statement->execute(array('Max')); 
+$anzahl_user = $statement->rowCount();
+echo "Es wurden $anzahl_user Benutzer gefunden";
+?>
+```
+
+This also works with UPDATE and DELETE commands.
+
+We should only use this PDO ```rowCount()``` method if we want to actually output the data - else all the data is sent to PHP and then it is counted. For performance reasons we should instead use the SQL command ```COUNT()``` because in that case MySQL actually just counts the entries.
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+
+$statement = $pdo->prepare("SELECT COUNT(*) AS anzahl FROM users");
+$statement->execute();  
+$row = $statement->fetch();
+echo "Es wurden ".$row['anzahl']." User gefunden";
+?>
+```
+
+By using **AS**, we **name** the results of the COUNT operation to "anzahl".
+
+### Getting distinct entries
+
+```php
+SELECT COUNT(DISTINCT vorname) AS anzahl FROM user
+```
+
+### Grouping entries by certain criteria
+
+```php
+SELECT nachname, COUNT(*) AS anzahl FROM users GROUP BY nachname
+```
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+
+$statement = $pdo->prepare("SELECT nachname, COUNT(*) AS anzahl FROM users WHERE vorname = ? GROUP BY nachname");
+$statement->execute(array('Max'));  
+while($row = $statement->fetch()) {
+  echo $row['nachname'].": ".$row['anzahl']." User<br />";
+}
+?>
+```
