@@ -551,3 +551,121 @@ while($row = $statement->fetch()) {
 }
 ?>
 ```
+
+## MySQL date and time
+
+The ```TIME``` type can be used for pure time (HH:MM:SS).
+
+```DATE``` is used for pure date values (YYYY-MM-DD)
+
+```TIMESTAMP``` uses UTC time - if we need multiple timezones, we should use this
+
+Example of saving the current date:
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("UPDATE tabelle SET zeitpunkt = ? WHERE id = 1");
+$statement->execute(array(date('Y-m-d H:i:s'));
+?>
+```
+
+If we have a DATE field, we use only "Y-m-d", if we have a TIME field, we use only "H:i:s".
+
+There are 3 ways to format a date:
+
+* strtotime() 
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("SELECT zeitpunkt FROM tabelle");
+$statement->execute(array());  
+while($row = $statement->fetch()) {
+   echo date('d.m.y H:i:s', strtotime($row['zeitpunkt']))."<br />";
+}
+ 
+?>
+```
+
+* Using DateTime
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+$statement = $pdo->prepare("SELECT zeitpunkt FROM tabelle");
+$statement->execute(array());  
+while($row = $statement->fetch()) {
+   $date = new DateTime($row['zeitpunkt']);
+   echo $date->format('d.m.y H:i:s')."<br />";
+}
+ 
+?>
+```
+
+* Formatting a MySQL timestamp
+
+```php
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'username', 'password');
+ 
+//Variante 1, mittels dem SQL-Befehl UNIX_TIMESTAMP
+$statement = $pdo->prepare("SELECT UNIX_TIMESTAMP(zeitpunkt) AS zeitpunkt FROM tabelle");
+$statement->execute(array());  
+while($row = $statement->fetch()) {
+   echo date('d.m.y H:i:s', $row['zeitpunkt']))."<br />";
+}
+ 
+?>
+```
+
+If the date we're working with doesn't fall between 1970 and 2038:
+
+```php
+SELECT DATE_FORMAT(zeitpunkt, '%d.%m.%Y %H:%i:%s') AS zeitpunkt FROM tabelle
+```
+
+### Setting a standard value of the current date
+
+For TIMESTAMP or DATETIME fields we can set the ```CURRENT_TIMESTAMP``` to represent the current time and date as default - we set this in phpMyAdmin.
+
+
+### Updating the current timestamp
+
+We can use the MySQL function ```NOW()``` to get the current time.
+
+```php
+UPDATE tabelle SET spalte1 = 'Wert1', spalte2 = 'Wert2', ..., updated_at = NOW() WHERE id = 1
+```
+
+If we want to update a field everytime an update happens, we can set the phpMyAdmin attribute "on update" to "CURRENT_TIMESTAMP".
+
+### DAY(), MONTH(), YEAR()
+
+Getting all the entries for march:
+
+```php
+SELECT * FROM tabelle WHERE MONTH(created_at) = 3
+```
+
+Another example:
+
+```php
+SELECT * FROM tabelle WHERE YEAR(created_at) >= 2010 AND YEAR(created_at) <= 2015
+```
+
+The most important date and time functions:
+
+* SECOND()
+* MINUTE()
+* HOUR()
+* DAY()
+* DAYOFWEEK()
+* MONTH()
+* YEAR()
+* NOW()
+* DATE_SUB()
+* DATE_ADD()
