@@ -8099,7 +8099,7 @@ r=P.bg(12,k,j,l)
 q=P.bg(61,k,j,l)
 p=P.bg(61,(16711680&c.gq(c))>>>16,(65280&c.gq(c))>>>8,(255&c.gq(c))>>>0)
 o=b.hU(P.bg(222,(16711680&c.gq(c))>>>16,(65280&c.gq(c))>>>8,(255&c.gq(c))>>>0))
-return K.Nv(t,a,n,s,r,n,C.n3,b.hU(P.bg(222,k,j,l)),C.n1,n,o,p,q,n,n,C.rk)},
+return K.Nv(t,a,n,s,r,n,C.n3,b.hU(P.bg(222,k,j,l)),C.n2,n,o,p,q,n,n,C.rk)},
 Sj:function(a,b,a0){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=null,c=a==null
 if(c&&b==null)return
 t=c?d:a.a
@@ -33177,7 +33177,7 @@ P:function(a){var t=null,s=u.p
 return new M.mT(new U.pU(T.NA(H.b([new K.t_(t),T.NZ(T.M2(H.b([new A.r3(t)],s),C.eH,C.eI))],s),C.fm,C.eH),t),C.j,t)}}
 U.pU.prototype={
 P:function(a){var t=null
-return M.q5(C.l3,new T.f8(new S.av(0,1200,0,1/0),this.c,t),t,t,t,t,t,C.n2,t)}}
+return M.q5(C.l3,new T.f8(new S.av(0,1200,0,1/0),this.c,t),t,t,t,t,t,C.n1,t)}}
 A.r3.prototype={
 P:function(a){var t=null
 return T.NZ(M.q5(t,T.NA(H.b([L.Gl("MATKV",A.eG(t,t,t,t,t,t,t,t,t,t,t,80,t,C.jh,t,0.9,!0,t,t,t,t,t,t)),new T.fF(t,30,t,t),L.Gl("This is the first basic version of this website. It is still under construction.",A.eG(t,t,t,t,t,t,t,t,t,t,t,21,t,t,t,1.7,!0,t,t,t,t,t,t))],u.p),C.dm,C.jY),t,t,t,t,t,t,t))}}
@@ -34499,8 +34499,8 @@ C.mZ=new P.aw(5e6)
 C.bh=new V.aI(0,0,0,0)
 C.n_=new V.aI(16,0,16,0)
 C.n0=new V.aI(24,0,24,0)
-C.n1=new V.aI(4,4,4,4)
-C.n2=new V.aI(70,60,70,60)
+C.n1=new V.aI(40,30,40,30)
+C.n2=new V.aI(4,4,4,4)
 C.n3=new V.aI(8,0,8,0)
 C.ft=new F.qL("FlexFit.tight")
 C.n4=new F.qL("FlexFit.loose")

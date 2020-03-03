@@ -12,7 +12,7 @@ const RESOURCES = {
 "/assets/AssetManifest.json": "dc062c89eac055e7c88977bf82aa79a6",
 "/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"/main.dart.js": "5f28f1c7a29f11f52f148e24988b1866"
+"/main.dart.js": "1fdc340cdffde80c6753d5d58d8aec81"
 };
 
 self.addEventListener('activate', function (event) {
