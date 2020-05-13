@@ -1,0 +1,1 @@
+{"componentChunkName":"component---node-modules-arshad-gatsby-theme-blog-core-src-templates-post-query-js","path":"/blog/2020-05-13-finished-main-website-layout","result":{"errors":[{"message":"Cannot read property 'internal' of null","locations":[{"line":6,"column":3}],"path":["post","body"]}],"data":{"post":null},"pageContext":{"id":"8ddf07aa-ee21-5bda-a13e-baac1fcbf4bb"}}}

@@ -1,0 +1,1 @@
+{"componentChunkName":"component---node-modules-arshad-gatsby-theme-blog-core-src-templates-post-query-js","path":"/blog/2020-05-13-first-blog-entry","result":{"errors":[{"message":"Cannot read property 'internal' of null","locations":[{"line":6,"column":3}],"path":["post","body"]}],"data":{"post":null},"pageContext":{"id":"aadfffd9-e371-5c3f-a602-5804dc94b032"}}}
