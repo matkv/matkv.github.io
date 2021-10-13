@@ -3,8 +3,9 @@
 <meta name=generator content="Hugo 0.88.1">
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>matko</title>
 <link rel=stylesheet href=/css/style.css type=text/css media=all>
+<link disabled id=dark-mode-theme rel=stylesheet href=/css/darkmode.css>
+<title>matko</title>
 <link rel=alternate type=application/rss+xml href=https://matkv.github.io/index.xml title=matko>
 <script src=https://kit.fontawesome.com/aa8e5d8b31.js crossorigin=anonymous></script>
 </head>
@@ -24,7 +25,11 @@ matko
 <li>
 <a href=/projects>projects</a>
 </li>
+<li>
+<a><i id=dark-mode-toggle class="far fa-moon"></i></a>
+</li>
 </ul>
+<script>var toggle=document.getElementById("dark-mode-toggle"),darkTheme=document.getElementById("dark-mode-theme"),savedTheme;toggle.addEventListener("click",()=>{toggle.className==="fas fa-moon"?setTheme("dark"):toggle.className==="fas fa-sun"&&setTheme("light")}),savedTheme=localStorage.getItem("dark-mode-storage")||"light",setTheme(savedTheme);function setTheme(a){localStorage.setItem("dark-mode-storage",a),a==="dark"?(darkTheme.disabled=!1,toggle.className="fas fa-sun"):a==="light"&&(darkTheme.disabled=!0,toggle.className="fas fa-moon")}</script>
 </nav>
 </header>
 <main class=content>
