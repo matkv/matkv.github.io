@@ -43,6 +43,22 @@ matko
 <li>Setup an built-in file browser and a nice theme (maybe the palenight theme)</li>
 <li>Setup code completion for my most used languages, maybe try C# first</li>
 </ul>
+<h1 id=introduction>Introduction</h1>
+<p>After installing Neovim (on Manjaro Linux: <code>sudo pacman -S neovim</code>) I can start it with the command <code>nvim</code>.</p>
+<p>I created an <code>init.lua</code> file in my dotfiles repository and symlinked it to the location of the actual Neovim config file:</p>
+<pre tabindex=0><code>ln -s ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+</code></pre><p>This way I should be able to change my config and still be able to have some version control because it is in my dotfiles repository.</p>
+<h1 id=initlua>init.lua</h1>
+<p>We can configure Neovim using the <code>init.lua</code> file. For example, we can enable line numbers by adding this line to the config file:</p>
+<pre tabindex=0><code>vim.wo.number = true
+</code></pre><h2 id=option-levels>Option levels</h2>
+<p>There are several option levels:</p>
+<ul>
+<li><code>vim.o.{option}</code>: global options</li>
+<li><code>vim.bo.{option}</code>: buffer-local options</li>
+<li><code>vim.wo.{option}</code>: window-local options</li>
+</ul>
+<p>Each option is specific to a level; for example - the <code>number</code> option is only available in the <code>window-local</code> options.</p>
 </main>
 <footer class=footer>
 <p>&copy;2021 Matko Bušljeta</p>
