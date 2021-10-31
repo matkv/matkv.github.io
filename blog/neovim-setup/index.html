@@ -73,6 +73,7 @@ matko
 <p>By hitting the <code>i</code> key, we enter insert mode. Now we can actually add and change text. With the command <code>:u</code> we can undo the last change we made.</p>
 <h3 id=splitting-the-window>Splitting the window</h3>
 <p>I can split the current window verticall by using the <code>:vs</code> command. This opens another vertical window to the right. The <code>:split</code> command would open one below. In order to move around between all open windows we can use the <code>:W w</code> command (colon W and then w). This cycles through all currently open windows. To close the currently open window I can use the normal <code>:q</code> command.</p>
+<p>If I have the <strong>mouse enabled in the settings (init.lua)</strong>, I can also just click a specific window to focus it and <strong>resize the windows by dragging with the mouse</strong>.</p>
 <h2 id=using-a-plugin-manager---packer>Using a plugin manager - packer</h2>
 <p>I created a new folder in my nvim folder called &ldquo;lua&rdquo; and a &ldquo;plugins&rdquo; folder in the new lua folder and a new file called <code>init.lua</code>. (I actually created it in my dotfiles repo and symlinked it to the actual config folder again).</p>
 <p>So after creating the folder and file in the actual config folder I ran the command:</p>
@@ -102,7 +103,31 @@ end)
 </code></pre><p>And then we run <code>PackerInstall</code> again. Then in the normal init.lua file we need to set the color scheme:</p>
 <pre tabindex=0><code>vim.cmd('colorscheme nord')
 </code></pre><p>After saving the file and opening nvim again, we should now <strong>see the new color scheme</strong> :)</p>
-<p>Continue with <a href="https://www.youtube.com/watch?v=r3NOB8UjIPc">this</a> tutorial (stopped at 4:44)</p>
+<h3 id=adding-better-syntax-highlighting-using-treesitter>Adding better syntax highlighting using treesitter</h3>
+<p>In the <code>init.vim</code> file in the plugins folder we add</p>
+<pre tabindex=0><code>    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+</code></pre><p>And then we install the treesitter plugin using the <code>PackerSync</code> command.</p>
+<h3 id=adding-treesitter-support-for-all-maintained-languages>Adding treesitter support for all maintained languages</h3>
+<p>We add a reference to the treesitter config in the normal <code>lua.init</code>:</p>
+<pre tabindex=0><code>require('treesitter-config')
+</code></pre><p>This basically means that the <code>init.lua</code> file will require any plugins/settings that are in <code>init.lua</code> files in the directories that are specified this way.</p>
+<p>Then we create this <code>treesitter-config</code> folder in the <code>lua</code> folder. And in this new folder we create a new <code>init.lua</code> file. Now we can basically enable all languages that are &ldquo;maintained&rdquo; and supported by treesitter:</p>
+<pre tabindex=0><code>require'nvim-treesitter.configs'.setup {
+  ensure_installed = &quot;maintained&quot;,
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = false,
+  },
+}
+</code></pre><p>The next time we open nvim, it will automatically download and install all languages that are supported. Now the syntax highlighting should look a lot better when opening code.</p>
+<h2 id=figuring-out-which-option-level-a-setting-belongs-to>Figuring out which option level a setting belongs to</h2>
+<p>In order to set settings in the <code>init.lua</code> file using lua syntax, we need to specify the option level, for example <code>vim.wo.number'. In order to figure out which option level a specific setting belongs to, we can use the </code>help command`.</p>
+<p>For exmample, figuring out where the <code>cursorline</code> setting belongs to:</p>
+<pre tabindex=0><code>:help cursorline
+</code></pre><p>Now the settings page shows that <code>cursorline</code> is of type boolean and that it is <strong>local to window</strong>. This means we can set it using <code>vim.wo.cursorline = true</code>.</p>
 </main>
 <footer class=footer>
 <p>&copy;2021 Matko Bušljeta</p>
