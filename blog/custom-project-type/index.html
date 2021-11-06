@@ -37,7 +37,10 @@ matko
 </div>
 </header>
 <main class=content>
-<h1>Custom Project Type</h1>
+<h1 style=margin-bottom:0>Custom Project Type</h1>
+<time datetime=" 2021-10-18T23:15:55+02:00">
+October 18, 2021
+</time>
 <p>I just finally finished creating a custom type for projects. I&rsquo;ll quickly document what I did so that I don&rsquo;t forget it again.</p>
 <p>Hugo basically looks in the <strong>&ldquo;theme/matkv/archetypes&rdquo;</strong> directory to figure out what kind of content types exist for the site.</p>
 <p>So I created a new archetype for my projects. I created a subfolder called &ldquo;projects&rdquo; and in this folder there is another subfolder &ldquo;image&rdquo; which will be used for a cover image for each project, and then just an &ldquo;index.md&rdquo; file for the actual content of the project site.</p>
@@ -49,9 +52,10 @@ coverimage: image/cover.jpg
 <p>In the layouts for both the list and the single page view for a project, I also used the &ldquo;coverimage&rdquo; parameter that I defined in the archetype to link to an image that is stored for each project in the subfolder /image/cover.jpg</p>
 <p>Now I can already create two different kinds of content types dynamically on this website.</p>
 <ul>
-<li>blog posts: <code>hugo new -k blog blog/custom-project-type</code></li>
+<li>blog posts: <code>hugo new -k blog blog/this-is-my-title.md</code></li>
 <li>projects: <code>hugo new -k project projects/test-project</code></li>
 </ul>
+<p>I have to specify the file type for blog posts (.md) because otherwise hugo will create a folder which is not what I want in this case.</p>
 </main>
 <footer class=footer>
 <p>&copy;2021 Matko Bušljeta</p>
