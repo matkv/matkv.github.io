@@ -1,24 +1,22 @@
-<!doctype html><html lang=en>
+<!doctype html><html>
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <link rel=stylesheet href=/css/style.css type=text/css media=all>
 <link disabled id=dark-mode-theme rel=stylesheet href=/css/darkmode.css>
-<title>Habit Tracker | matko</title>
 <script src=https://kit.fontawesome.com/aa8e5d8b31.js crossorigin=anonymous></script>
-<link rel=apple-touch-icon sizes=180x180 href=/favicon/apple-touch-icon-180x180.png>
-<link rel="shortcut icon" type=image/x-icon href=/favicon/favicon-32x32.ico>
-<link rel=icon type=image/png sizes=96x96 href=/favicon/favicon-96x96.png>
-<meta name=msapplication-square310x310logo content="/favicon/mstile-310x310.png">
+<title>
+</title>
 </head>
 <body>
-<header class=site-header>
-<div class=site-nav-banner>
-<nav class=site-nav>
-<a class=logo href=https://matkv.github.io>
-matko
-</a>
-<ul class=main-menu>
+<div class=navigation>
+<div class=website-title>
+Matko
+</div>
+<ul>
+<li>
+<a href=/>home</a>
+</li>
 <li>
 <a href=/about>about</a>
 </li>
@@ -31,21 +29,20 @@ matko
 <li>
 <a><i id=dark-mode-toggle class="far fa-moon"></i></a>
 </li>
-</ul>
 <script>var toggle=document.getElementById("dark-mode-toggle"),darkTheme=document.getElementById("dark-mode-theme"),savedTheme;toggle.addEventListener("click",()=>{toggle.className==="fas fa-moon"?setTheme("dark"):toggle.className==="fas fa-sun"&&setTheme("light")}),savedTheme=localStorage.getItem("dark-mode-storage")||"light",setTheme(savedTheme);function setTheme(a){localStorage.setItem("dark-mode-storage",a),a==="dark"?(darkTheme.disabled=!1,toggle.className="fas fa-sun"):a==="light"&&(darkTheme.disabled=!0,toggle.className="fas fa-moon")}</script>
-</nav>
+</ul>
 </div>
-</header>
-<main class=content>
-<h1>Habit Tracker</h1>
-<img src=image/cover.png style=width:200px>
-<p>A Flutter app which lets the user create habits, tasks and events. This app was created as my final project at LBS Eibiswald and was my first complete Flutter app that I built. It uses an SQLite database to store the habit data.</p>
-<span style=font-size:1em>
-<a href=https://github.com/matkv/HabitTracker><i class="fab fa-github"></i></a>
-<a href=https://github.com/matkv/HabitTracker>GitHub repository</a>
-</span>
-</main>
-<footer class=footer>
-</footer>
+<div class=content>
+<div class=pagetitle>
+Habit Tracker
+</div>
+<p></p>
+<div class=projectimage><img src=https://matkv.github.io/projects/habit-tracker/cover.jpg></div>
+<p>A Flutter app which lets the user create habits, tasks and events.</p>
+<p>This app was created as my final project at LBS Eibiswald and was my first complete Flutter app that I built. It uses an SQLite database to store the habit data.</p>
+</div>
+<div class=footer>
+<p>© 2022 | Matko Bušljeta</p>
+</div>
 </body>
 </html>
