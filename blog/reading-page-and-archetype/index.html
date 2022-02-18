@@ -1,0 +1,65 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=stylesheet href=/css/style.css type=text/css media=all>
+<link disabled id=dark-mode-theme rel=stylesheet href=/css/darkmode.css>
+<script src=https://kit.fontawesome.com/aa8e5d8b31.js crossorigin=anonymous></script>
+<title>matko</title>
+</head>
+<body>
+<div class=navigation>
+<div class=website-title>
+<a href=/>Matko</a>
+</div>
+<ul>
+<li>
+<a href=/>home</a>
+</li>
+<li>
+<a href=/about>about</a>
+</li>
+<li>
+<a href=/blog>blog</a>
+</li>
+<li>
+<a href=/projects>projects</a>
+</li>
+<li>
+<a><i id=dark-mode-toggle class="far fa-moon"></i></a>
+</li>
+<script>var toggle=document.getElementById("dark-mode-toggle"),darkTheme=document.getElementById("dark-mode-theme"),savedTheme;toggle.addEventListener("click",()=>{toggle.className==="fas fa-moon"?setTheme("dark"):toggle.className==="fas fa-sun"&&setTheme("light")}),savedTheme=localStorage.getItem("dark-mode-storage")||"light",setTheme(savedTheme);function setTheme(a){localStorage.setItem("dark-mode-storage",a),a==="dark"?(darkTheme.disabled=!1,toggle.className="fas fa-sun"):a==="light"&&(darkTheme.disabled=!0,toggle.className="fas fa-moon")}</script>
+</ul>
+</div>
+<div class=content>
+<div class=pagetitle>
+Reading page and archetype
+</div>
+<div class=blogdate>
+18 February 2022
+</div>
+<p>I&rsquo;m exhausted but I managed to set up a page for my <strong>book reviews / reading list</strong>! I actually wrote a little C# program to automatically convert the exported csv from Goodreads into Markdown files that have the exact format that I need for this website.</p>
+<p>The finished result can be seen <a href=https://matkobusljeta.com/reading>here</a>!</p>
+<p>This was actually the first <em>useful</em> program that I wrote with .NET core, haha. I used the <a href=https://joshclose.github.io/CsvHelper/>CsvHelper</a> library to read the exported csv. Overall the code is definitely not very clean because this whole project was just meant to be a quick one-time way to convert my Goodreads list into the markdown files. Initially I thought about keeping that project public & open source but considering I used that library I just don&rsquo;t wanna deal with looking up all the license stuff to be honest.</p>
+<p>I created <strong>custom parameters</strong> for the book hugo archetype that were filled out automatically by my C# &ldquo;book&rdquo; object in the program:</p>
+<ul>
+<li>book title</li>
+<li>author</li>
+<li>date finished</li>
+<li>publication year</li>
+<li>my rating</li>
+<li>my review</li>
+</ul>
+<p>The hardest part about this little project was actually cleaning up the csv file that was exported. I had issues with the double quotes, it used &ldquo;,&rdquo; instead of &ldquo;;&rdquo; as the separator which made things unnecessary difficult when splitting the values up and the book titles also had some formatting issues that I needed to clean up with the code.</p>
+<p>All in all I feel like I learned quite a bit doing this, I definitely understand the archetypes better now and I&rsquo;m able to get things done more quickly in Hugo now. I don&rsquo;t think I&rsquo;ll really need to use this custom program again because now I can just create a new book review with the normal &ldquo;hugo new -k book reading/enter-book-title-here&rdquo; command and then I should already get a nicely formatted markdown file with all the necessary properties that I just need to fill out.</p>
+<p>This was definitely a fun little project and I&rsquo;m happy that it worked out so well :D</p>
+<br>
+<div class=blogbacktolist>
+<a href=/blog>Back to overview</a>
+</div>
+</div>
+<div class=footer>
+<p>© 2022 | Matko Bušljeta</p>
+</div>
+</body>
+</html>
