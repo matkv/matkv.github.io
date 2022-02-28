@@ -5,865 +5,439 @@
 <link rel=stylesheet href=/css/style.css type=text/css media=all>
 <link disabled id=dark-mode-theme rel=stylesheet href=/css/darkmode.css>
 <script src=https://kit.fontawesome.com/aa8e5d8b31.js crossorigin=anonymous></script>
-<title>matko</title>
-</head>
-<body>
+<title>matko</title></head><body>
 <div class=navigation>
 <div class=website-title>
 <a href=/>Matko</a>
-</div>
-<ul>
+</div><ul>
 <li>
 <a href=/>home</a>
-</li>
-<li>
+</li><li>
 <a href=/about>about</a>
-</li>
-<li>
+</li><li>
 <a href=/blog>blog</a>
-</li>
-<li>
+</li><li>
 <a href=/projects>projects</a>
-</li>
-<li>
+</li><li>
 <a><i id=dark-mode-toggle class="far fa-moon"></i></a>
-</li>
-<script>var toggle=document.getElementById("dark-mode-toggle"),darkTheme=document.getElementById("dark-mode-theme"),savedTheme;toggle.addEventListener("click",()=>{toggle.className==="fas fa-moon"?setTheme("dark"):toggle.className==="fas fa-sun"&&setTheme("light")}),savedTheme=localStorage.getItem("dark-mode-storage")||"light",setTheme(savedTheme);function setTheme(a){localStorage.setItem("dark-mode-storage",a),a==="dark"?(darkTheme.disabled=!1,toggle.className="fas fa-sun"):a==="light"&&(darkTheme.disabled=!0,toggle.className="fas fa-moon")}</script>
-</ul>
-</div>
-<div class=content>
+</li><script>var toggle=document.getElementById("dark-mode-toggle"),savedTheme,darkTheme=document.getElementById("dark-mode-theme");toggle.addEventListener("click",()=>{toggle.className==="fas fa-moon"?setTheme("dark"):toggle.className==="fas fa-sun"&&setTheme("light")}),savedTheme=localStorage.getItem("dark-mode-storage")||"light",setTheme(savedTheme);function setTheme(e){localStorage.setItem("dark-mode-storage",e),e==="dark"?(darkTheme.disabled=!1,toggle.className="fas fa-sun"):e==="light"&&(darkTheme.disabled=!0,toggle.className="fas fa-moon")}</script>
+</ul></div><div class=content>
 <div class=pagetitle>
 Reading
-</div>
-<p>These are all the books that I have read since March of 2019. I will be
+</div><p>These are all the books that I have read since March of 2019. I will be
 using this page as some kind of backup/replacement of my Goodreads profile.
 The list is ordered by the date I finished reading the book,
 so the books that I've read most recently are the first ones on here.
-</p>
-<div class=reading-stats>
-<h3>Reading stats</h3>
-<p><b>Total books:</b> 52</p>
-<table class=reading-stats-table>
+</p><div class=reading-stats>
+<h3>Reading stats</h3><p><b>Total books:</b> 52</p><table class=reading-stats-table>
 <tr>
-<td>2022:</td>
-<td>
+<td>2022:</td><td>
 <div class=reading-progressbar>
-●
-●
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-○
-</div>
-</td>
-</tr>
-<tr>
-<td>2021:</td>
-<td>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+</div></td></tr><tr>
+<td>2021:</td><td>
 <div class=reading-progressbar>
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-○
-○
-○
-</div>
-</td>
-</tr>
-<tr>
-<td>2020:</td>
-<td>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+</div></td></tr><tr>
+<td>2020:</td><td>
 <div class=reading-progressbar>
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-○
-</div>
-</td>
-</tr>
-<tr>
-<td>2019:</td>
-<td>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-white></span>
+</div></td></tr><tr>
+<td>2019:</td><td>
 <div class=reading-progressbar>
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-●
-○
-○
-○
-○
-○
-○
-</div>
-</td>
-</tr>
-</table>
-<br>
-</div>
-<div class=separator>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-black></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+<span class=reading-stats-circle-white></span>
+</div></td></tr></table><br>
+</div><div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Brief Answers to the Big Questions</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Brief Answers to the Big Questions</div><div class=book-details>
 Stephen Hawking (2018)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Here&rsquo;s another non-fiction book. This book is a collection of questions mostly about space, the future and technology that Stephen Hawking answers in pretty short chapters. Some questions/answers give insight to his own experiences in his life, both about his work and his personal struggle with his disability, some are about his expectations about the future, for example the impact of the advancement of A.I on humanity.</p>
-<p>I expected this book to be drier than it actually was - although some of his answers went into pretty heavy scientific topics, he still managed to explain them in an understandable and often very humorous way.</p>
-<p>I also found the afterword by his daughter Lucy, written after Stephen&rsquo;s death, very touching, it was a great end to a cool book! Overall I think it was extremely interesting and I would definitely recommend it!</p>
-</div>
-<div class=book-dateread>Finished: 22 February 2022</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Here&rsquo;s another non-fiction book. This book is a collection of questions mostly about space, the future and technology that Stephen Hawking answers in pretty short chapters. Some questions/answers give insight to his own experiences in his life, both about his work and his personal struggle with his disability, some are about his expectations about the future, for example the impact of the advancement of A.I on humanity.</p><p>I expected this book to be drier than it actually was - although some of his answers went into pretty heavy scientific topics, he still managed to explain them in an understandable and often very humorous way.</p><p>I also found the afterword by his daughter Lucy, written after Stephen&rsquo;s death, very touching, it was a great end to a cool book! Overall I think it was extremely interesting and I would definitely recommend it!</p></div><div class=book-dateread>Finished: 22 February 2022</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Schoolgirl</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Schoolgirl</div><div class=book-details>
 Osamu Dazai (1939)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>This was very short and pretty weird book. It&rsquo;s mostly just the thoughts and ramblings of a girl that is frustrated and looking for her purpose in life. I find it pretty hard to describe the book because there&rsquo;s not really a storyline, the main character is just reflecting on her current situation and her life & goals in general.</p>
-<p>The book is definitely unique but overall I wasn&rsquo;t blown away a bit.</p>
-</div>
-<div class=book-dateread>Finished: 29 January 2022</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>This was very short and pretty weird book. It&rsquo;s mostly just the thoughts and ramblings of a girl that is frustrated and looking for her purpose in life. I find it pretty hard to describe the book because there&rsquo;s not really a storyline, the main character is just reflecting on her current situation and her life & goals in general.</p><p>The book is definitely unique but overall I wasn&rsquo;t blown away a bit.</p></div><div class=book-dateread>Finished: 29 January 2022</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Schachnovelle</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Schachnovelle</div><div class=book-details>
 Stefan Zweig (1942)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>I read this novella pretty spontaneously because I had just really been in a &ldquo;chess mood&rdquo; for the last couple of days.</p>
-<p>Overall it was surprising how much of a page turner it actually was and it was a nice to read a Austrian book for a change.</p>
-<p>Then again - from an emotional point of view this book hardly touched me so I&rsquo;m giving it 3.5 stars I think. Worth a read but nothing exceptional in my opinion.</p>
-</div>
-<div class=book-dateread>Finished: 14 December 2021</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>I read this novella pretty spontaneously because I had just really been in a &ldquo;chess mood&rdquo; for the last couple of days.</p><p>Overall it was surprising how much of a page turner it actually was and it was a nice to read a Austrian book for a change.</p><p>Then again - from an emotional point of view this book hardly touched me so I&rsquo;m giving it 3.5 stars I think. Worth a read but nothing exceptional in my opinion.</p></div><div class=book-dateread>Finished: 14 December 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Great Hunt (The Wheel of Time, #2)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Great Hunt (The Wheel of Time, #2)</div><div class=book-details>
 Robert Jordan (1990)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really liked this one. I did take a break of a week or two while I read some different books but overall I like that I got to know the characters even more now and the story is really starting to pick up. I especially enjoyed some of the new friendships that were formed in this one.</p>
-<p>I don&rsquo;t have any big criticism when it comes to the pacing, I think it was definitely better than the first one.</p>
-<p>Super curious about the next book because I heard that it&rsquo;s one of the best in the series!</p>
-</div>
-<div class=book-dateread>Finished: 7 November 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really liked this one. I did take a break of a week or two while I read some different books but overall I like that I got to know the characters even more now and the story is really starting to pick up. I especially enjoyed some of the new friendships that were formed in this one.</p><p>I don&rsquo;t have any big criticism when it comes to the pacing, I think it was definitely better than the first one.</p><p>Super curious about the next book because I heard that it&rsquo;s one of the best in the series!</p></div><div class=book-dateread>Finished: 7 November 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>When Breath Becomes Air</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>When Breath Becomes Air</div><div class=book-details>
 Paul Kalanithi (2016)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>This book describes the experiences of a neurosurgeon during his time in medical school to residency and then in the second part how he dealt with his lung cancer diagnosis all the way up until his eventual death.</p>
-<p>Loved the writing, obviously an incredibly heavy topic but the descriptions of his time as resident in the hospital and his motivations & reasons to become a doctor in the first place were very insightful. It is also remarkable how realistic and brave he stayed during his illness and the book also shows how the diagnosis changed the lives of not only him but also his wife.</p>
-<p>I would absolutely recommend this book, I loved it.</p>
-</div>
-<div class=book-dateread>Finished: 24 October 2021</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>This book describes the experiences of a neurosurgeon during his time in medical school to residency and then in the second part how he dealt with his lung cancer diagnosis all the way up until his eventual death.</p><p>Loved the writing, obviously an incredibly heavy topic but the descriptions of his time as resident in the hospital and his motivations & reasons to become a doctor in the first place were very insightful. It is also remarkable how realistic and brave he stayed during his illness and the book also shows how the diagnosis changed the lives of not only him but also his wife.</p><p>I would absolutely recommend this book, I loved it.</p></div><div class=book-dateread>Finished: 24 October 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Lolita</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Lolita</div><div class=book-details>
 Vladimir Nabokov (1955)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>My first book by Nabokov. My main thoughts: super pretty and flowery writing style - sometimes hard to read for me as a non native English speaker (then again neither was Nabokov).</p>
-<p>My main problem with the book wasn&rsquo;t even the obviously problematic/disturbing relationship between the two main characters but mostly that I just didn&rsquo;t really care for the story at some point. I actually took a break of several months before finally finishing this book. There are definitely some quite fucked up scenes & situations in the book; I also didn&rsquo;t think that this book is in any way romanticizing the relationship of the two characters. Humbert knows what he&rsquo;s doing and that what he is doing isn&rsquo;t right, it&rsquo;s just the fact that he&rsquo;s an unreliable narrator that might make this a bit less clear I guess.</p>
-<p>Overall, I found it okay. Very pretty writing style, didn&rsquo;t love the story & probably won&rsquo;t reread it.</p>
-</div>
-<div class=book-dateread>Finished: 1 October 2021</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>My first book by Nabokov. My main thoughts: super pretty and flowery writing style - sometimes hard to read for me as a non native English speaker (then again neither was Nabokov).</p><p>My main problem with the book wasn&rsquo;t even the obviously problematic/disturbing relationship between the two main characters but mostly that I just didn&rsquo;t really care for the story at some point. I actually took a break of several months before finally finishing this book. There are definitely some quite fucked up scenes & situations in the book; I also didn&rsquo;t think that this book is in any way romanticizing the relationship of the two characters. Humbert knows what he&rsquo;s doing and that what he is doing isn&rsquo;t right, it&rsquo;s just the fact that he&rsquo;s an unreliable narrator that might make this a bit less clear I guess.</p><p>Overall, I found it okay. Very pretty writing style, didn&rsquo;t love the story & probably won&rsquo;t reread it.</p></div><div class=book-dateread>Finished: 1 October 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Man's Search for Meaning</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Man's Search for Meaning</div><div class=book-details>
 Viktor E. Frankl (1946)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>The first part of the book describes the experiences of the author during his imprisonment in several concentration camps and talks about dealing with the situation there and finding a reason to accept & continue enduring his suffering there. Obviously some very disturbing & tragic description of events there.</p>
-<p>The second part was about his general philosophy called Logotherapy. This was definitely more dry, but I liked that for every statement or idea he usually gave several examples of actual cases that prove and explain that idea in a more practical sense.</p>
-<p>Overall I found it super interesting & it definitely changes one&rsquo;s outlook on life&rsquo;s meaning to a certain extent. Great book!</p>
-</div>
-<div class=book-dateread>Finished: 21 September 2021</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>The first part of the book describes the experiences of the author during his imprisonment in several concentration camps and talks about dealing with the situation there and finding a reason to accept & continue enduring his suffering there. Obviously some very disturbing & tragic description of events there.</p><p>The second part was about his general philosophy called Logotherapy. This was definitely more dry, but I liked that for every statement or idea he usually gave several examples of actual cases that prove and explain that idea in a more practical sense.</p><p>Overall I found it super interesting & it definitely changes one&rsquo;s outlook on life&rsquo;s meaning to a certain extent. Great book!</p></div><div class=book-dateread>Finished: 21 September 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Meditations</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Meditations</div><div class=book-details>
 Marcus Aurelius (180)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>This is my first introduction to stoicism and actually the first book on philosophy in general that I read. I read the Gregory Hayes translation which helped a lot - I first tried an older translation that was unecessarily difficult to understand when you&rsquo;re used to modern English.</p>
-<p>I found many of the ideas in the book quite interesting and insightful even though I don&rsquo;t agree with all of them. At times the book was quite dry & repetitive but I guess that is to be expected when talking about this topic. Overall I liked it and it was neat to actually read the private notes of a Roman emperor that lived almost 2000 years ago. You don&rsquo;t get to do that every day.</p>
-</div>
-<div class=book-dateread>Finished: 9 September 2021</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>This is my first introduction to stoicism and actually the first book on philosophy in general that I read. I read the Gregory Hayes translation which helped a lot - I first tried an older translation that was unecessarily difficult to understand when you&rsquo;re used to modern English.</p><p>I found many of the ideas in the book quite interesting and insightful even though I don&rsquo;t agree with all of them. At times the book was quite dry & repetitive but I guess that is to be expected when talking about this topic. Overall I liked it and it was neat to actually read the private notes of a Roman emperor that lived almost 2000 years ago. You don&rsquo;t get to do that every day.</p></div><div class=book-dateread>Finished: 9 September 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Play Winning Chess</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Play Winning Chess</div><div class=book-details>
 Yasser Seirawan (1992)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>First chess book I read! Interesting lessons, some fun chess trivia and lots of examples and games to go through.</p>
-</div>
-<div class=book-dateread>Finished: 29 August 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>First chess book I read! Interesting lessons, some fun chess trivia and lots of examples and games to go through.</p></div><div class=book-dateread>Finished: 29 August 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Cunk on Everything: The Encyclopedia Philomena</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Cunk on Everything: The Encyclopedia Philomena</div><div class=book-details>
 Jason Hazeley (2018)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>Funny concept but overall it wasn&rsquo;t really my type of humor. I get that the character is supposed to be naive and stupid but it was just a bit too much for me.</p>
-</div>
-<div class=book-dateread>Finished: 29 August 2021</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>Funny concept but overall it wasn&rsquo;t really my type of humor. I get that the character is supposed to be naive and stupid but it was just a bit too much for me.</p></div><div class=book-dateread>Finished: 29 August 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Eye of the World (The Wheel of Time, #1)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Eye of the World (The Wheel of Time, #1)</div><div class=book-details>
 Robert Jordan (1990)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Started reading this book expecting a very slow and dry read but I was suprised how easy to read and engaging this story was. The beginning was definitely a bit slow but soon the story really picks up and the characters are driven by danger and urgency.</p>
-<p>The characters are relatable and while they do fit some stereotypes as far as fantasy books are concerned, I did not find this to be detrimental to the story.
-I&rsquo;ve heard some opinions that this is Robert Jordan&rsquo;s weakest book in the series as far as writing style and prose is concerned but honestly if that&rsquo;s the case then I&rsquo;m absolutely looking forward to the rest of the series because I actually already really enjoyed the writing in this one.</p>
-<p>The ending did feel quite rushed and came a bit too suprising for my taste but overall I liked the book and will continue with the series.</p>
-</div>
-<div class=book-dateread>Finished: 18 August 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Started reading this book expecting a very slow and dry read but I was suprised how easy to read and engaging this story was. The beginning was definitely a bit slow but soon the story really picks up and the characters are driven by danger and urgency.</p><p>The characters are relatable and while they do fit some stereotypes as far as fantasy books are concerned, I did not find this to be detrimental to the story.
+I&rsquo;ve heard some opinions that this is Robert Jordan&rsquo;s weakest book in the series as far as writing style and prose is concerned but honestly if that&rsquo;s the case then I&rsquo;m absolutely looking forward to the rest of the series because I actually already really enjoyed the writing in this one.</p><p>The ending did feel quite rushed and came a bit too suprising for my taste but overall I liked the book and will continue with the series.</p></div><div class=book-dateread>Finished: 18 August 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Last Question</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Last Question</div><div class=book-details>
 Isaac Asimov (1956)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really cool short story with a suprising twist at the end. Definitely recommend it!</p>
-</div>
-<div class=book-dateread>Finished: 14 May 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really cool short story with a suprising twist at the end. Definitely recommend it!</p></div><div class=book-dateread>Finished: 14 May 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Egg</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Egg</div><div class=book-details>
 Andy Weir (2009)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Super cute story, really creative idea with a suprisingly deep meaning. Absolutely recommend this short story!</p>
-</div>
-<div class=book-dateread>Finished: 13 May 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Super cute story, really creative idea with a suprisingly deep meaning. Absolutely recommend this short story!</p></div><div class=book-dateread>Finished: 13 May 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>This Is Water: Some Thoughts, Delivered on a Significant Occasion, about Living a Compassionate Life</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>This Is Water: Some Thoughts, Delivered on a Significant Occasion, about Living a Compassionate Life</div><div class=book-details>
 David Foster Wallace (2009)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Nice speech, actually listened to a video of him reading it rather than doing it myself. Some interesting thoughts about living a more compassionate and mindful life.</p>
-</div>
-<div class=book-dateread>Finished: 13 April 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Nice speech, actually listened to a video of him reading it rather than doing it myself. Some interesting thoughts about living a more compassionate and mindful life.</p></div><div class=book-dateread>Finished: 13 April 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>To Be Taught, If Fortunate</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>To Be Taught, If Fortunate</div><div class=book-details>
 Becky Chambers (2019)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Super creative ideas, really nice pacing - especially how the book was split into the crew&rsquo;s stays on the different planets and I absolutely loved the ending!</p>
-</div>
-<div class=book-dateread>Finished: 1 April 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Super creative ideas, really nice pacing - especially how the book was split into the crew&rsquo;s stays on the different planets and I absolutely loved the ending!</p></div><div class=book-dateread>Finished: 1 April 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Headspace Guide to Meditation & Mindfulness</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Headspace Guide to Meditation & Mindfulness</div><div class=book-details>
 Andy Puddicombe (2011)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>I&rsquo;ve been wanting to get into mediation for a while and this book was a nice introduction to this topic. There were examples to try out while reading it and the author also gave us his backstory and personal experiences with meditation.</p>
-<p>Overall a really nice read, would recommend it to someone who wants to get into meditiation.</p>
-</div>
-<div class=book-dateread>Finished: 1 April 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>I&rsquo;ve been wanting to get into mediation for a while and this book was a nice introduction to this topic. There were examples to try out while reading it and the author also gave us his backstory and personal experiences with meditation.</p><p>Overall a really nice read, would recommend it to someone who wants to get into meditiation.</p></div><div class=book-dateread>Finished: 1 April 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Rhythm of War (The Stormlight Archive, #4)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Rhythm of War (The Stormlight Archive, #4)</div><div class=book-details>
 Brandon Sanderson (2020)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>Personally I didn&rsquo;t love that most of the book to place in the same location but overall it was amazing as usual. I actually didn&rsquo;t mind the pacing and the finale was great and left me eager to read the next one once it&rsquo;s out!</p>
-</div>
-<div class=book-dateread>Finished: 24 March 2021</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>Personally I didn&rsquo;t love that most of the book to place in the same location but overall it was amazing as usual. I actually didn&rsquo;t mind the pacing and the finale was great and left me eager to read the next one once it&rsquo;s out!</p></div><div class=book-dateread>Finished: 24 March 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Dawnshard (The Stormlight Archive, #3.5)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Dawnshard (The Stormlight Archive, #3.5)</div><div class=book-details>
 Brandon Sanderson (2020)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>I really like the novellas in between the long books of The Stormlight Archive. Dawnshard was a nice change of pace and gave us a chance to spend more time with Rysn. Sandersons writing style was nice as usual and didn&rsquo;t get in the way of following the story. Overall I liked the book!</p>
-</div>
-<div class=book-dateread>Finished: 21 January 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>I really like the novellas in between the long books of The Stormlight Archive. Dawnshard was a nice change of pace and gave us a chance to spend more time with Rysn. Sandersons writing style was nice as usual and didn&rsquo;t get in the way of following the story. Overall I liked the book!</p></div><div class=book-dateread>Finished: 21 January 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>1984</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>1984</div><div class=book-details>
 George Orwell (1949)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>I personally don&rsquo;t find Orwell&rsquo;s writing still to be very engaging but overall I liked the book, definitely worth reading it for the references and general impact on popular culture.</p>
-</div>
-<div class=book-dateread>Finished: 14 January 2021</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>I personally don&rsquo;t find Orwell&rsquo;s writing still to be very engaging but overall I liked the book, definitely worth reading it for the references and general impact on popular culture.</p></div><div class=book-dateread>Finished: 14 January 2021</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Deathly Hallows (Harry Potter, #7)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Deathly Hallows (Harry Potter, #7)</div><div class=book-details>
 J.K. Rowling (2007)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Overall a nice end to the whole series, some of the conclusions/explanations to some plot holes felt kind of weak but again, the book suceeds at what it is trying to be.</p>
-</div>
-<div class=book-dateread>Finished: 19 December 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Overall a nice end to the whole series, some of the conclusions/explanations to some plot holes felt kind of weak but again, the book suceeds at what it is trying to be.</p></div><div class=book-dateread>Finished: 19 December 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Half-Blood Prince (Harry Potter, #6)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Half-Blood Prince (Harry Potter, #6)</div><div class=book-details>
 J.K. Rowling (2005)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Probably my favorite Harry Potter book. I think the general atmosphere in this one is the best. We still get cozy scenes at Hogwarts but the story has by now definitely shifted to a darker tone and there is a sense of urgency and danger. Liked it a lot!</p>
-</div>
-<div class=book-dateread>Finished: 8 December 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Probably my favorite Harry Potter book. I think the general atmosphere in this one is the best. We still get cozy scenes at Hogwarts but the story has by now definitely shifted to a darker tone and there is a sense of urgency and danger. Liked it a lot!</p></div><div class=book-dateread>Finished: 8 December 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Order of the Phoenix (Harry Potter, #5)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Order of the Phoenix (Harry Potter, #5)</div><div class=book-details>
 J.K. Rowling (2003)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Loved the parts with Dumbledore&rsquo;s Army and Dolores Umbridge was a great villain character. Overall typical Harry Potter, I liked it!</p>
-</div>
-<div class=book-dateread>Finished: 29 November 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Loved the parts with Dumbledore&rsquo;s Army and Dolores Umbridge was a great villain character. Overall typical Harry Potter, I liked it!</p></div><div class=book-dateread>Finished: 29 November 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Goblet of Fire (Harry Potter, #4)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Goblet of Fire (Harry Potter, #4)</div><div class=book-details>
 J.K. Rowling (2000)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>My first Harry Potter book that I ever read. Loved that we get both the normal cozy Hogwarts athmosphere while also getting some more special scenes with the Triwizard tournament & the story starts to definitely shift to a more darker tone.</p>
-</div>
-<div class=book-dateread>Finished: 15 November 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>My first Harry Potter book that I ever read. Loved that we get both the normal cozy Hogwarts athmosphere while also getting some more special scenes with the Triwizard tournament & the story starts to definitely shift to a more darker tone.</p></div><div class=book-dateread>Finished: 15 November 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)</div><div class=book-details>
 J.K. Rowling (1999)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>The story is finally getting a bit darker in this book but it still has that cozy feeling, the time travel aspect is also pretty interesting.</p>
-</div>
-<div class=book-dateread>Finished: 29 October 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>The story is finally getting a bit darker in this book but it still has that cozy feeling, the time travel aspect is also pretty interesting.</p></div><div class=book-dateread>Finished: 29 October 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Chamber of Secrets (Harry Potter, #2)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Chamber of Secrets (Harry Potter, #2)</div><div class=book-details>
 J.K. Rowling (1998)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Simple writing style, super cozy feeling. Liked it a lot!</p>
-</div>
-<div class=book-dateread>Finished: 24 October 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Simple writing style, super cozy feeling. Liked it a lot!</p></div><div class=book-dateread>Finished: 24 October 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Harry Potter and the Sorcerer's Stone (Harry Potter, #1)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Harry Potter and the Sorcerer's Stone (Harry Potter, #1)</div><div class=book-details>
 J.K. Rowling (1997)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>First time reading the complete series after reading books 4-6 after movie 4 came out. The writing style is simple but the story just feels so cozy and comfy to read. Of course it&rsquo;s a book for children but it does a great job being that and is obviously a great entry point for someone trying to get into fantasy!</p>
-</div>
-<div class=book-dateread>Finished: 10 October 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>First time reading the complete series after reading books 4-6 after movie 4 came out. The writing style is simple but the story just feels so cozy and comfy to read. Of course it&rsquo;s a book for children but it does a great job being that and is obviously a great entry point for someone trying to get into fantasy!</p></div><div class=book-dateread>Finished: 10 October 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Let the Right One In</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Let the Right One In</div><div class=book-details>
 John Ajvide Lindqvist (2004)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>Really cool idea, loved the relationsship between Oskar and Eli. The general vibe and feeling in the book was definitely quite creepy. What I didn&rsquo;t love is that some side storylines felt kind of ill-fitting to the rest of the story and especially the flashbacks of Eli felt kind of out of place and weren&rsquo;t fleshed out enough. Overall I liked it but I feel like it could have been better.</p>
-</div>
-<div class=book-dateread>Finished: 29 September 2020</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>Really cool idea, loved the relationsship between Oskar and Eli. The general vibe and feeling in the book was definitely quite creepy. What I didn&rsquo;t love is that some side storylines felt kind of ill-fitting to the rest of the story and especially the flashbacks of Eli felt kind of out of place and weren&rsquo;t fleshed out enough. Overall I liked it but I feel like it could have been better.</p></div><div class=book-dateread>Finished: 29 September 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Last Wish (The Witcher, #0.5)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Last Wish (The Witcher, #0.5)</div><div class=book-details>
 Andrzej Sapkowski (1993)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Went into this one with really high expectations but while I overall enjoyed it, the fact that it consists of several more or less separate stories rather than one cohesive story was kind of off putting.</p>
-<p>I wanted to learn more about the Witcher universe before playing the game or watching the show but after finishing this one I just didn&rsquo;t really feel the itch to continue with the series. I might give it another shot though at some point!</p>
-</div>
-<div class=book-dateread>Finished: 16 August 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Went into this one with really high expectations but while I overall enjoyed it, the fact that it consists of several more or less separate stories rather than one cohesive story was kind of off putting.</p><p>I wanted to learn more about the Witcher universe before playing the game or watching the show but after finishing this one I just didn&rsquo;t really feel the itch to continue with the series. I might give it another shot though at some point!</p></div><div class=book-dateread>Finished: 16 August 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Bad Blood: Secrets and Lies in a Silicon Valley Startup</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Bad Blood: Secrets and Lies in a Silicon Valley Startup</div><div class=book-details>
 John Carreyrou (2018)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Loved it! I actually had never heard of the whole scandal with Theranos but this book was a real page turner and gave me pretty good information about the whole thing. Even though it is non-fiction the story still felt like a &ldquo;normal&rdquo; book and I found it very easy to follow. The author seems to have researched the topic really well and gave great insights on everything that happened.</p>
-</div>
-<div class=book-dateread>Finished: 6 August 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Loved it! I actually had never heard of the whole scandal with Theranos but this book was a real page turner and gave me pretty good information about the whole thing. Even though it is non-fiction the story still felt like a &ldquo;normal&rdquo; book and I found it very easy to follow. The author seems to have researched the topic really well and gave great insights on everything that happened.</p></div><div class=book-dateread>Finished: 6 August 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Ocean at the End of the Lane</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Ocean at the End of the Lane</div><div class=book-details>
 Neil Gaiman (2013)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>My first book by Neil Gaiman. I don&rsquo;t know why, but I just didn&rsquo;t completely vibe with this book. Definitely had some pretty creative ideas and the writing style was pretty but I just didn&rsquo;t find the story to be very engaging.</p>
-</div>
-<div class=book-dateread>Finished: 21 July 2020</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>My first book by Neil Gaiman. I don&rsquo;t know why, but I just didn&rsquo;t completely vibe with this book. Definitely had some pretty creative ideas and the writing style was pretty but I just didn&rsquo;t find the story to be very engaging.</p></div><div class=book-dateread>Finished: 21 July 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Institute</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Institute</div><div class=book-details>
 Stephen King (2019)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>My first book by Stephen King. This book was definitely a page turner. It has a unique setting and I really liked the characters and the relationships they built. The ending wasn&rsquo;t really strong but it seems like that&rsquo;s pretty common with Stephen King&rsquo;s books.</p>
-</div>
-<div class=book-dateread>Finished: 15 July 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>My first book by Stephen King. This book was definitely a page turner. It has a unique setting and I really liked the characters and the relationships they built. The ending wasn&rsquo;t really strong but it seems like that&rsquo;s pretty common with Stephen King&rsquo;s books.</p></div><div class=book-dateread>Finished: 15 July 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Hello World: Being Human in the Age of Algorithms</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Hello World: Being Human in the Age of Algorithms</div><div class=book-details>
 Hannah Fry (2018)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really interesting topic, the writing style was fine too. However it doesn&rsquo;t really go into detail or a lot of depth about the specific examples in the book. Overall I enjoyed it, would definitely recommend it to someone who is into IT in general.</p>
-</div>
-<div class=book-dateread>Finished: 18 June 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really interesting topic, the writing style was fine too. However it doesn&rsquo;t really go into detail or a lot of depth about the specific examples in the book. Overall I enjoyed it, would definitely recommend it to someone who is into IT in general.</p></div><div class=book-dateread>Finished: 18 June 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Perks of Being a Wallflower</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Perks of Being a Wallflower</div><div class=book-details>
 Stephen Chbosky (1999)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>Re-read this book in 2020 after reading it like 5-7 years ago. I actually remembered it to be way better than I found it now. Reading it now left me kind of underwhelmed. Overall it is a pretty nice read though and definitely has emotional moments.</p>
-<p>This book is actually one of the rare cases where I vastly prefer the movie.</p>
-</div>
-<div class=book-dateread>Finished: 25 April 2020</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>Re-read this book in 2020 after reading it like 5-7 years ago. I actually remembered it to be way better than I found it now. Reading it now left me kind of underwhelmed. Overall it is a pretty nice read though and definitely has emotional moments.</p><p>This book is actually one of the rare cases where I vastly prefer the movie.</p></div><div class=book-dateread>Finished: 25 April 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)</div><div class=book-details>
 Douglas Adams (1979)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>Actually had really high expectations for this book but I was overall a bit dissapointed. I guess it&rsquo;s just not my style of humor but I probably won&rsquo;t be continuing this series. I guess it&rsquo;s nice to now have some info on some references in pop-culture but overall it just didn&rsquo;t really blow me away.</p>
-</div>
-<div class=book-dateread>Finished: 22 April 2020</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>Actually had really high expectations for this book but I was overall a bit dissapointed. I guess it&rsquo;s just not my style of humor but I probably won&rsquo;t be continuing this series. I guess it&rsquo;s nice to now have some info on some references in pop-culture but overall it just didn&rsquo;t really blow me away.</p></div><div class=book-dateread>Finished: 22 April 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Animal Farm</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Animal Farm</div><div class=book-details>
 George Orwell (1945)
-</div>
-<div class=book-rating>★★☆☆☆</div>
-<div class=book-review><p>I get the overall message, but I just found it way too predictable and just like with 1984 I just don&rsquo;t really love Orwell&rsquo;s writing style. All in all I think it&rsquo;s worth the read though, even if it&rsquo;s just for the references in popular culture and general idea and political allegory.</p>
-<p>If it hadn&rsquo;t been such a super short read I would have probably quit reading it.</p>
-</div>
-<div class=book-dateread>Finished: 18 April 2020</div>
-<br>
+</div><div class=book-rating>★★☆☆☆</div><div class=book-review><p>I get the overall message, but I just found it way too predictable and just like with 1984 I just don&rsquo;t really love Orwell&rsquo;s writing style. All in all I think it&rsquo;s worth the read though, even if it&rsquo;s just for the references in popular culture and general idea and political allegory.</p><p>If it hadn&rsquo;t been such a super short read I would have probably quit reading it.</p></div><div class=book-dateread>Finished: 18 April 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Oathbringer (The Stormlight Archive, #3)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Oathbringer (The Stormlight Archive, #3)</div><div class=book-details>
 Brandon Sanderson (2017)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>Fantastic just like the other ones in the series. I actually didn&rsquo;t have problems with the pacing like some other reviewers had, overall I loved it. Great characters, a page turner. Would recommend!</p>
-</div>
-<div class=book-dateread>Finished: 16 April 2020</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>Fantastic just like the other ones in the series. I actually didn&rsquo;t have problems with the pacing like some other reviewers had, overall I loved it. Great characters, a page turner. Would recommend!</p></div><div class=book-dateread>Finished: 16 April 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Edgedancer (The Stormlight Archive, #2.5)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Edgedancer (The Stormlight Archive, #2.5)</div><div class=book-details>
 Brandon Sanderson (2017)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Almost skipped this one because it&rsquo;s technically optional to read this novella when looking at the whole series. Glad I didn&rsquo;t though, really enjoyable read even though it might not be as &ldquo;big&rdquo; as the other books.</p>
-</div>
-<div class=book-dateread>Finished: 17 March 2020</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Almost skipped this one because it&rsquo;s technically optional to read this novella when looking at the whole series. Glad I didn&rsquo;t though, really enjoyable read even though it might not be as &ldquo;big&rdquo; as the other books.</p></div><div class=book-dateread>Finished: 17 March 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Words of Radiance (The Stormlight Archive, #2)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Words of Radiance (The Stormlight Archive, #2)</div><div class=book-details>
 Brandon Sanderson (2014)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>Just as amazing as the first one of the series. Amazing worldbuilding and characters, super immersive story. Fantastic book!</p>
-</div>
-<div class=book-dateread>Finished: 14 March 2020</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>Just as amazing as the first one of the series. Amazing worldbuilding and characters, super immersive story. Fantastic book!</p></div><div class=book-dateread>Finished: 14 March 2020</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Way of Kings (The Stormlight Archive, #1)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Way of Kings (The Stormlight Archive, #1)</div><div class=book-details>
 Brandon Sanderson (2010)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>Absolutely loved it. Incredible worldbuilding, amazing characters and story - an absolute page turner. I genuinely can&rsquo;t think of a lot of things that I disliked about the book.</p>
-</div>
-<div class=book-dateread>Finished: 10 November 2019</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>Absolutely loved it. Incredible worldbuilding, amazing characters and story - an absolute page turner. I genuinely can&rsquo;t think of a lot of things that I disliked about the book.</p></div><div class=book-dateread>Finished: 10 November 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Im Westen nichts Neues</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Im Westen nichts Neues</div><div class=book-details>
 Erich Maria Remarque (1929)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Finally a book I was able to read in its original language. It portraits the naivety with which these young men went to war, looking at it as some sort of adventure which then turned into bleakness. The writing style definitely felt dated but then again this book was written fairly shortly after the war. Would absolutely recommend it, probably one of best (anti) war books I&rsquo;ve read.</p>
-</div>
-<div class=book-dateread>Finished: 22 October 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Finally a book I was able to read in its original language. It portraits the naivety with which these young men went to war, looking at it as some sort of adventure which then turned into bleakness. The writing style definitely felt dated but then again this book was written fairly shortly after the war. Would absolutely recommend it, probably one of best (anti) war books I&rsquo;ve read.</p></div><div class=book-dateread>Finished: 22 October 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Whisperer in Darkness</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Whisperer in Darkness</div><div class=book-details>
 H.P. Lovecraft (1931)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>The book is structured as a series of letters describing some supernatural events happening. Some pretty creepy parts but overall I found the writing style a bit too dry. It was also my first Lovecraft book so I think some references to his &ldquo;universe&rdquo; went over my head. Overall it was pretty nice though.</p>
-</div>
-<div class=book-dateread>Finished: 20 October 2019</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>The book is structured as a series of letters describing some supernatural events happening. Some pretty creepy parts but overall I found the writing style a bit too dry. It was also my first Lovecraft book so I think some references to his &ldquo;universe&rdquo; went over my head. Overall it was pretty nice though.</p></div><div class=book-dateread>Finished: 20 October 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>What If? Serious Scientific Answers to Absurd Hypothetical Questions (What If?, #1)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>What If? Serious Scientific Answers to Absurd Hypothetical Questions (What If?, #1)</div><div class=book-details>
 Randall Munroe (2014)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really fun book! If you enjoy the xkcd comics, you&rsquo;ll enjoy this book too. Each chapter answers some silly question in a pretty scientific way. It&rsquo;s easy to just pick it up every now and then because each chapter can basically stand on its own.</p>
-</div>
-<div class=book-dateread>Finished: 10 October 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really fun book! If you enjoy the xkcd comics, you&rsquo;ll enjoy this book too. Each chapter answers some silly question in a pretty scientific way. It&rsquo;s easy to just pick it up every now and then because each chapter can basically stand on its own.</p></div><div class=book-dateread>Finished: 10 October 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Permanent Record</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Permanent Record</div><div class=book-details>
 Edward Snowden (2019)
-</div>
-<div class=book-rating>★★★★★</div>
-<div class=book-review><p>Absolutely loved it. Really great insights in both his personal and professional life, from his beginnings all the way to his whistle-blowing. I&rsquo;m generally interested in IT & privacy concerning this topic so I found this to be a great read.</p>
-<p>The writing style is very easy to follow and the book was a page turner. Definitely recommend it!</p>
-</div>
-<div class=book-dateread>Finished: 4 October 2019</div>
-<br>
+</div><div class=book-rating>★★★★★</div><div class=book-review><p>Absolutely loved it. Really great insights in both his personal and professional life, from his beginnings all the way to his whistle-blowing. I&rsquo;m generally interested in IT & privacy concerning this topic so I found this to be a great read.</p><p>The writing style is very easy to follow and the book was a page turner. Definitely recommend it!</p></div><div class=book-dateread>Finished: 4 October 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Sapiens: A Brief History of Humankind</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Sapiens: A Brief History of Humankind</div><div class=book-details>
 Yuval Noah Harari (2011)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>Did not love it. During several times in the book the author seems to present his own opinions as facts without really backing them up with any sources. Overall it was interesting though and I did learn some new things.</p>
-</div>
-<div class=book-dateread>Finished: 10 September 2019</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>Did not love it. During several times in the book the author seems to present his own opinions as facts without really backing them up with any sources. Overall it was interesting though and I did learn some new things.</p></div><div class=book-dateread>Finished: 10 September 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Night (The Night Trilogy, #1)</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Night (The Night Trilogy, #1)</div><div class=book-details>
 Elie Wiesel (1956)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>The book definitely portraits the horrible things happening during the holocaust well but for some reason I just didn&rsquo;t really find the writing style very immersive. I liked it as far as the story is concerned but from a literary point of view I did not really enjoy reading it.</p>
-</div>
-<div class=book-dateread>Finished: 24 August 2019</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>The book definitely portraits the horrible things happening during the holocaust well but for some reason I just didn&rsquo;t really find the writing style very immersive. I liked it as far as the story is concerned but from a literary point of view I did not really enjoy reading it.</p></div><div class=book-dateread>Finished: 24 August 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>East of Eden</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>East of Eden</div><div class=book-details>
 John Steinbeck (1952)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really great prose, definitely felt old-timey quite often but I guess that&rsquo;s to be expected from a book that was written a while ago. Very descriptive writing at times and not the biggest page-turner but I liked it a lot overall.</p>
-<p>I might give it a re-read at some point.</p>
-</div>
-<div class=book-dateread>Finished: 18 August 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really great prose, definitely felt old-timey quite often but I guess that&rsquo;s to be expected from a book that was written a while ago. Very descriptive writing at times and not the biggest page-turner but I liked it a lot overall.</p><p>I might give it a re-read at some point.</p></div><div class=book-dateread>Finished: 18 August 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>A Monster Calls</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>A Monster Calls</div><div class=book-details>
 Patrick Ness (2011)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Liked it a lot. A pretty quick read, very unique story. The writing style was pretty and I liked the little stories within the main story that the reader is shown.</p>
-</div>
-<div class=book-dateread>Finished: 6 July 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Liked it a lot. A pretty quick read, very unique story. The writing style was pretty and I liked the little stories within the main story that the reader is shown.</p></div><div class=book-dateread>Finished: 6 July 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Norwegian Wood</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Norwegian Wood</div><div class=book-details>
 Haruki Murakami (1987)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really unique writing style, the story itself wasn&rsquo;t actually a big part of the book. I felt like the relationships between the characters were the main focus. Definitely felt quite relatable at times.</p>
-<p>One thing I found off-putting was the overly sexual themes at times. Seems like the main character has a sexual relationship with pretty much every other female character he interacts with. Kind of felt forced/unfitting more often than not.</p>
-</div>
-<div class=book-dateread>Finished: 30 June 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really unique writing style, the story itself wasn&rsquo;t actually a big part of the book. I felt like the relationships between the characters were the main focus. Definitely felt quite relatable at times.</p><p>One thing I found off-putting was the overly sexual themes at times. Seems like the main character has a sexual relationship with pretty much every other female character he interacts with. Kind of felt forced/unfitting more often than not.</p></div><div class=book-dateread>Finished: 30 June 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>The Book Thief</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>The Book Thief</div><div class=book-details>
 Markus Zusak (2005)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Really liked it overall. It was unique to have death as the narrator, the relationships between the characters felt very believable and the writing style was beautiful.</p>
-</div>
-<div class=book-dateread>Finished: 14 June 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Really liked it overall. It was unique to have death as the narrator, the relationships between the characters felt very believable and the writing style was beautiful.</p></div><div class=book-dateread>Finished: 14 June 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Never Let Me Go</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Never Let Me Go</div><div class=book-details>
 Kazuo Ishiguro (2005)
-</div>
-<div class=book-rating>★★★☆☆</div>
-<div class=book-review><p>Overall a really unique and interesting story and a fine writing style - but I just could never really build a connection to the characters and feel very invested into their life. To me the book and the ending were just okay - not bad but not amazing either.</p>
-</div>
-<div class=book-dateread>Finished: 26 May 2019</div>
-<br>
+</div><div class=book-rating>★★★☆☆</div><div class=book-review><p>Overall a really unique and interesting story and a fine writing style - but I just could never really build a connection to the characters and feel very invested into their life. To me the book and the ending were just okay - not bad but not amazing either.</p></div><div class=book-dateread>Finished: 26 May 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>Flowers for Algernon</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>Flowers for Algernon</div><div class=book-details>
 Daniel Keyes (1959)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Loved the way the writing style changes simultaneously with the mental state of the main character while the story progresses, first time I read something like that. In general the ending was kind of spoiled or at least too predictable by the synopsis and general descriptions of the book.</p>
-<p>It didn&rsquo;t have the deep emotional impact on me as it seems to have on a lot of readers but I would overall still absolutely recommend it.</p>
-</div>
-<div class=book-dateread>Finished: 15 May 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Loved the way the writing style changes simultaneously with the mental state of the main character while the story progresses, first time I read something like that. In general the ending was kind of spoiled or at least too predictable by the synopsis and general descriptions of the book.</p><p>It didn&rsquo;t have the deep emotional impact on me as it seems to have on a lot of readers but I would overall still absolutely recommend it.</p></div><div class=book-dateread>Finished: 15 May 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-<div class=book-title>All the Light We Cannot See</div>
-<div class=book-details>
+</div><br>
+<div class=book-title>All the Light We Cannot See</div><div class=book-details>
 Anthony Doerr (2014)
-</div>
-<div class=book-rating>★★★★☆</div>
-<div class=book-review><p>Loved the writing style and the way the story switches between the two different viewpoints of the main characters. I definitely remember thinking that the prose was really beautiful.</p>
-<p>Only negative point for me personally was the ending, I felt like it would have been better if the book had ended a bit earlier, the last part felt kind of tacked on and didn&rsquo;t really fit with the feel of the rest of the book.</p>
-</div>
-<div class=book-dateread>Finished: 5 May 2019</div>
-<br>
+</div><div class=book-rating>★★★★☆</div><div class=book-review><p>Loved the writing style and the way the story switches between the two different viewpoints of the main characters. I definitely remember thinking that the prose was really beautiful.</p><p>Only negative point for me personally was the ending, I felt like it would have been better if the book had ended a bit earlier, the last part felt kind of tacked on and didn&rsquo;t really fit with the feel of the rest of the book.</p></div><div class=book-dateread>Finished: 5 May 2019</div><br>
 <div class=separator>
 <hr>
-</div>
-<br>
-</div>
-<div class=footer>
-<p>© 2022 | Matko Bušljeta</p>
-</div>
-</body>
-</html>
+</div><br>
+</div><div class=footer>
+<p>© 2022 | Matko Bušljeta</p></div></body></html>
