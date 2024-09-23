@@ -1,5 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Sun, 22 Sep 2024 19:20:47 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Fitness Goals</title><link>https://matkv.dev/fitness-goals/</link><pubDate>Sun, 22 Sep 2024 19:20:47 +0200</pubDate><guid>https://matkv.dev/fitness-goals/</guid><description>&lt;p>I feel like I haven&amp;rsquo;t been taking my fitness seriously enough recently so I&amp;rsquo;m writing down my goals and habits I want to build again to remind myself what I want to focus on.&lt;/p>
-&lt;p>I&amp;rsquo;d rather focus on few goals that I take very seriously than trying to completely through my routine and life around and then fail to stick to it in the end.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Mon, 23 Sep 2024 17:53:53 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Projects</title><link>https://matkv.dev/projects/</link><pubDate>Mon, 23 Sep 2024 17:53:53 +0200</pubDate><guid>https://matkv.dev/projects/</guid><description>&lt;p>My open source projects.&lt;/p>
+&lt;h2 id="current-projects">Current projects&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/matkv/matkv.dev">matkv.dev&lt;/a> - Repository for my personal website built using Hugo.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/utils">utils&lt;/a> - A CLI tool to make some common personal tasks easier. Practice project for learning Go.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/dotfiles">dotfiles&lt;/a> - My dotfiles repository.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/playlist-quickadd">playlist-quickadd&lt;/a> - Tool to help me manage my Spotify playlists.&lt;/li>
+&lt;/ul>
+&lt;h2 id="finished--abandoned-projects">Finished / abandoned projects&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/matkv/nobite">nobite&lt;/a> - Small tool to prevent nail biting by sending regular notifications.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/aoc">aoc&lt;/a> - Repository for Advent of Code.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/code">code&lt;/a> - Blazor app for random programming experiments.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/beep">beep&lt;/a> - A small program that plays a sound when clicking an icon in the system tray / tray bar.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/IMDBRandomMovie">IMDBRandomMovie&lt;/a> - Console application which automatically selects a random movie from your IMDB watchlist using Selenium &amp;amp; Python.&lt;/li>
+&lt;li>&lt;a href="https://github.com/matkv/HabitTracker">HabitTracker&lt;/a> - Flutter app for tracking personal habits.&lt;/li>
+&lt;/ul></description></item><item><title>Fitness Goals</title><link>https://matkv.dev/fitness-goals/</link><pubDate>Sun, 22 Sep 2024 19:20:47 +0200</pubDate><guid>https://matkv.dev/fitness-goals/</guid><description>&lt;p>I feel like I haven&amp;rsquo;t been taking my fitness seriously enough recently so I&amp;rsquo;m writing down my goals and habits I want to build again to remind myself what I want to focus on.&lt;/p>
+&lt;p>I&amp;rsquo;d rather focus on few goals that I take very seriously than trying to completely throw my routine and life around and then fail to stick to it in the end.&lt;/p>
 &lt;h2 id="goals-september-2024">Goals September 2024&lt;/h2>
 &lt;ul>
 &lt;li>Run 3x per week&lt;/li>
