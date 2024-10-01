@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Sat, 28 Sep 2024 22:19:33 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Podcasts</title><link>https://matkv.dev/podcasts/</link><pubDate>Sat, 28 Sep 2024 22:19:33 +0200</pubDate><guid>https://matkv.dev/podcasts/</guid><description>&lt;p>Some podcasts that I recommend:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Tue, 01 Oct 2024 20:02:33 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Websites</title><link>https://matkv.dev/websites/</link><pubDate>Tue, 01 Oct 2024 20:02:33 +0200</pubDate><guid>https://matkv.dev/websites/</guid><description>&lt;p>Useful &amp;amp; fun websites. Work in progress, just starting to populate this page.&lt;/p>
+&lt;h2 id="blogs">Blogs&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Website&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://jvns.ca/">jvns / Julia Evans&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">Interesting blog, lots of git topics. Comes up often on Hackernews.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://webring.xxiivv.com/">XXIIVV&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">Webring with a lot of very artistic websites, great for inspiration.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="tools">Tools&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Website&lt;/th>
+ &lt;th style="text-align: left">Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;a href="https://monkeytype.com/">MonkeyType&lt;/a>&lt;/td>
+ &lt;td style="text-align: left">Typing practice, keeps track of your records.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>Podcasts</title><link>https://matkv.dev/podcasts/</link><pubDate>Sat, 28 Sep 2024 22:19:33 +0200</pubDate><guid>https://matkv.dev/podcasts/</guid><description>&lt;p>Some podcasts that I recommend:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.dancarlin.com/hardcore-history-series/">Hardcore History&lt;/a> by Dan Carlin
 &lt;ul>
