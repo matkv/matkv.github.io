@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Tue, 01 Oct 2024 20:02:33 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Websites</title><link>https://matkv.dev/websites/</link><pubDate>Tue, 01 Oct 2024 20:02:33 +0200</pubDate><guid>https://matkv.dev/websites/</guid><description>&lt;p>Useful &amp;amp; fun websites. Work in progress, just starting to populate this page.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Tue, 01 Oct 2024 20:02:33 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Links</title><link>https://matkv.dev/links/</link><pubDate>Tue, 01 Oct 2024 20:02:33 +0200</pubDate><guid>https://matkv.dev/links/</guid><description>&lt;p>Links to useful &amp;amp; fun websites. Work in progress, just starting to populate this page.&lt;/p>
 &lt;h2 id="blogs">Blogs&lt;/h2>
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Website&lt;/th>
+ &lt;th style="text-align: left">Links&lt;/th>
  &lt;th style="text-align: left">Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
@@ -22,7 +22,7 @@
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Website&lt;/th>
+ &lt;th style="text-align: left">Link&lt;/th>
  &lt;th style="text-align: left">Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
