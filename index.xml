@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Tue, 01 Oct 2024 20:02:33 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Links</title><link>https://matkv.dev/links/</link><pubDate>Tue, 01 Oct 2024 20:02:33 +0200</pubDate><guid>https://matkv.dev/links/</guid><description>&lt;p>Links to useful &amp;amp; fun websites. Work in progress, just starting to populate this page.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on matkv.dev</title><link>https://matkv.dev/</link><description>Recent content in Home on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Fri, 11 Oct 2024 21:27:40 +0200</lastBuildDate><atom:link href="https://matkv.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Go learning resources</title><link>https://matkv.dev/golang-learning-resources/</link><pubDate>Fri, 11 Oct 2024 21:27:40 +0200</pubDate><guid>https://matkv.dev/golang-learning-resources/</guid><description>&lt;p>Quick access to some links for learning Go.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://youtu.be/8uiZC0l4Ajw">Learn Go Fast video&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://exercism.org/tracks/go">Exercism&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://go.dev/tour/welcome/1">Tour of Go&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://go.dev/doc/code">How to write Go code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://go.dev/doc/effective_go">Effective Go&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gobyexample.com/">Go By Example&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Links</title><link>https://matkv.dev/links/</link><pubDate>Tue, 01 Oct 2024 20:02:33 +0200</pubDate><guid>https://matkv.dev/links/</guid><description>&lt;p>Links to useful &amp;amp; fun websites. Work in progress, just starting to populate this page.&lt;/p>
 &lt;h2 id="blogs">Blogs&lt;/h2>
 &lt;table>
  &lt;thead>
