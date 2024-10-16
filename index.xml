@@ -11,26 +11,26 @@
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Links&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Links&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://jvns.ca/">jvns / Julia Evans&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Interesting blog, lots of git topics. Comes up often on Hackernews.&lt;/td>
+ &lt;td>&lt;a href="https://jvns.ca/">jvns / Julia Evans&lt;/a>&lt;/td>
+ &lt;td>Interesting blog, lots of git topics. Comes up often on Hackernews.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://webring.xxiivv.com/">XXIIVV&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Webring with a lot of very artistic websites, great for inspiration.&lt;/td>
+ &lt;td>&lt;a href="https://webring.xxiivv.com/">XXIIVV&lt;/a>&lt;/td>
+ &lt;td>Webring with a lot of very artistic websites, great for inspiration.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://taylor.town/">Taylor Town&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Random posts but interesting, found it on HN&lt;/td>
+ &lt;td>&lt;a href="https://taylor.town/">Taylor Town&lt;/a>&lt;/td>
+ &lt;td>Random posts but interesting, found it on HN&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://blogs.hn/">Blogs HN&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Collection of blogs&lt;/td>
+ &lt;td>&lt;a href="https://blogs.hn/">Blogs HN&lt;/a>&lt;/td>
+ &lt;td>Collection of blogs&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -38,22 +38,22 @@
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Link&lt;/th>
- &lt;th style="text-align: left">Description&lt;/th>
+ &lt;th>Link&lt;/th>
+ &lt;th>Description&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://monkeytype.com/">MonkeyType&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Typing practice, keeps track of your records.&lt;/td>
+ &lt;td>&lt;a href="https://monkeytype.com/">MonkeyType&lt;/a>&lt;/td>
+ &lt;td>Typing practice, keeps track of your records.&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://exercism.org/">Exercism&lt;/a>&lt;/td>
- &lt;td style="text-align: left">Open source programming learning platform, non profit, no paid features at all + it has its own cli tool that let&amp;rsquo;s you comfortably &lt;strong>download and submit exercises from your local machine/editor&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="https://exercism.org/">Exercism&lt;/a>&lt;/td>
+ &lt;td>Open source programming learning platform, non profit, no paid features at all + it has its own cli tool that let&amp;rsquo;s you comfortably &lt;strong>download and submit exercises from your local machine/editor&lt;/strong>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">&lt;a href="https://omniivore.app/home/">Omnivore&lt;/a>&lt;/td>
- &lt;td style="text-align: left">My &amp;ldquo;read-later&amp;rdquo; app of choice. open source, no paid features (for now) and it has it&amp;rsquo;s own Obsidian plugin to import saved articles into Obsidian&lt;/td>
+ &lt;td>&lt;a href="https://omniivore.app/home/">Omnivore&lt;/a>&lt;/td>
+ &lt;td>My &amp;ldquo;read-later&amp;rdquo; app of choice. open source, no paid features (for now) and it has it&amp;rsquo;s own Obsidian plugin to import saved articles into Obsidian&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table></description></item><item><title>Podcasts</title><link>https://matkv.dev/podcasts/</link><pubDate>Sat, 28 Sep 2024 22:19:33 +0200</pubDate><guid>https://matkv.dev/podcasts/</guid><description>&lt;p>Some podcasts that I recommend:&lt;/p>
