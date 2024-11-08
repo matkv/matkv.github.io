@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on matkv.dev</title><link>https://matkv.dev/tags/hugo/</link><description>Recent content in Hugo on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Sun, 01 May 2022 20:39:28 +0100</lastBuildDate><atom:link href="https://matkv.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Website Improvements</title><link>https://matkv.dev/archive/website-improvements/</link><pubDate>Sun, 01 May 2022 20:39:28 +0100</pubDate><guid>https://matkv.dev/archive/website-improvements/</guid><description>&lt;p>Some ideas for content that I want to put on this website:&lt;/p>
+&lt;h2 id="to-do">To-Do&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> a digital cv - either just hosting a PDF or writing some custom css to format everything nicely&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> changelog for this website&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> maybe a page about this website in general and why I created it / why I&amp;rsquo;m using it&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> add ways to contact me (maybe /contact page)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> add a page for my to-read list&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> general clean-up of the archetypes, layouts and css&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> maybe switch to just having a thicker separator between menu and main content, maybe also show all page titles in uppercase&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> try grouping the books on the reading page by year, with a little header for each year&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> find a way to add tags to blog posts &amp;amp; notes and make them searchable&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> add reading time to blog posts&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> add all bigger changes to this website to the &lt;a href="https://matkv.dev/changelog">changelog&lt;/a> page and delete the unnecessary blog posts&lt;/li>
+&lt;/ul>
+&lt;h2 id="done">Done&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> a personal blog&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> page with information about myself&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> a reading list &amp;amp; place to review books I&amp;rsquo;ve read, basically an online library / bookshelf,
+maybe a way to replace my Goodreads account&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> programming side projects&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> a custom bookmarks page for websites and links I commonly use (maybe just one big html table)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> page for random notes&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> maybe switch the domain to &amp;ldquo;matkv.dev&amp;rdquo; (when my current domain runs out, so probably in October?) + I could keep my current domain, especially for the e-mail and just forward to the website on the new domain&lt;/li>
+&lt;/ul></description></item><item><title>Mark active menu bold in Hugo</title><link>https://matkv.dev/archive/mark-active-menu-bold-in-hugo/</link><pubDate>Thu, 24 Mar 2022 21:46:26 +0200</pubDate><guid>https://matkv.dev/archive/mark-active-menu-bold-in-hugo/</guid><description>&lt;p>A quick summary of how I managed to set the currently active menu item bold on this website. My solution is a bit hacky but it works.&lt;/p></description></item></channel></rss>
