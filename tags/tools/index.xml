@@ -45,8 +45,8 @@
  &lt;td>Insert at the beginning/end of the line&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td>&lt;code>P&lt;/code>&lt;/td>
- &lt;td>In visual mode -&amp;gt; paste but does not copy the selection&lt;/td>
+ &lt;td>&lt;code>P&lt;/code> (visual mode)&lt;/td>
+ &lt;td>Paste without overwriting the clipboard&lt;/td>
  &lt;/tr>
  &lt;tr>
  &lt;td>&lt;code>&amp;quot;_d&lt;/code>&lt;/td>
