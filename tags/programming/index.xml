@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on matkv.dev</title><link>https://matkv.dev/tags/programming/</link><description>Recent content in Programming on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Tue, 22 Apr 2025 20:00:00 +0200</lastBuildDate><atom:link href="https://matkv.dev/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Git</title><link>https://matkv.dev/git/</link><pubDate>Tue, 22 Apr 2025 20:00:00 +0200</pubDate><guid>https://matkv.dev/git/</guid><description>&lt;p>Quick reference for Git commands and concepts while reading &lt;a href="https://git-scm.com/book/en/v2">Pro Git&lt;/a>.&lt;/p>
-&lt;h2 id="commands">Commands&lt;/h2>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>Command&lt;/th>
- &lt;th>Description&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>git diff --staged&lt;/code>&lt;/td>
- &lt;td>Show diff for staged files&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h2 id="links">Links&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://wizardzines.com/git-cheat-sheet.pdf">Git Cheat Sheet&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.github.com/en/get-started/git-basics/caching-your-github-credentials-in-git">Caching your GitHub credentials in Git&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Go learning resources</title><link>https://matkv.dev/golang-learning-resources/</link><pubDate>Fri, 11 Oct 2024 21:27:40 +0200</pubDate><guid>https://matkv.dev/golang-learning-resources/</guid><description>&lt;p>Quick access to some links for learning Go.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on matkv.dev</title><link>https://matkv.dev/tags/programming/</link><description>Recent content in Programming on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Fri, 11 Oct 2024 21:27:40 +0200</lastBuildDate><atom:link href="https://matkv.dev/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Go learning resources</title><link>https://matkv.dev/golang-learning-resources/</link><pubDate>Fri, 11 Oct 2024 21:27:40 +0200</pubDate><guid>https://matkv.dev/golang-learning-resources/</guid><description>&lt;p>Quick access to some links for learning Go.&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://youtu.be/8uiZC0l4Ajw">Learn Go Fast video&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://exercism.org/tracks/go">Exercism&lt;/a>&lt;/li>
