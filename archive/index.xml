@@ -1,86 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archive on matkv.dev</title><link>https://matkv.dev/archive/</link><description>Recent content in Archive on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Thu, 12 Sep 2024 18:00:00 +0100</lastBuildDate><atom:link href="https://matkv.dev/archive/index.xml" rel="self" type="application/rss+xml"/><item><title>Rebuilding this website</title><link>https://matkv.dev/archive/rebuilding-this-website/</link><pubDate>Thu, 12 Sep 2024 18:00:00 +0100</pubDate><guid>https://matkv.dev/archive/rebuilding-this-website/</guid><description>&lt;p style="color: red; font-weight: bold">THIS PAGE IS A TEMPORARY PLAYGROUND FOR TRYING OUT STYLING CHANGES.&lt;/p>
-&lt;p>I&amp;rsquo;m currently rebuilding this whole website.&lt;/p></description></item><item><title>Changing how I'm doing book reviews</title><link>https://matkv.dev/archive/changing-how-im-doing-book-reviews/</link><pubDate>Mon, 18 Dec 2023 20:00:00 +0100</pubDate><guid>https://matkv.dev/archive/changing-how-im-doing-book-reviews/</guid><description>&lt;p>I haven&amp;rsquo;t really been keeping up with writing &lt;a href="https://matkv.dev/reading">reviews&lt;/a> for the books I read on here. The last review I did immediately after finishing the book was book 4 of The Wheel of Time and now I&amp;rsquo;m already at book 13.&lt;/p></description></item><item><title>2 Year Website Anniversary</title><link>https://matkv.dev/archive/2-year-website-anniversary/</link><pubDate>Tue, 10 Oct 2023 19:00:55 +0200</pubDate><guid>https://matkv.dev/archive/2-year-website-anniversary/</guid><description>&lt;p>I just noticed that it has been two years (8th of October 2021) since I&amp;rsquo;ve set up this website. Feels like that&amp;rsquo;s worth a post.&lt;/p></description></item><item><title>code.matkv.dev</title><link>https://matkv.dev/archive/code-matkv-dev/</link><pubDate>Mon, 03 Jul 2023 18:00:00 +0200</pubDate><guid>https://matkv.dev/archive/code-matkv-dev/</guid><description>&lt;p>I just set up a second site that I&amp;rsquo;m planning to use for random programming projects. It runs on Blazor and can be found at &lt;a href="https://code.matkv.dev">code.matkv.dev&lt;/a>&lt;/p></description></item><item><title>Giving Doom Emacs a second try</title><link>https://matkv.dev/archive/giving-doom-emacs-a-second-try/</link><pubDate>Fri, 24 Jun 2022 20:00:00 +0200</pubDate><guid>https://matkv.dev/archive/giving-doom-emacs-a-second-try/</guid><description>&lt;p>After trying out Doom Emacs late last year and giving up on it, I&amp;rsquo;ve decided to give it another try.&lt;/p></description></item><item><title>Chess Openings</title><link>https://matkv.dev/archive/chess-openings/</link><pubDate>Sat, 07 May 2022 20:46:26 +0200</pubDate><guid>https://matkv.dev/archive/chess-openings/</guid><description>&lt;h2 id="tactical-vs-positional-openings">Tactical vs. Positional openings&lt;/h2>
-&lt;p>&lt;a href="https://docs.google.com/presentation/d/e/2PACX-1vScs84UlQpEP-dsde2HeSmDgDTTgK9LLQW9N1aNbE05jhjPskyEbiHSk_CTgIcbIShV7qywws8Vy_7H/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000#slide=id.ged614816f3_1_168">Link&lt;/a> to the Google Presentation for an overview of chess openings that I found on Reddit.&lt;/p>
-&lt;p>&lt;strong>To-Do&lt;/strong>: look up if I can embed lichess games directly here on the site using &lt;a href="https://lichess.org/developers">this&lt;/a>.&lt;/p>
-&lt;h3 id="tactical-opening">Tactical opening&lt;/h3>
-&lt;ul>
-&lt;li>Usually sharp &amp;amp; typically open position&lt;/li>
-&lt;li>Often many pawns have been traded off&lt;/li>
-&lt;li>Gambit openings (willingly sacrificing material to gain lead in development)&lt;/li>
-&lt;li>Tends to require more theory&lt;/li>
-&lt;li>Gambits are good for players that love to sacrifice material &amp;amp; work well against unprepared players, especially in speed chess (blitz, bullet)&lt;/li>
-&lt;/ul>
-&lt;h3 id="positional-opening">Positional opening&lt;/h3>
-&lt;ul>
-&lt;li>Often closed position&lt;/li>
-&lt;li>Pawns blocking each other in the center&lt;/li>
-&lt;li>Gradual improvement by maneuvering&lt;/li>
-&lt;li>Depriving opponents pieces of active squares, preparing pawn breaks&lt;/li>
-&lt;li>Play tends to be slow paced, knowledge of general strategy is more important than memorizing theory&lt;/li>
-&lt;/ul>
-&lt;h2 id="system-based-vs-theory-based-openings">System based vs. Theory based openings&lt;/h2>
-&lt;h3 id="system-based">System based&lt;/h3>
-&lt;ul>
-&lt;li>The same piece setup - regardless what the opponent plays (more or less)
-&lt;ul>
-&lt;li>Flexible move order&lt;/li>
-&lt;li>Less chance of committing a serious blunder in the opening&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Often leads to more passive and defensive positions&lt;/li>
-&lt;li>May lead to playing &amp;ldquo;mindless&amp;rdquo; chess&lt;/li>
-&lt;li>You can learn the same position over and over
-&lt;ul>
-&lt;li>Well suited for beginners, for &lt;strong>long-term development&lt;/strong> it might be a bad idea though&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="theory-based">Theory based&lt;/h3>
-&lt;ul>
-&lt;li>Usually requires players to memorize some concrete lines&lt;/li>
-&lt;li>Most tactical openings are theory-based&lt;/li>
-&lt;li>Useful for people with good memory, especially tactical openings with many traps&lt;/li>
-&lt;/ul>
-&lt;h2 id="classical-vs-hypermodern-openings">Classical vs. Hypermodern openings&lt;/h2>
-&lt;h3 id="classical">Classical&lt;/h3>
-&lt;ul>
-&lt;li>Physically occupying the center with pawns&lt;/li>
-&lt;li>Use center pawns to maintain a space advantage&lt;/li>
-&lt;/ul>
-&lt;h3 id="hypermodern">Hypermodern&lt;/h3>
-&lt;ul>
-&lt;li>Not necessary to directly occupy the center&lt;/li>
-&lt;li>Instead controlling the center from a distance using pieces&lt;/li>
-&lt;li>Trying to lure the opponent to over-extend their center pawns&lt;/li>
-&lt;li>Often uses &lt;strong>fianchetto&lt;/strong>, bishop controls the central squares at a safe distance&lt;/li>
-&lt;li>More cramped positions, trickier and less intuitive to play well - however the positional challenge can be a natural step in chess development&lt;/li>
-&lt;/ul>
-&lt;h2 id="openings-with-1e4---kings-pawn-game">Openings with 1.e4 - King&amp;rsquo;s Pawn Game&lt;/h2>
-&lt;p>Why?&lt;/p></description></item><item><title>Website Improvements</title><link>https://matkv.dev/archive/website-improvements/</link><pubDate>Sun, 01 May 2022 20:39:28 +0100</pubDate><guid>https://matkv.dev/archive/website-improvements/</guid><description>&lt;p>Some ideas for content that I want to put on this website:&lt;/p>
-&lt;h2 id="to-do">To-Do&lt;/h2>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> a digital cv - either just hosting a PDF or writing some custom css to format everything nicely&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> changelog for this website&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> maybe a page about this website in general and why I created it / why I&amp;rsquo;m using it&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> add ways to contact me (maybe /contact page)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> add a page for my to-read list&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> general clean-up of the archetypes, layouts and css&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> maybe switch to just having a thicker separator between menu and main content, maybe also show all page titles in uppercase&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> try grouping the books on the reading page by year, with a little header for each year&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> find a way to add tags to blog posts &amp;amp; notes and make them searchable&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> add reading time to blog posts&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> add all bigger changes to this website to the &lt;a href="https://matkv.dev/changelog">changelog&lt;/a> page and delete the unnecessary blog posts&lt;/li>
-&lt;/ul>
-&lt;h2 id="done">Done&lt;/h2>
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> a personal blog&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> page with information about myself&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> a reading list &amp;amp; place to review books I&amp;rsquo;ve read, basically an online library / bookshelf,
-maybe a way to replace my Goodreads account&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> programming side projects&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> a custom bookmarks page for websites and links I commonly use (maybe just one big html table)&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> page for random notes&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> maybe switch the domain to &amp;ldquo;matkv.dev&amp;rdquo; (when my current domain runs out, so probably in October?) + I could keep my current domain, especially for the e-mail and just forward to the website on the new domain&lt;/li>
-&lt;/ul></description></item><item><title>Added Notes Feature to This Website</title><link>https://matkv.dev/archive/added-notes-feature-to-this-website/</link><pubDate>Sun, 17 Apr 2022 20:00:26 +0200</pubDate><guid>https://matkv.dev/archive/added-notes-feature-to-this-website/</guid><description>&lt;p>I can now easily create notes &amp;amp; pages that don&amp;rsquo;t really fit into any of the other categories on this website! For now, I&amp;rsquo;ve added a page for programming projects ideas, new usecases for my Raspberry Pi and ideas for new content for this website!&lt;/p></description></item><item><title>Mark active menu bold in Hugo</title><link>https://matkv.dev/archive/mark-active-menu-bold-in-hugo/</link><pubDate>Thu, 24 Mar 2022 21:46:26 +0200</pubDate><guid>https://matkv.dev/archive/mark-active-menu-bold-in-hugo/</guid><description>&lt;p>A quick summary of how I managed to set the currently active menu item bold on this website. My solution is a bit hacky but it works.&lt;/p></description></item><item><title>Current Projects</title><link>https://matkv.dev/archive/current-projects/</link><pubDate>Wed, 02 Mar 2022 20:50:26 +0200</pubDate><guid>https://matkv.dev/archive/current-projects/</guid><description>&lt;p>I&amp;rsquo;ve been struggling to find a programming side project that I am really passionate about. In the last couple of weeks my main two projects have been this
-website &amp;amp; learning Rust. I did finish my little Rust &lt;a href="https://github.com/matkv/beep">project&lt;/a> that plays a sound to wake up my studio monitor speakers, but apart from that
-I just keep abandoning all the side projects I start.&lt;/p></description></item><item><title>Custom blog type</title><link>https://matkv.dev/archive/custom-blog-type/</link><pubDate>Sat, 06 Nov 2021 20:46:26 +0200</pubDate><guid>https://matkv.dev/archive/custom-blog-type/</guid><description>&lt;p>There is a &lt;strong>custom blog type&lt;/strong> for this website now - this means it is possible to create a blog post with just one command. The date, the type and the layout will be automatically set and I can basically just start typing the actual post.&lt;/p></description></item><item><title>Custom project type</title><link>https://matkv.dev/archive/custom-project-type/</link><pubDate>Mon, 18 Oct 2021 23:15:55 +0200</pubDate><guid>https://matkv.dev/archive/custom-project-type/</guid><description>&lt;p>I just finally finished creating a custom type for projects. I&amp;rsquo;ll quickly document what I did so that I don&amp;rsquo;t forget it again.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Archive on matkv.dev</title><link>https://matkv.dev/archive/</link><description>Recent content in Archive on matkv.dev</description><generator>Hugo</generator><language>en-us</language><copyright>test</copyright><lastBuildDate>Thu, 12 Sep 2024 18:00:00 +0100</lastBuildDate><atom:link href="https://matkv.dev/archive/index.xml" rel="self" type="application/rss+xml"/><item><title>Rebuilding this website</title><link>https://matkv.dev/archive/rebuilding-this-website/</link><pubDate>Thu, 12 Sep 2024 18:00:00 +0100</pubDate><guid>https://matkv.dev/archive/rebuilding-this-website/</guid><description>&lt;p style="color: red; font-weight: bold"&gt;THIS PAGE IS A TEMPORARY PLAYGROUND FOR TRYING OUT STYLING CHANGES.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m currently rebuilding this whole website.&lt;/p&gt;</description></item><item><title>Changing how I'm doing book reviews</title><link>https://matkv.dev/archive/changing-how-im-doing-book-reviews/</link><pubDate>Mon, 18 Dec 2023 20:00:00 +0100</pubDate><guid>https://matkv.dev/archive/changing-how-im-doing-book-reviews/</guid><description>&lt;p&gt;I haven&amp;rsquo;t really been keeping up with writing &lt;a href="https://matkv.dev/reading"&gt;reviews&lt;/a&gt; for the books I read on here. The last review I did immediately after finishing the book was book 4 of The Wheel of Time and now I&amp;rsquo;m already at book 13.&lt;/p&gt;</description></item><item><title>2 Year Website Anniversary</title><link>https://matkv.dev/archive/2-year-website-anniversary/</link><pubDate>Tue, 10 Oct 2023 19:00:55 +0200</pubDate><guid>https://matkv.dev/archive/2-year-website-anniversary/</guid><description>&lt;p&gt;I just noticed that it has been two years (8th of October 2021) since I&amp;rsquo;ve set up this website. Feels like that&amp;rsquo;s worth a post.&lt;/p&gt;</description></item><item><title>code.matkv.dev</title><link>https://matkv.dev/archive/code-matkv-dev/</link><pubDate>Mon, 03 Jul 2023 18:00:00 +0200</pubDate><guid>https://matkv.dev/archive/code-matkv-dev/</guid><description>&lt;p&gt;I just set up a second site that I&amp;rsquo;m planning to use for random programming projects. It runs on Blazor and can be found at &lt;a href="https://code.matkv.dev"&gt;code.matkv.dev&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Giving Doom Emacs a second try</title><link>https://matkv.dev/archive/giving-doom-emacs-a-second-try/</link><pubDate>Fri, 24 Jun 2022 20:00:00 +0200</pubDate><guid>https://matkv.dev/archive/giving-doom-emacs-a-second-try/</guid><description>&lt;p&gt;After trying out Doom Emacs late last year and giving up on it, I&amp;rsquo;ve decided to give it another try.&lt;/p&gt;</description></item><item><title>Chess Openings</title><link>https://matkv.dev/archive/chess-openings/</link><pubDate>Sat, 07 May 2022 20:46:26 +0200</pubDate><guid>https://matkv.dev/archive/chess-openings/</guid><description>&lt;h2 id="tactical-vs-positional-openings"&gt;Tactical vs. Positional openings&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.google.com/presentation/d/e/2PACX-1vScs84UlQpEP-dsde2HeSmDgDTTgK9LLQW9N1aNbE05jhjPskyEbiHSk_CTgIcbIShV7qywws8Vy_7H/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000#slide=id.ged614816f3_1_168"&gt;Link&lt;/a&gt; to the Google Presentation for an overview of chess openings that I found on Reddit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To-Do&lt;/strong&gt;: look up if I can embed lichess games directly here on the site using &lt;a href="https://lichess.org/developers"&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="tactical-opening"&gt;Tactical opening&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Usually sharp &amp;amp; typically open position&lt;/li&gt;
+&lt;li&gt;Often many pawns have been traded off&lt;/li&gt;
+&lt;li&gt;Gambit openings (willingly sacrificing material to gain lead in development)&lt;/li&gt;
+&lt;li&gt;Tends to require more theory&lt;/li&gt;
+&lt;li&gt;Gambits are good for players that love to sacrifice material &amp;amp; work well against unprepared players, especially in speed chess (blitz, bullet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="positional-opening"&gt;Positional opening&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Often closed position&lt;/li&gt;
+&lt;li&gt;Pawns blocking each other in the center&lt;/li&gt;
+&lt;li&gt;Gradual improvement by maneuvering&lt;/li&gt;
+&lt;li&gt;Depriving opponents pieces of active squares, preparing pawn breaks&lt;/li&gt;
+&lt;li&gt;Play tends to be slow paced, knowledge of general strategy is more important than memorizing theory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="system-based-vs-theory-based-openings"&gt;System based vs. Theory based openings&lt;/h2&gt;
+&lt;h3 id="system-based"&gt;System based&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The same piece setup - regardless what the opponent plays (more or less)
+&lt;ul&gt;
+&lt;li&gt;Flexible move order&lt;/li&gt;
+&lt;li&gt;Less chance of committing a serious blunder in the opening&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Often leads to more passive and defensive positions&lt;/li&gt;
+&lt;li&gt;May lead to playing &amp;ldquo;mindless&amp;rdquo; chess&lt;/li&gt;
+&lt;li&gt;You can learn the same position over and over
+&lt;ul&gt;
+&lt;li&gt;Well suited for beginners, for &lt;strong&gt;long-term development&lt;/strong&gt; it might be a bad idea though&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="theory-based"&gt;Theory based&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Usually requires players to memorize some concrete lines&lt;/li&gt;
+&lt;li&gt;Most tactical openings are theory-based&lt;/li&gt;
+&lt;li&gt;Useful for people with good memory, especially tactical openings with many traps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="classical-vs-hypermodern-openings"&gt;Classical vs. Hypermodern openings&lt;/h2&gt;
+&lt;h3 id="classical"&gt;Classical&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Physically occupying the center with pawns&lt;/li&gt;
+&lt;li&gt;Use center pawns to maintain a space advantage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="hypermodern"&gt;Hypermodern&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Not necessary to directly occupy the center&lt;/li&gt;
+&lt;li&gt;Instead controlling the center from a distance using pieces&lt;/li&gt;
+&lt;li&gt;Trying to lure the opponent to over-extend their center pawns&lt;/li&gt;
+&lt;li&gt;Often uses &lt;strong&gt;fianchetto&lt;/strong&gt;, bishop controls the central squares at a safe distance&lt;/li&gt;
+&lt;li&gt;More cramped positions, trickier and less intuitive to play well - however the positional challenge can be a natural step in chess development&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="openings-with-1e4---kings-pawn-game"&gt;Openings with 1.e4 - King&amp;rsquo;s Pawn Game&lt;/h2&gt;
+&lt;p&gt;Why?&lt;/p&gt;</description></item><item><title>Website Improvements</title><link>https://matkv.dev/archive/website-improvements/</link><pubDate>Sun, 01 May 2022 20:39:28 +0100</pubDate><guid>https://matkv.dev/archive/website-improvements/</guid><description>&lt;p&gt;Some ideas for content that I want to put on this website:&lt;/p&gt;
+&lt;h2 id="to-do"&gt;To-Do&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a digital cv - either just hosting a PDF or writing some custom css to format everything nicely&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; changelog for this website&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; maybe a page about this website in general and why I created it / why I&amp;rsquo;m using it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; add ways to contact me (maybe /contact page)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; add a page for my to-read list&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; general clean-up of the archetypes, layouts and css&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; maybe switch to just having a thicker separator between menu and main content, maybe also show all page titles in uppercase&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; try grouping the books on the reading page by year, with a little header for each year&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; find a way to add tags to blog posts &amp;amp; notes and make them searchable&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; add reading time to blog posts&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; add all bigger changes to this website to the &lt;a href="https://matkv.dev/changelog"&gt;changelog&lt;/a&gt; page and delete the unnecessary blog posts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="done"&gt;Done&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; a personal blog&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; page with information about myself&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; a reading list &amp;amp; place to review books I&amp;rsquo;ve read, basically an online library / bookshelf,
+maybe a way to replace my Goodreads account&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; programming side projects&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; a custom bookmarks page for websites and links I commonly use (maybe just one big html table)&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; page for random notes&lt;/li&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; maybe switch the domain to &amp;ldquo;matkv.dev&amp;rdquo; (when my current domain runs out, so probably in October?) + I could keep my current domain, especially for the e-mail and just forward to the website on the new domain&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Added Notes Feature to This Website</title><link>https://matkv.dev/archive/added-notes-feature-to-this-website/</link><pubDate>Sun, 17 Apr 2022 20:00:26 +0200</pubDate><guid>https://matkv.dev/archive/added-notes-feature-to-this-website/</guid><description>&lt;p&gt;I can now easily create notes &amp;amp; pages that don&amp;rsquo;t really fit into any of the other categories on this website! For now, I&amp;rsquo;ve added a page for programming projects ideas, new usecases for my Raspberry Pi and ideas for new content for this website!&lt;/p&gt;</description></item><item><title>Mark active menu bold in Hugo</title><link>https://matkv.dev/archive/mark-active-menu-bold-in-hugo/</link><pubDate>Thu, 24 Mar 2022 21:46:26 +0200</pubDate><guid>https://matkv.dev/archive/mark-active-menu-bold-in-hugo/</guid><description>&lt;p&gt;A quick summary of how I managed to set the currently active menu item bold on this website. My solution is a bit hacky but it works.&lt;/p&gt;</description></item><item><title>Current Projects</title><link>https://matkv.dev/archive/current-projects/</link><pubDate>Wed, 02 Mar 2022 20:50:26 +0200</pubDate><guid>https://matkv.dev/archive/current-projects/</guid><description>&lt;p&gt;I&amp;rsquo;ve been struggling to find a programming side project that I am really passionate about. In the last couple of weeks my main two projects have been this
+website &amp;amp; learning Rust. I did finish my little Rust &lt;a href="https://github.com/matkv/beep"&gt;project&lt;/a&gt; that plays a sound to wake up my studio monitor speakers, but apart from that
+I just keep abandoning all the side projects I start.&lt;/p&gt;</description></item><item><title>Custom blog type</title><link>https://matkv.dev/archive/custom-blog-type/</link><pubDate>Sat, 06 Nov 2021 20:46:26 +0200</pubDate><guid>https://matkv.dev/archive/custom-blog-type/</guid><description>&lt;p&gt;There is a &lt;strong&gt;custom blog type&lt;/strong&gt; for this website now - this means it is possible to create a blog post with just one command. The date, the type and the layout will be automatically set and I can basically just start typing the actual post.&lt;/p&gt;</description></item><item><title>Custom project type</title><link>https://matkv.dev/archive/custom-project-type/</link><pubDate>Mon, 18 Oct 2021 23:15:55 +0200</pubDate><guid>https://matkv.dev/archive/custom-project-type/</guid><description>&lt;p&gt;I just finally finished creating a custom type for projects. I&amp;rsquo;ll quickly document what I did so that I don&amp;rsquo;t forget it again.&lt;/p&gt;</description></item></channel></rss>
