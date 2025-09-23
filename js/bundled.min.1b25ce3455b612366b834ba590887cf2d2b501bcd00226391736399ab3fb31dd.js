@@ -1,9 +1,0 @@
-(()=>{var n,d=`${window.location.origin}/index.json`,t="query",j=20,a='<span style="background-color: #fff3cd;">',r="</span>",f={keys:["title","content","url"],ignoreLocation:!0,includeMatches:!0,minMatchCharLength:3},e=()=>{const e=document.querySelector(".search-input");if(!e)throw new Error("Search input element not found");return e},c=()=>{e().disabled=!1},l=e=>{n=new Fuse(e,f)},i=()=>{const n=new URLSearchParams(window.location.search);if(n.has(t)){const o=decodeURIComponent(n.get(t)||"");e().value=o,s()}},u=e=>encodeURIComponent(e).replace(/[!'()*]/g,e=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`),h=e=>{const n=new URL(location.origin+location.pathname);n.search=`${t}=${u(e)}`,window.history.replaceState({},"",n)},m=()=>{fetch(d).then(e=>e.json()).then(e=>{const t=e;l(t),c(),i()}).catch(e=>{console.error(`Failed to fetch JSON index: ${e.message}`)})},o=(e,t)=>{const n=e.item[t],o=e.matches.find(e=>e.key===t);if(!o)return n;const s=new Map;return o.indices.forEach(e=>{const t=e[0],o=e[1],i=`${a}${n[t]}`,c=`${n[o]}${r}`;s.set(t,i),s.set(o,c)}),n.split("").map((e,t)=>s.get(t)||e).join("")},p=e=>{const t=Object.keys(e.item).filter(e=>e!=="title"&&e!=="url"&&e!=="content").map(t=>`    <strong>${t}:</strong> ${o(e,t)}<br>
-    `).join(`
-`);return`  <p>
-    <a href="${e.item.url}">
-    ${o(e,"title")}
-    </a><br>
-    ${t}
-  </p>`},g=e=>{const n=e.slice(0,j),s=n.map(p).join(`
-`),t=document.querySelector(".search-results-container");t&&(t.innerHTML=s)},v=()=>{const t=e().value.trim();return t},b=e=>n.search(e),s=()=>{const e=v(),t=b(e);h(e),g(t)},y=()=>{e()&&(m(),e().addEventListener("keyup",s))},_=()=>{document.addEventListener("DOMContentLoaded",y)};_()})()
