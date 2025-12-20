@@ -7,136 +7,33 @@
     --constructiontext: #888;
 }
 
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Black.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-BlackItalic.woff2') format('woff2');
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-BoldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Heavy.woff2') format('woff2');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-HeavyItalic.woff2') format('woff2');
-    font-weight: 800;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-LightItalic.woff2') format('woff2');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-MediumItalic.woff2') format('woff2');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-RegularItalic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-SemiBoldItalic.woff2') format('woff2');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SNPro';
-    src: url('/fonts/SNPro-ThinItalic.woff2') format('woff2');
-    font-weight: 100;
-    font-style: italic;
-}
-
 body {
     background-color: var(--background-color);
-    font-family: SNPro, Arial, sans-serif;
+    font-family: "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
     color: var(--font-color);
-    max-width: 45em;
+    max-width: 50em;
     margin: 0 auto;
-    line-height: 1.25em;
-    font-size: 1em;
+    line-height: 1.6em;
+    font-size: 0.96em;
+    letter-spacing: 0.01em;
     padding-left: 1.5em;
     padding-right: 1.5em;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 
     a,
     a:visited {
         color: var(--font-color);
+        transition: all 0.2s ease;
+    }
+
+    a:hover {
+        opacity: 0.7;
     }
 }
 
@@ -158,10 +55,15 @@ nav ul {
     list-style-type: none;
     padding: 0;
     gap: 0.9em;
-    font-weight: bold;
+    font-weight: 500;
 
     a {
         text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+        opacity: 0.6;
     }
 
     .nav-icons {
@@ -178,7 +80,7 @@ nav ul {
 
 .tag-label {
     margin-right: 0.5em;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .tags ul {
@@ -197,6 +99,12 @@ nav ul {
     background-color: var(--light-grey);
     border-radius: 0.5em;
     display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.tags ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tags ul li a {
@@ -210,16 +118,28 @@ main {
     margin-top: 0em;
 
     h1 {
-        font-size: 1.5em;
-        font-weight: bold;
+        font-size: 1.35em;
+        font-weight: 600;
+        margin-top: 1.2em;
+        margin-bottom: 0.8em;
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.0em;
+        font-weight: 600;
+        margin-top: 1.5em;
+        margin-bottom: 0.6em;
     }
 
     h3 {
-        font-size: 1.0em;
+        font-size: 0.95em;
+        font-weight: 600;
+        margin-top: 1.3em;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        margin-bottom: 1em;
     }
 }
 
@@ -246,7 +166,7 @@ p {
     }
 
     .date {
-        font-weight: bold;
+        font-weight: 500;
         min-width: 7em;
     }
 }
@@ -302,14 +222,14 @@ p {
     }
 
     .yearheader {
-        font-weight: bold;
-        font-size: 1.1em;
+        font-weight: 600;
+        font-size: 0.9em;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
 
     .date {
-        font-weight: bold;
+        font-weight: 500;
         min-width: 6em;
     }
 
@@ -376,7 +296,15 @@ p {
 .home {
 
     .post {
-        margin-bottom: 1em;
+        margin-bottom: 0.2em;
+        padding: 0.5em 0.8em;
+        border-radius: 0.4em;
+        transition: all 0.2s ease;
+    }
+
+    .post:hover {
+        background-color: rgba(206, 206, 206, 0.15);
+        transform: translateX(4px);
     }
 
     a {
@@ -384,8 +312,8 @@ p {
     }
 
     .title {
-        font-size: 1.1em;
-        font-weight: bold;
+        font-size: 1.05em;
+        font-weight: 600;
     }
 
     .iconslist {
@@ -393,23 +321,101 @@ p {
         flex-direction: row;
         justify-content: space-evenly;
         gap: 0.5em;
-        font-size: 1.75em;
+        font-size: 1.5em;
         margin-top: 2em;
         margin-bottom: 2em;
     }
 
 }
 
+/* Footnotes as sidenotes on wide screens */
 .footnotes {
     hr {
-        border: solid var(--light-grey 0.11em);
-        opacity: 0.4;
+        display: none;
     }
 
     font-size: 0.8em;
 
     ol {
+        padding-left: 0;
+        list-style: none;
+        counter-reset: sidenote-counter;
+    }
+
+    li {
+        counter-increment: sidenote-counter;
+    }
+
+    li::before {
+        content: counter(sidenote-counter) ". ";
+        font-weight: bold;
+    }
+
+    li p {
+        display: inline;
+    }
+
+    .footnote-backref {
+        display: none;
+    }
+}
+
+/* Wide screen layout - footnotes as sidenotes */
+@media (min-width: 1200px) {
+    main {
+        position: relative;
+    }
+
+    .footnotes {
+        position: absolute;
+        right: -18em;
+        width: 15em;
+        top: 0;
+        font-size: 0.75em;
+        line-height: 1.3em;
+    }
+
+    .footnotes hr {
+        display: none;
+    }
+
+    .footnotes ol {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footnotes li {
+        margin-bottom: 1.5em;
+        padding: 0.5em;
+        background-color: rgba(206, 206, 206, 0.1);
+        border-left: 2px solid var(--light-grey);
+        position: absolute;
+    }
+}
+
+/* Mobile/narrow screen - traditional footnotes at bottom */
+@media (max-width: 1199px) {
+    .footnotes {
+        margin-top: 2em;
+    }
+
+    .footnotes hr {
+        display: block;
+        border: solid var(--light-grey) 0.11em;
+        opacity: 0.4;
+    }
+
+    .footnotes ol {
         padding-left: 1em;
+        list-style: decimal;
+    }
+
+    .footnotes li::before {
+        content: none;
+    }
+
+    .footnote-backref {
+        display: inline;
     }
 }
 
@@ -429,9 +435,14 @@ blockquote {
     font-style: italic;
     font-weight: 300;
     border-left: 0.5em solid var(--light-grey);
-    padding-left: 1em;
+    padding-left: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     margin-left: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     font-size: 0.9em;
+    background-color: rgba(206, 206, 206, 0.05);
 }
 
 .tagslist {
@@ -541,7 +552,7 @@ img {
     right: 30px;
     color: #fff;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     z-index: 1001;
     user-select: none;
@@ -567,7 +578,13 @@ main img {
 
 /* Mobile responsiveness for lightbox */
 @media (max-width: 768px) {
-    .lightbox-content {
+    body {
+        \n padding-left: 2em;
+        \n padding-right: 2em;
+        \n
+    }
+
+    \n\n .lightbox-content {
         max-width: 95vw;
         max-height: 85vh;
     }
@@ -630,8 +647,8 @@ main img {
 .archive {
 
     .yearheader {
-        font-weight: bold;
-        font-size: 1.1em;
+        font-weight: 600;
+        font-size: 0.9em;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
@@ -646,6 +663,14 @@ main img {
 
     li {
         display: flex;
+        padding: 0.4em 0.6em;
+        border-radius: 0.3em;
+        transition: all 0.2s ease;
+    }
+
+    li:hover {
+        background-color: rgba(206, 206, 206, 0.15);
+        transform: translateX(4px);
     }
 
     .tags {
@@ -663,7 +688,7 @@ main img {
 
     .title a {
         margin-right: auto;
-        font-weight: bold;
+        font-weight: 500;
         text-decoration: none;
     }
 }
@@ -671,6 +696,10 @@ main img {
 .highlight div,
 .highlight pre {
     overflow-x: auto;
+    padding: 1em 1.2em;
+    border-radius: 0.4em;
+    border-left: 3px solid var(--light-grey);
+    background-color: rgba(206, 206, 206, 0.08) !important;
 }
 
 table {
@@ -691,7 +720,7 @@ tbody td:first-child a {
 table thead th {
     border-bottom: 2px solid #ddd;
     padding: 10px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* Table cells */
@@ -774,13 +803,13 @@ table tbody td a {
     }
 
     .title {
-        font-size: 1.1em;
-        font-weight: bold;
+        font-size: 0.9em;
+        font-weight: 600;
         color: var(--font-color);
     }
 
     .date {
-        margin-bottom: 0.5em;
+        font-size: 0.8em;
         color: var(--constructiontext);
     }
 
@@ -812,7 +841,7 @@ table tbody td a {
 }
 
 .linksgrid>ul>li>p {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 0.8em;
 }
 
