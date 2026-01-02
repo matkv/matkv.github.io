@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Log on matkv.dev</title><link>https://matkv.dev/log/</link><description>Recent content in Log on matkv.dev</description><generator>Hugo</generator><language>en</language><atom:link href="https://matkv.dev/log/index.xml" rel="self" type="application/rss+xml"/><item><title>Example log entry</title><link/><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid/><description>&lt;p&gt;This is what a log entry looks like.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Log on matkv.dev</title><link>https://matkv.dev/log/</link><description>Recent content in Log on matkv.dev</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 02 Jan 2026 16:44:41 +0100</lastBuildDate><atom:link href="https://matkv.dev/log/index.xml" rel="self" type="application/rss+xml"/><item><title>New Year's Resolutions 2026</title><link/><pubDate>Fri, 02 Jan 2026 16:44:41 +0100</pubDate><guid/><description>&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Personal&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find a flat &amp;amp; move out&lt;/li&gt;
+&lt;li&gt;Spend less time on the computer &amp;amp; phone, use more analog tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fitness&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get back into my planned workout routine&lt;/li&gt;
+&lt;li&gt;3x calisthenics / strength workout per week&lt;/li&gt;
+&lt;li&gt;3x running per week&lt;/li&gt;
+&lt;li&gt;If my knee feels better, start running longer runs again&lt;/li&gt;
+&lt;li&gt;Half-marathon 👀&lt;/li&gt;
+&lt;li&gt;More regular bouldering&lt;/li&gt;
+&lt;li&gt;More regular stretching&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Hobbies &amp;amp; projects&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Daily &amp;amp; consistent reading; read shorter books, various genres &amp;amp; authors&lt;/li&gt;
+&lt;li&gt;Work on &lt;a href="https://github.com/matkv/core"&gt;core&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Finish Obsidian vault revamp &amp;amp; set up &lt;a href="https://matkv.dev"&gt;matkv.dev&lt;/a&gt; automatic builds from the vault&lt;/li&gt;
+&lt;li&gt;Continue learning Rust &amp;amp; start with small projects&lt;/li&gt;
+&lt;li&gt;Watch more movies &amp;amp; go to cinema more often&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link/><pubDate>Thu, 01 Jan 2026 09:00:00 +0000</pubDate><guid/><description>&lt;p&gt;This is what a log entry will look like.&lt;/p&gt;</description></item></channel></rss>
