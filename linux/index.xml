@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on matkv.dev</title><link>https://matkv.dev/linux/</link><description>Recent content in Linux on matkv.dev</description><generator>Hugo</generator><language>en</language><atom:link href="https://matkv.dev/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Arch Linux WSL</title><link>https://matkv.dev/linux/arch-linux-wsl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://matkv.dev/linux/arch-linux-wsl/</guid><description>&lt;h2 id="installation-guide"&gt;Installation guide&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL"&gt;Install Arch Linux on WSL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="disable-wsl-interop"&gt;Disable WSL interop&lt;/h2&gt;
+&lt;p&gt;To prevent issues caused by having the Windows &lt;code&gt;$PATH&lt;/code&gt; in the WSL environment, we can disable that functionality.&lt;/p&gt;
+&lt;p&gt;In particular, this solves a problem I had where the &lt;code&gt;utils&lt;/code&gt; binary - when installing it on Windows - was loaded into &lt;code&gt;$PATH&lt;/code&gt; &lt;em&gt;before&lt;/em&gt; the &lt;code&gt;utils&lt;/code&gt; binary from &lt;code&gt;~/.go/bin&lt;/code&gt;. This made it impossible to run the &lt;code&gt;utils&lt;/code&gt; binary from &lt;code&gt;~/.go/bin&lt;/code&gt; because the Windows version was always loaded first.&lt;/p&gt;</description></item></channel></rss>
